@@ -1,0 +1,589 @@
+[
+ {
+  "slug": "la-cabane-marjolaine",
+  "name": "La Cabane Marjolaine",
+  "farmer_names": "Pauline Besnier et Cyril Le Naour",
+  "city": "Thônes",
+  "address": "Allée de Marjolaine, Glapigny, 74230 Thônes",
+  "phone": "06 72 45 37 42",
+  "participation": "contrat",
+  "tagline": "Fromages de chèvre des hauteurs de Thônes",
+  "product_types": [
+   "fromages",
+   "laitages"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>La Cabane Marjolaine a pris la suite du GAEC Marjolaine le 1<sup>er</sup> janvier 2019. Pauline et Cyril, forts d'une solide expérience en agriculture biologique et en production de fromages, ont décidé de prolonger et renforcer l'aventure Marjolaine.</p><p>Installés sur les hauteurs de Thônes, ils élèvent environ quatre-vingts chèvres. L'hiver, les chèvres restent au chaud ; les beaux jours venus, elles parcourent les prairies naturelles qui les entourent et donnent un caractère unique aux fromages.</p><p>Les prairies servent aussi à la fauche, pour rentrer le fourrage qui nourrit les animaux l'hiver.</p>",
+  "products": [
+   {
+    "name": "Panier fromages de chèvre",
+    "description": "Assortiment de la saison : frais, mi-sec, tomme",
+    "unit": "panier",
+    "price_cents": 1400,
+    "icon": "🧀"
+   },
+   {
+    "name": "Tomme de chèvre (demie)",
+    "description": null,
+    "unit": "pièce",
+    "price_cents": 1250,
+    "icon": "🧀"
+   },
+   {
+    "name": "Faisselle de chèvre",
+    "description": null,
+    "unit": "pot de 500 g",
+    "price_cents": 450,
+    "icon": "🥛"
+   }
+  ],
+  "cover_photo": "producteurs/la-cabane-marjolaine-1.jpg",
+  "photos": [
+   "producteurs/la-cabane-marjolaine-2.jpg"
+  ],
+  "documents": []
+ },
+ {
+  "slug": "la-chevrerie-de-lily",
+  "name": "La Chèvrerie de Lily",
+  "farmer_names": "Eliane Marcoux et Morgan Diaz",
+  "city": "Le Bouchet-Mont-Charvin",
+  "address": "Chemin de la Longeret, 74230 Le Bouchet-Mont-Charvin",
+  "participation": "contrat",
+  "tagline": "Chevrotin AOP et Persillé des Aravis, au lait de chèvres des Savoie",
+  "product_types": [
+   "fromages"
+  ],
+  "labels": [
+   "bio",
+   "aop"
+  ],
+  "social_links": {
+   "facebook": "https://www.facebook.com/lachevreriedelily"
+  },
+  "description": "<p>En novembre 2018, Morgan et Lily rachètent un troupeau de chèvres de race locale, la chèvre des Savoie, et créent leur chèvrerie dans le massif des Aravis.</p><p>Afin de perpétuer les savoir-faire ancestraux, ils transforment le lait biologique de leurs chèvres principalement en fromages locaux : le chevrotin AOP et le Persillé des Aravis.</p>",
+  "products": [
+   {
+    "name": "Chevrotin AOP",
+    "description": null,
+    "unit": "pièce",
+    "price_cents": 1100,
+    "icon": "🧀"
+   },
+   {
+    "name": "Persillé des Aravis",
+    "description": null,
+    "unit": "pièce",
+    "price_cents": 1500,
+    "icon": "🧀"
+   }
+  ],
+  "cover_photo": "producteurs/la-chevrerie-de-lily-1.jpg",
+  "photos": [
+   "producteurs/la-chevrerie-de-lily-2.jpg"
+  ],
+  "documents": []
+ },
+ {
+  "slug": "la-ferme-du-peroset",
+  "name": "La Ferme du Péroset",
+  "farmer_names": "Bertrand Aguettand",
+  "city": "Manigod",
+  "address": "Le Péroset, 74230 Manigod",
+  "phone": "06 24 77 08 97",
+  "participation": "contrat",
+  "tagline": "Tommettes de brebis fabriquées après chaque traite",
+  "product_types": [
+   "fromages",
+   "laitages"
+  ],
+  "labels": [],
+  "description": "<p>En 2008, Bertrand Aguettand reprend le troupeau de brebis de son père et se lance dans la production de tommettes de brebis.</p><p>Au printemps, en été et à l'automne, les brebis profitent de l'herbe des champs autour de l'exploitation. À l'arrivée de la neige, elles rentrent et sont nourries tout l'hiver du foin coupé durant l'été.</p><p>C'est à Manigod, toute l'année, directement après la traite, que Bertrand fabrique ses tommettes.</p>",
+  "products": [
+   {
+    "name": "Tommette de brebis",
+    "description": null,
+    "unit": "pièce",
+    "price_cents": 900,
+    "icon": "🧀"
+   },
+   {
+    "name": "Yaourts de brebis nature",
+    "description": null,
+    "unit": "lot de 4",
+    "price_cents": 420,
+    "icon": "🥛"
+   }
+  ],
+  "cover_photo": "producteurs/la-ferme-du-peroset-1.jpg",
+  "photos": [
+   "producteurs/la-ferme-du-peroset-2.jpg"
+  ],
+  "documents": []
+ },
+ {
+  "slug": "la-ferme-du-ponant",
+  "name": "La Ferme du Ponant",
+  "farmer_names": "Johann Bocquet",
+  "city": "La Chapelle-Saint-Maurice",
+  "address": "16 impasse de Borny, 74410 La Chapelle-Saint-Maurice",
+  "phone": "06 20 93 46 15",
+  "participation": "contrat",
+  "tagline": "Le petit fromager des Bauges : tommes et laitages bio",
+  "product_types": [
+   "fromages",
+   "laitages"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>Johann Bocquet, agriculteur à La Chapelle-Saint-Maurice, a repris La Ferme du Ponant en 2018. Passionné par son métier, il élève une vingtaine de vaches laitières.</p><p>Il travaille dans la continuité de ses prédécesseurs, la famille Bouvet, avec le même respect des animaux et de la terre : aucun pesticide et très peu de compléments alimentaires.</p><p>Son but : des produits laitiers certifiés bio et de qualité, et des fromages artisanaux aux recettes inventives.</p>",
+  "products": [
+   {
+    "name": "Tomme fermière (quart)",
+    "description": "environ 1,2 kg",
+    "unit": "pièce",
+    "price_cents": 2400,
+    "icon": "🧀"
+   },
+   {
+    "name": "Tomme fermière (demie)",
+    "description": "environ 2,4 kg",
+    "unit": "pièce",
+    "price_cents": 4800,
+    "icon": "🧀"
+   },
+   {
+    "name": "Lait entier pasteurisé",
+    "description": null,
+    "unit": "litre",
+    "price_cents": 170,
+    "icon": "🥛"
+   }
+  ],
+  "cover_photo": "producteurs/la-ferme-du-ponant-1.jpg",
+  "photos": [
+   "producteurs/la-ferme-du-ponant-2.jpg",
+   "producteurs/la-ferme-du-ponant-3.jpg"
+  ],
+  "documents": []
+ },
+ {
+  "slug": "le-corti-des-aravis",
+  "name": "Le Corti des Aravis",
+  "farmer_names": "François Sylvestre-Boncheval",
+  "city": "Les Villards-sur-Thônes",
+  "address": "148 route du Liez, 74230 Les Villards-sur-Thônes",
+  "phone": "06 47 54 05 22",
+  "email": "lecortidesaravis@ecomail.fr",
+  "website": "https://www.lecortidesaravis.fr/",
+  "participation": "contrat",
+  "cheque_payee": "EI François Sylvestre-Boncheval",
+  "tagline": "Légumes et petits fruits bio en agroécologie, aux Villards",
+  "product_types": [
+   "legumes",
+   "fruits"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>François Sylvestre-Boncheval a débuté le maraîchage bio au printemps 2022, aux Villards-sur-Thônes.</p><p>Inscrit dans une démarche de transition, il vise un fonctionnement en agroécologie : des arbres intégrés au jardin (agroforesterie, verger maraîcher), le moins de plastique et d'emballages possible (barquettes consignées), peu de pétrole (travail manuel à la grelinette) et un travail avec la nature, pas contre elle.</p><p>Il cherche à augmenter la biodiversité, à stocker du carbone dans les arbres et le sol, et à limiter la consommation d'eau. Petits fruits, fruits du verger et légumineuses complètent peu à peu les paniers.</p>",
+  "products": [
+   {
+    "name": "Panier légumes et fruits",
+    "description": "Panier moyen de saison",
+    "unit": "panier",
+    "price_cents": 3029,
+    "icon": "🥕"
+   }
+  ],
+  "cover_photo": "producteurs/le-corti-des-aravis-1.jpg",
+  "photos": [
+   "producteurs/le-corti-des-aravis-2.jpg"
+  ],
+  "documents": [
+   "documents/contrat-2026-le-corti-des-aravis.pdf"
+  ]
+ },
+ {
+  "slug": "le-jardin-des-solstices",
+  "name": "Le Jardin des Solstices",
+  "farmer_names": "Thomas et Audrey Roset",
+  "city": "Saint-Vital",
+  "address": "Le Verney, 73460 Saint-Vital",
+  "email": "lejardindessolstices@gmail.com",
+  "participation": "contrat",
+  "tagline": "Maraîchage bio : des légumes de saison toute l'année",
+  "product_types": [
+   "legumes"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>Le Jardin des Solstices est une exploitation maraîchère en agriculture biologique, créée en 2012 par Thomas et Audrey Roset après une reconversion professionnelle.</p><p>Située à Saint-Vital en Savoie, elle s'étend sur 8 ha en plein champ et 4 200 m² sous serres et tunnels, et emploie de 3 à 10 salariés selon les saisons.</p><p>Ils produisent toute l'année de nombreuses variétés de légumes locaux et de saison, en mettant l'accent sur le goût et la fraîcheur : carottes, pommes de terre, choux variés, courges, poivrons… et des variétés oubliées.</p>",
+  "products": [
+   {
+    "name": "Petit panier de légumes",
+    "description": null,
+    "unit": "panier",
+    "price_cents": 1400,
+    "icon": "🥕"
+   },
+   {
+    "name": "Grand panier de légumes",
+    "description": null,
+    "unit": "panier",
+    "price_cents": 2000,
+    "icon": "🥕"
+   }
+  ],
+  "cover_photo": "producteurs/le-jardin-des-solstices-1.jpg",
+  "photos": [
+   "producteurs/le-jardin-des-solstices-2.jpg"
+  ],
+  "documents": []
+ },
+ {
+  "slug": "la-ferme-du-coteau",
+  "name": "La Ferme du Coteau",
+  "farmer_names": "Christophe et Nathalie Raucaz",
+  "city": "Verrens-Arvey",
+  "address": "546 route des Ayes, 73460 Verrens-Arvey",
+  "phone": "06 02 59 20 46",
+  "website": "https://lafermeducoteau.fr/",
+  "participation": "contrat",
+  "tagline": "Fruits, compotes et jus bio au rythme des saisons",
+  "product_types": [
+   "fruits",
+   "boissons"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>L'exploitation arboricole de Christophe et Nathalie Raucaz est située à Verrens-Arvey et Tournon, sur les contreforts sud-est du massif des Bauges, entre 400 et 600 mètres d'altitude.</p><p>Ils cultivent environ 28 hectares en agriculture biologique, sous le contrôle de Bureau Veritas (FR-BIO-10).</p><p>Ils proposent leurs fruits, compotes et jus bio au rythme des saisons, en quantités variables selon les caprices du temps !</p>",
+  "products": [
+   {
+    "name": "Pommes",
+    "description": "Cagette",
+    "unit": "5 kg",
+    "price_cents": 1200,
+    "icon": "🍎"
+   },
+   {
+    "name": "Poires",
+    "description": "Barquette",
+    "unit": "2 kg",
+    "price_cents": 650,
+    "icon": "🍎"
+   },
+   {
+    "name": "Pur jus de pommes",
+    "description": null,
+    "unit": "bouteille de 1 l",
+    "price_cents": 380,
+    "icon": "🧃"
+   }
+  ],
+  "cover_photo": "producteurs/la-ferme-du-coteau-1.jpg",
+  "photos": [],
+  "documents": [
+   "documents/une-annee-dans-les-vergers.pdf",
+   "documents/conservation-des-pommes.pdf"
+  ]
+ },
+ {
+  "slug": "boulangerie-chez-geoffrey",
+  "name": "Boulangerie Chez Geoffrey",
+  "farmer_names": "Geoffrey et Morgane",
+  "city": "Saint-Laurent",
+  "address": "31 rue de la Charre, 74800 Saint-Laurent",
+  "participation": "contrat",
+  "tagline": "Pains bio au levain, 18 heures de fermentation",
+  "product_types": [
+   "pain"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>Geoffrey est un artisan passionné. Après son CAP, il s'est formé aux différentes panifications, et notamment à la fermentation lente : deux tiers de sel en moins, trois quarts de levain en moins, et des matières premières bien plus respectées.</p><p>Morgane, passionnée par les relations humaines, s'est intéressée à la naissance du métier de boulanger, autrefois bien plus lié aux rencontres qu'aujourd'hui. Ensemble, ils ouvrent leur premier fournil en 2016, puis leur boutique à Saint-Laurent en 2020.</p><p>Pains et viennoiseries sont certifiés bio, au levain, avec au minimum 18 heures de fermentation. La farine vient de paysans meuniers de Massongy, qui sèment des semences paysannes.</p>",
+  "products": [
+   {
+    "name": "Le Campagnard",
+    "description": "Blé T80 et seigle",
+    "unit": "1 kg",
+    "price_cents": 680,
+    "icon": "🍞"
+   },
+   {
+    "name": "Le Multigraines",
+    "description": null,
+    "unit": "750 g",
+    "price_cents": 620,
+    "icon": "🍞"
+   },
+   {
+    "name": "Le Petit Épeautre",
+    "description": null,
+    "unit": "750 g",
+    "price_cents": 780,
+    "icon": "🍞"
+   }
+  ],
+  "cover_photo": "producteurs/boulangerie-chez-geoffrey-1.jpg",
+  "photos": [],
+  "documents": [
+   "documents/pains-disponibles.pdf"
+  ]
+ },
+ {
+  "slug": "gaec-bibollet",
+  "name": "GAEC Bibollet",
+  "farmer_names": "Sylvie et Fred Bibollet",
+  "city": "Marcellaz-Albanais",
+  "address": "Peignat, 74150 Marcellaz-Albanais",
+  "phone": "06 71 61 46 23",
+  "email": "s.bibollet@orange.fr",
+  "participation": "contrat",
+  "tagline": "Viandes bio de races à viande, élevées à l'herbe",
+  "product_types": [
+   "viandes"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>Sylvie et Fred Bibollet gèrent leur exploitation 100 % en agriculture biologique : sans engrais chimique, sans pesticide, sans antibiotique et sans OGM.</p><p>Leur cheptel de races à viande (Aubrac, Salers, Gascogne…) est élevé à son rythme et nourri essentiellement d'herbe ; foin et céréales prennent le relais l'hiver. Veaux, agneaux et cabris sont en liberté et se nourrissent du lait de leur mère. Tous les animaux passent l'été en alpage.</p><p>La viande est livrée sous vide pour conserver toute sa saveur.</p>",
+  "products": [
+   {
+    "name": "Colis de bœuf",
+    "description": "Morceaux variés, sous vide",
+    "unit": "colis de 5 kg",
+    "price_cents": 9500,
+    "icon": "🥩"
+   },
+   {
+    "name": "Colis de veau",
+    "description": null,
+    "unit": "colis de 3 kg",
+    "price_cents": 6600,
+    "icon": "🥩"
+   }
+  ],
+  "cover_photo": "producteurs/gaec-bibollet-1.jpg",
+  "photos": [],
+  "documents": [
+   "documents/tarifs-2026.pdf",
+   "documents/les-morceaux-de-boeuf.pdf",
+   "documents/conseils-de-conservation.pdf"
+  ]
+ },
+ {
+  "slug": "les-oeufs-d-alex",
+  "name": "Les Œufs d'Alex",
+  "farmer_names": "Alexis Sale",
+  "city": "Marin",
+  "address": "101 chemin de Chillaz, 74200 Marin",
+  "participation": "contrat",
+  "tagline": "Œufs bio extra-frais",
+  "product_types": [
+   "oeufs"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>Alexis Sale, jeune agriculteur, est installé comme producteur d'œufs bio à Marin depuis décembre 2020.</p><p>Ses poules vivent dans deux poulaillers en système volière. Le bien-être animal et la qualité des œufs guident tous ses choix de production.</p><p>Tous les œufs livrés sont extra-frais.</p>",
+  "products": [
+   {
+    "name": "Œufs bio",
+    "description": null,
+    "unit": "boîte de 6",
+    "price_cents": 240,
+    "icon": "🥚"
+   },
+   {
+    "name": "Œufs bio",
+    "description": null,
+    "unit": "boîte de 12",
+    "price_cents": 460,
+    "icon": "🥚"
+   }
+  ],
+  "cover_photo": "producteurs/les-oeufs-d-alex-1.jpg",
+  "photos": [
+   "producteurs/les-oeufs-d-alex-2.jpg"
+  ],
+  "documents": []
+ },
+ {
+  "slug": "le-fournil-des-paysans",
+  "name": "Le Fournil des Paysans",
+  "farmer_names": "Laurence et Fabien Abry",
+  "city": "Mésigny",
+  "participation": "commandes-groupees",
+  "tagline": "Farines bio moulues sur meule de pierre",
+  "product_types": [
+   "farines",
+   "pain"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>Le GAEC Le Fournil des Paysans a été créé par Laurence et Fabien Abry, paysans meuniers boulangers à Mésigny.</p><p>Ils cultivent 30 ha en agriculture biologique, dont 10 ha de céréales panifiables : blés modernes, blés paysans « anciens », petit épeautre et seigle.</p><p>Ils produisent eux-mêmes leur farine sur un moulin à meule de pierre de type Astrié, pour privilégier la qualité plutôt que la quantité.</p>",
+  "cover_photo": "producteurs/le-fournil-des-paysans-1.jpg",
+  "photos": [],
+  "documents": [
+   "documents/nos-farines.pdf"
+  ],
+  "products": []
+ },
+ {
+  "slug": "vale-douro",
+  "name": "Vale Douro",
+  "farmer_names": "Dominique et Alexandre Viard",
+  "city": "Montfaucon",
+  "website": "https://www.valedouro.pt",
+  "participation": "commandes-groupees",
+  "tagline": "Huile d'olive vierge extra du haut Douro",
+  "product_types": [
+   "epicerie"
+  ],
+  "labels": [],
+  "description": "<p>En 2013, Dominique Viard remet en valeur un terroir oléicole familial dans les montagnes de l'Alto Douro, au nord du Portugal.</p><p>L'huile d'olive vierge extra Vale Douro est extraite uniquement par des procédés mécaniques, à partir des variétés Bical, Verdeal et Cobrançosa. Elle est régulièrement médaillée aux concours internationaux.</p>",
+  "cover_photo": "producteurs/vale-douro-1.jpg",
+  "photos": [
+   "producteurs/vale-douro-2.jpg"
+  ],
+  "documents": [],
+  "products": []
+ },
+ {
+  "slug": "lait-able-des-frangins",
+  "name": "Lait'able des Frangins",
+  "farmer_names": "Grégoire et Élisabeth Veyrat",
+  "city": "Les Clefs",
+  "address": "355 route du Galfas, 74230 Les Clefs",
+  "phone": "06 25 11 51 46",
+  "participation": "commandes-groupees",
+  "tagline": "Glaces et sorbets fermiers des Aravis",
+  "product_types": [
+   "laitages"
+  ],
+  "labels": [],
+  "description": "<p>Lait'able des Frangins est une petite ferme au cœur des Aravis. Grégoire s'occupe d'une vingtaine de vaches Abondance, nourries principalement d'herbe au pâturage et de foin l'hiver.</p><p>Sa sœur Élisabeth régale avec des glaces faites à partir du lait de la ferme et des sorbets aux fruits du marché local, du jardin ou de la montagne.</p>",
+  "cover_photo": "producteurs/lait-able-des-frangins-1.jpg",
+  "photos": [],
+  "documents": [],
+  "products": []
+ },
+ {
+  "slug": "domaine-du-rieu-frais",
+  "name": "Domaine du Rieu Frais",
+  "city": "Sainte-Jalle",
+  "participation": "commandes-groupees",
+  "tagline": "Vins bio des Baronnies provençales",
+  "product_types": [
+   "vins"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>Depuis plus de 35 ans, trois générations de vignerons se succèdent sur ce domaine familial au cœur du Parc naturel régional des Baronnies provençales.</p><p>Les 30 hectares de vignes en agriculture biologique sont plantés entre 420 et 600 m d'altitude, à Sainte-Jalle, dans la Drôme provençale.</p>",
+  "cover_photo": "producteurs/domaine-du-rieu-frais-1.jpg",
+  "photos": [
+   "producteurs/domaine-du-rieu-frais-2.jpg"
+  ],
+  "documents": [],
+  "products": []
+ },
+ {
+  "slug": "chateau-farizeau",
+  "name": "Château Farizeau",
+  "city": "Bordelais",
+  "participation": "commandes-groupees",
+  "tagline": "Six appellations bordelaises en agriculture biologique",
+  "product_types": [
+   "vins"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>Cette exploitation familiale produit six appellations sur 12 hectares, en agriculture biologique.</p><p>En 1995, la famille a arraché les vignes destinées au Bordeaux standard pour restructurer le vignoble en méthodes traditionnelles et produire des vins de caractère.</p>",
+  "cover_photo": "producteurs/chateau-farizeau-1.jpg",
+  "photos": [
+   "producteurs/chateau-farizeau-2.jpg",
+   "producteurs/chateau-farizeau-3.jpg"
+  ],
+  "documents": [],
+  "products": []
+ },
+ {
+  "slug": "mas-d-intras",
+  "name": "Mas d'Intras",
+  "farmer_names": "Sébastien Pradal et Denis Robert",
+  "city": "Valvignères",
+  "participation": "commandes-groupees",
+  "tagline": "Vins bio et biodynamiques d'Ardèche",
+  "product_types": [
+   "vins"
+  ],
+  "labels": [
+   "bio",
+   "demeter"
+  ],
+  "description": "<p>Sébastien Pradal et Denis Robert, deux cousins, sont vignerons indépendants depuis 1982 en Ardèche, sur la ferme et les terres de leurs ancêtres.</p><p>Ils produisent des vins certifiés en viticulture biologique et biodynamique, et font eux-mêmes tout le travail, de la vigne à la mise en bouteilles, sur 25 hectares à Valvignères.</p>",
+  "cover_photo": "producteurs/mas-d-intras-1.jpg",
+  "photos": [
+   "producteurs/mas-d-intras-2.jpg"
+  ],
+  "documents": [],
+  "products": []
+ },
+ {
+  "slug": "clos-de-l-abbaye-bourgueil",
+  "name": "Clos de l'Abbaye – Bourgueil",
+  "city": "Bourgueil",
+  "participation": "commandes-groupees",
+  "tagline": "Cabernet franc bio au cœur de l'abbaye de Bourgueil",
+  "product_types": [
+   "vins"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>Le Clos de l'Abbaye est un vignoble de 6,85 ha de cabernet franc âgé de 30 à 95 ans, au cœur de l'abbaye de Bourgueil.</p><p>Depuis 1975, la famille Lorieux exploite ce clos, cultivé en agriculture biologique depuis 1998.</p>",
+  "cover_photo": "producteurs/clos-de-l-abbaye-bourgueil-1.jpg",
+  "photos": [
+   "producteurs/clos-de-l-abbaye-bourgueil-2.jpg"
+  ],
+  "documents": [],
+  "products": []
+ },
+ {
+  "slug": "les-paysans-voyageurs",
+  "name": "Les Paysans Voyageurs",
+  "farmer_names": "Maxime Leportier et Céline Fournier",
+  "city": "Thénésol",
+  "address": "Les Cheseaux, 73200 Thénésol",
+  "website": "https://lespaysansvoyageurs.fr/",
+  "participation": "commandes-groupees",
+  "tagline": "Confitures, coulis et sirops de petits fruits bio",
+  "product_types": [
+   "fruits",
+   "epicerie"
+  ],
+  "labels": [
+   "bio"
+  ],
+  "description": "<p>Installés depuis 2018 à Thénésol, au pied du massif des Bauges, Maxime et Céline élèvent 250 poules pondeuses en plein air et cultivent environ 1,5 ha de fruitiers, principalement des fruits rouges.</p><p>Fraises, framboises, groseilles, mûres… poussent en plein champ et sont ramassées à maturité pour exprimer toutes leurs saveurs.</p>",
+  "cover_photo": "producteurs/les-paysans-voyageurs-1.jpg",
+  "photos": [
+   "producteurs/les-paysans-voyageurs-2.jpg",
+   "producteurs/les-paysans-voyageurs-3.jpg"
+  ],
+  "documents": [
+   "documents/gamme-de-produits.pdf"
+  ],
+  "products": []
+ }
+]

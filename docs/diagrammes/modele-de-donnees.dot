@@ -1,0 +1,78 @@
+// Modèle de données simplifié – Le Panier des Aravis (v1, 15/11/2026)
+// Générer : dot -Tsvg modele-de-donnees.dot -o modele-de-donnees.svg
+digraph modele {
+  graph [rankdir=LR, fontname="Lato", bgcolor="#FBF8F2", pad=0.4, nodesep=0.35, ranksep=0.9, splines=true,
+         labelloc=t, fontsize=22, label=<<b>Base de données — modèle simplifié (V1)</b><br/><font point-size="13" color="#6b5b4b">Une case = une table MySQL. Les flèches se lisent « a plusieurs ». Couleurs : personnes · offre · commandes · organisation.</font><br/> >];
+  node  [shape=plain, fontname="Lato", fontsize=11];
+  edge  [color="#8a7a6a", arrowhead=crow, arrowtail=none, penwidth=1.1, fontname="Lato", fontsize=10, fontcolor="#6b5b4b"];
+
+  // ---- Personnes (terre)
+  user [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white" color="#E2705A">
+    <tr><td bgcolor="#E2705A"><font color="white"><b>Utilisateur</b></font></td></tr>
+    <tr><td align="left">nom, prénom, e-mail, mot de passe (chiffré)<br align="left"/>adresse, téléphones<br align="left"/>partage du téléphone (oui/non)<br align="left"/><b>rôles</b> : adhérent · producteur · référent · admin<br align="left"/></td></tr></table>>];
+  adhesion [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white" color="#E2705A">
+    <tr><td bgcolor="#E2705A"><font color="white"><b>Adhésion</b></font></td></tr>
+    <tr><td align="left">année, montant<br align="left"/>mode : HelloAsso · chèque · virement<br align="left"/>statut : en attente · payée<br align="left"/></td></tr></table>>];
+
+  // ---- Offre (vert)
+  producer [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white" color="#688423">
+    <tr><td bgcolor="#688423"><font color="white"><b>Producteur</b></font></td></tr>
+    <tr><td align="left">ferme, producteurs, commune, contacts<br align="left"/>présentation, photos, documents, labels<br align="left"/>ordre des chèques, RIB, SIRET<br align="left"/>référents (utilisateurs) · compte producteur<br align="left"/>publié / brouillon<br align="left"/></td></tr></table>>];
+  product [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white" color="#688423">
+    <tr><td bgcolor="#688423"><font color="white"><b>Produit</b></font></td></tr>
+    <tr><td align="left">nom, description, photo<br align="left"/>unité (panier, pièce, kg…), prix<br align="left"/>actif / inactif<br align="left"/></td></tr></table>>];
+  offer [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white" color="#688423">
+    <tr><td bgcolor="#688423"><font color="white"><b>Offre de contrat</b></font></td></tr>
+    <tr><td align="left">saison (dates de début et de fin)<br align="left"/>fréquences autorisées<br align="left"/>échéanciers autorisés (n chèques, mois)<br align="left"/>ouverture / clôture des souscriptions<br align="left"/>texte du contrat<br align="left"/></td></tr></table>>];
+  group [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white" color="#688423">
+    <tr><td bgcolor="#688423"><font color="white"><b>Commande groupée</b></font></td></tr>
+    <tr><td align="left">titre, description, référent<br align="left"/>ouverture / clôture (date et heure)<br align="left"/>distribution de livraison<br align="left"/>produits (prix, plafonds)<br align="left"/>modalités de paiement<br align="left"/></td></tr></table>>];
+
+  // ---- Commandes (miel)
+  contract [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white" color="#C49A0A">
+    <tr><td bgcolor="#D0A60F"><font color="white"><b>Contrat</b> (commande standard)</font></td></tr>
+    <tr><td align="left">adhérent · offre · statut<br align="left"/>échéancier et mode choisis<br align="left"/></td></tr></table>>];
+  cline [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white" color="#C49A0A">
+    <tr><td bgcolor="#D0A60F"><font color="white"><b>Ligne de contrat</b></font></td></tr>
+    <tr><td align="left">produit, quantité<br align="left"/>fréquence (toutes · série A/B · dates)<br align="left"/></td></tr></table>>];
+  delivery [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="#FFF6DD" color="#C49A0A">
+    <tr><td bgcolor="#D0A60F"><font color="white"><b>Livraison</b></font></td></tr>
+    <tr><td align="left">qui reçoit quoi, combien, à quelle date<br align="left"/><i>→ calendrier perso, récaps, émargement</i><br align="left"/></td></tr></table>>];
+  gorder [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white" color="#C49A0A">
+    <tr><td bgcolor="#D0A60F"><font color="white"><b>Commande d'adhérent</b></font></td></tr>
+    <tr><td align="left">adhérent · commande groupée<br align="left"/>lignes : produit, quantité<br align="left"/></td></tr></table>>];
+  payment [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="#FFF6DD" color="#C49A0A">
+    <tr><td bgcolor="#D0A60F"><font color="white"><b>Échéance</b> (pointage)</font></td></tr>
+    <tr><td align="left">montant, mois d'encaissement, bénéficiaire<br align="left"/>chèque / virement, n° facultatif<br align="left"/>statut : attendu · reçu · encaissé<br align="left"/>pointé par, le…<br align="left"/></td></tr></table>>];
+
+  // ---- Organisation (ardoise)
+  dist [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white" color="#3F707E">
+    <tr><td bgcolor="#3F707E"><font color="white"><b>Distribution</b></font></td></tr>
+    <tr><td align="left">n°, date, horaires, série A/B<br align="left"/>lieu (EHPAD, autre…)<br align="left"/>producteurs présents<br align="left"/>statut : prévue · clôturée · récaps envoyés<br align="left"/></td></tr></table>>];
+  shift [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white" color="#3F707E">
+    <tr><td bgcolor="#3F707E"><font color="white"><b>Inscription de permanence</b></font></td></tr>
+    <tr><td align="left">adhérent · distribution<br align="left"/>statut : vœu · retenu · présent · absent<br align="left"/>responsable (oui/non)<br align="left"/>remplaçant (nom, tél., e-mail)<br align="left"/></td></tr></table>>];
+  page [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white" color="#3F707E">
+    <tr><td bgcolor="#3F707E"><font color="white"><b>Pages · Paramètres · E-mails</b></font></td></tr>
+    <tr><td align="left">pages d'information (blocs)<br align="left"/>nom de l'AMAP, logo, couleurs, cotisation<br align="left"/>messages de contact, envois groupés<br align="left"/>journal des actions<br align="left"/></td></tr></table>>];
+
+  user -> adhesion;
+  user -> contract;
+  user -> gorder;
+  user -> shift;
+  producer -> product;
+  producer -> offer;
+  producer -> group;
+  offer -> contract;
+  contract -> cline;
+  cline -> delivery;
+  contract -> payment;
+  gorder -> payment [style=dashed, label="si besoin"];
+  group -> gorder;
+  dist -> delivery;
+  dist -> shift;
+  dist -> group [arrowhead=none, style=dashed, label="livrée à"];
+  product -> cline [style=dotted, arrowhead=none];
+  product -> group [style=dotted, arrowhead=none];
+  {rank=same; user; producer}
+}

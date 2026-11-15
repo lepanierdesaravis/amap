@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+/* Identité visuelle du Panier des Aravis (voir assets/brand/README.md) */
+@theme {
+    --font-sans: var(--font-lato), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+    --font-display: var(--font-raleway), var(--font-lato), ui-sans-serif, sans-serif;
+    --font-hand: var(--font-caveat), cursive;
+
+    --color-vert: #5F7A1F;
+    --color-vert-fonce: #4A6118;
+    --color-vert-clair: #EEF3E2;
+    --color-sauge: #8DAE7E;
+    --color-terre: #D9634B;
+    --color-terre-fonce: #B94E38;
+    --color-terre-clair: #FDEBE5;
+    --color-miel: #E0A82E;
+    --color-miel-clair: #FFF3D1;
+    --color-tomate: #C8381A;
+    --color-brun: #4A3328;
+    --color-creme: #FBF8F2;
+    --color-ardoise: #3F707E;
+    --color-ardoise-clair: #E6EEF0;
+    --color-doux: #6B5B4B;
+}
+
+@layer base {
+    body { @apply bg-creme text-brun font-sans antialiased; }
+    h1, h2, h3 { @apply font-display text-brun; }
+    a { @apply underline-offset-2; }
+}
+
+@utility btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 font-bold no-underline transition focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50;
+}
+
+@layer components {
+    .btn-primary { @apply btn bg-terre text-white hover:bg-terre-fonce focus-visible:outline-terre; }
+    .btn-vert { @apply btn bg-vert text-white hover:bg-vert-fonce focus-visible:outline-vert; }
+    .btn-ghost { @apply btn bg-white text-brun ring-1 ring-brun/15 hover:bg-vert-clair; }
+    .card { @apply rounded-2xl bg-white p-5 shadow-sm ring-1 ring-brun/10; }
+    .kicker { @apply font-hand text-2xl text-vert; }
+    .badge { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-bold; }
+    .input { @apply block w-full rounded-xl border-0 bg-white px-3.5 py-2.5 text-brun ring-1 ring-brun/20 placeholder:text-doux/60 focus:ring-2 focus:ring-vert; }
+    .label { @apply mb-1 block text-sm font-bold text-brun; }
+    .prose-amap { @apply leading-relaxed text-brun/90; }
+    .prose-amap p { @apply mb-4; }
+    .prose-amap h2 { @apply mt-8 mb-3 text-2xl font-bold; }
+    .prose-amap h3 { @apply mt-6 mb-2 text-xl font-bold; }
+    .prose-amap ul { @apply mb-4 list-disc space-y-1.5 pl-6; }
+    .prose-amap ol { @apply mb-4 list-decimal space-y-1.5 pl-6; }
+    .prose-amap a { @apply font-bold text-vert underline; }
+    .prose-amap blockquote { @apply my-4 border-l-4 border-sauge bg-vert-clair/60 px-4 py-2 italic; }
+}

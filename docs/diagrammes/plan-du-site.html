@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<title>Le Panier des Aravis — plan du nouveau site</title>
+<style>
+  :root{--vert:#688423;--vert-clair:#EEF3E2;--terre:#E2705A;--terre-clair:#FDEBE5;--miel:#D0A60F;--miel-clair:#FFF3D1;
+        --ardoise:#3F707E;--ardoise-clair:#E6EEF0;--brun:#573636;--creme:#FBF8F2;--neuf:#FFF6DD;}
+  @page{size:1600px 980px;margin:0} html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  *{box-sizing:border-box} body{margin:0;background:var(--creme);font-family:Lato,"Open Sans",sans-serif;color:#2d2620;width:1600px;padding:36px 40px}
+  header{display:flex;align-items:center;gap:24px;margin-bottom:22px}
+  header img{height:84px} h1{margin:0;font-size:30px;color:var(--brun)} header p{margin:4px 0 0;color:#6b5b4b;font-size:15px}
+  .root{background:var(--brun);color:#fff;border-radius:10px;padding:10px 18px;font-weight:700;font-size:18px;display:inline-block}
+  .grid{display:grid;grid-template-columns:1fr 1fr 0.8fr 1.6fr;gap:18px;align-items:start}
+  .zone{border:2.5px solid;border-radius:16px;padding:14px 14px 10px}
+  .zone h2{margin:0 0 2px;font-size:19px} .zone .who{font-size:13px;color:#6b5b4b;margin-bottom:12px}
+  .pub{border-color:var(--vert);background:var(--vert-clair)} .pub h2{color:var(--vert)}
+  .adh{border-color:var(--terre);background:var(--terre-clair)} .adh h2{color:#b4472f}
+  .pro{border-color:var(--miel);background:var(--miel-clair)} .pro h2{color:#8d6f00}
+  .ges{border-color:var(--ardoise);background:var(--ardoise-clair)} .ges h2{color:var(--ardoise)}
+  .sub{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .subzone{border:1.5px dashed var(--ardoise);border-radius:12px;padding:10px;background:#F4F8F9}
+  .subzone h3{margin:0 0 8px;font-size:15px;color:var(--ardoise)} .subzone h3 small{font-weight:400;color:#6b5b4b}
+  .p{background:#fff;border:1px solid #00000018;border-radius:10px;padding:8px 11px;margin-bottom:8px;box-shadow:0 1px 2px #0000000d}
+  .p b{display:block;font-size:14.5px} .p span{font-size:12px;color:#5d5045;line-height:1.35;display:block;margin-top:2px}
+  .p.new{background:var(--neuf);border-color:#e7c86a}
+  .p.new b::after{content:"NOUVEAU";font-size:9px;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--terre);border-radius:4px;padding:1px 5px;margin-left:7px;vertical-align:2px}
+  .p.child{margin-left:18px;position:relative} .p.child::before{content:"↳";position:absolute;left:-16px;top:7px;color:#8a7a6a}
+  .login{background:var(--brun);color:#fff;text-align:center;font-weight:700;border-radius:10px;padding:8px;margin-top:6px}
+  .arrow{font-size:12.5px;color:#5d5045;margin:0 0 10px;padding:6px 10px;border-radius:8px;background:#ffffff99}
+  footer{margin-top:18px;display:flex;gap:26px;font-size:13px;color:#5d5045;align-items:center}
+  .sw{display:inline-block;width:16px;height:16px;border-radius:4px;vertical-align:-3px;margin-right:6px;border:1px solid #0002}
+</style></head><body>
+<header>
+  <img src="../../assets/brand/logo.png" alt="Logo Le Panier des Aravis">
+  <div><h1>Plan du nouveau site</h1>
+  <p>Chaque zone de couleur correspond à un niveau d'accès. Les rôles se cumulent : un référent est aussi adhérent, un administrateur a tous les droits.</p></div>
+  <div style="margin-left:auto" class="root">lepanierdesaravis.fr</div>
+</header>
+<div class="grid">
+  <section class="zone pub"><h2>Site public</h2><div class="who">Tout le monde</div>
+    <div class="p"><b>Accueil</b><span>Prochaine distribution · actualités · commande groupée ouverte · bouton « Adhérer »</span></div>
+    <div class="p"><b>L'AMAP</b><span>Qu'est-ce qu'une AMAP + notre fonctionnement (pages fusionnées) · charte · code de bonne conduite</span></div>
+    <div class="p"><b>Nos producteurs</b><span>Vignettes filtrables par type de produit</span></div>
+    <div class="p child new"><b>Fiche producteur</b><span>Générée automatiquement depuis le formulaire du référent<br>/producteurs/la-ferme-du-coteau</span></div>
+    <div class="p new"><b>Calendrier</b><span>Distributions et producteurs présents · permanences d'adhésion</span></div>
+    <div class="p"><b>Adhérer</b><span>Étapes · cotisation en ligne (HelloAsso) · création du compte</span></div>
+    <div class="p"><b>Contact · Nous rencontrer</b><span>Formulaire → envoyé au bon destinataire selon le sujet · adresse et plan d'accès</span></div>
+    <div class="p"><b>Mentions légales · Confidentialité</b></div>
+    <div class="login">🔒 Se connecter</div>
+  </section>
+
+  <section class="zone adh"><h2>Mon espace</h2><div class="who">Adhérents à jour de cotisation 🔒</div>
+    <div class="p new"><b>Tableau de bord</b><span>Ce que je récupère samedi · ma prochaine permanence · commandes ouvertes · alertes</span></div>
+    <div class="p new"><b>Mes contrats</b><span>Offres ouvertes par producteur → produit, quantité, fréquence → panier et calendrier en direct → choix de l'échéancier → e-mail de confirmation</span></div>
+    <div class="p new"><b>Commandes groupées</b><span>Commandes ouvertes · ma commande, modifiable jusqu'à la clôture</span></div>
+    <div class="p new"><b>Mon calendrier</b><span>Mes livraisons date par date (une icône par produit) et mes permanences</span></div>
+    <div class="p new"><b>Permanences</b><span>3 vœux de dates · échange avec un adhérent · remplaçant · rappels par e-mail</span></div>
+    <div class="p new"><b>Mes paiements</b><span>Mes échéances par producteur et leur pointage (lecture seule)</span></div>
+    <div class="p"><b>Mon compte</b><span>Profil · adhésion · partage du téléphone (consentement)</span></div>
+  </section>
+
+  <section class="zone pro"><h2>Espace producteur</h2><div class="who">Producteurs partenaires 🔒</div>
+    <div class="p new"><b>Mes distributions</b><span>Quantités à préparer pour chaque date · récapitulatif PDF ou Excel, aussi reçu par e-mail</span></div>
+    <div class="p new"><b>Pointage des paiements</b><span>Chèques et virements : reçu · encaissé</span></div>
+    <div class="p new"><b>Mes commandes groupées</b><span>Récapitulatif par produit et par adhérent</span></div>
+    <div class="p"><b>Ma fiche</b><span>Modification directe ou via le référent (à décider)</span></div>
+  </section>
+
+  <section class="zone ges"><h2>Gestion (back-office)</h2><div class="who">Référents et administrateurs 🔒</div>
+    <div class="sub">
+      <div class="subzone"><h3>Référents <small>· leurs producteurs et commandes</small></h3>
+        <div class="p new"><b>Producteurs</b><span>Bouton « Ajouter un producteur » → formulaire → la fiche publique est créée</span></div>
+        <div class="p new"><b>Produits et offres de contrat</b><span>Prix · fréquences · échéanciers · ouverture et clôture automatiques · « Dupliquer l'an dernier »</span></div>
+        <div class="p new"><b>Commandes groupées</b><span>Nouvelle · dupliquer · annonce par e-mail aux adhérents</span></div>
+        <div class="p new"><b>Suivi et pointage</b><span>Contrats et commandes · pointage des paiements · export Excel</span></div>
+        <div class="p new"><b>Documents</b><span>Récapitulatifs producteurs · feuilles d'émargement (PDF)</span></div>
+        <div class="p new"><b>Inscrire un adhérent</b><span>À une permanence, pour le compte de quelqu'un</span></div>
+      </div>
+      <div class="subzone"><h3>Administrateurs <small>· tout</small></h3>
+        <div class="p new"><b>Distributions</b><span>Calendrier annuel généré · producteurs présents · clôture → envoi des récapitulatifs</span></div>
+        <div class="p new"><b>Planning des permanences</b><span>Vœux → équipes de 5 à 6 · responsable de distribution</span></div>
+        <div class="p new"><b>Adhérents et rôles</b><span>Adhésions · cotisations · attribution des référents · modération</span></div>
+        <div class="p"><b>Pages et accueil</b><span>Modification par blocs de texte et d'images</span></div>
+        <div class="p new"><b>E-mails groupés</b><span>Lettre d'information · annonces ciblées</span></div>
+        <div class="p new"><b>Paramètres</b><span>Nom · logo · couleurs · adresses e-mail (réutilisable par d'autres AMAP)</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+<footer>
+  <span><span class="sw" style="background:var(--neuf)"></span>Nouveauté par rapport au site Wix</span>
+  <span><span class="sw" style="background:#fff"></span>Existant, repris et modernisé</span>
+  <span style="margin-left:auto">v1 · 15/11/2026 · source : docs/diagrammes/plan-du-site.html</span>
+</footer>
+</body></html>

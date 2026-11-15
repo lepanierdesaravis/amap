@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Le Panier des Aravis — Refonte du site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700;800&family=Lato:wght@400;700;900&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  :root{
+    --vert:#5F7A1F; --vert-l:#EEF3E2; --sauge:#8DAE7E; --terre:#D9634B; --terre-l:#FDEBE5;
+    --miel:#E0A82E; --miel-l:#FFF3D1; --brun:#4A3328; --creme:#FBF8F2; --ardoise:#3F707E; --ardoise-l:#E6EEF0;
+    --texte:#2d2620; --doux:#6b5b4b;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{margin:0;background:#888;font-family:Lato,"Open Sans",sans-serif;color:var(--texte)}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;background:var(--creme);page-break-after:always;break-after:page;padding:56px 70px}
+  .slide:last-child{page-break-after:auto;break-after:auto}
+  h1,h2,h3{font-family:Raleway,Lato,sans-serif;margin:0;color:var(--brun)}
+  h2{font-size:40px;font-weight:800;letter-spacing:-.01em}
+  h2 .accent{color:var(--terre)}
+  .kicker{font-family:Caveat,cursive;font-size:30px;color:var(--vert);margin-bottom:2px}
+  .lead{font-size:20px;color:var(--doux);margin-top:10px;max-width:980px;line-height:1.4}
+  .foot{position:absolute;left:70px;right:70px;bottom:22px;display:flex;justify-content:space-between;font-size:12.5px;color:#9a8b7c}
+  .foot img{height:26px;opacity:.9}
+  .num{font-weight:700}
+  .badge{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.07em;color:#fff;background:var(--terre);border-radius:5px;padding:2px 7px;vertical-align:3px;margin-left:6px}
+  .cols{display:grid;gap:22px;margin-top:30px}
+  .card{background:#fff;border-radius:16px;padding:20px 22px;box-shadow:0 2px 10px #4a33281a;border:1px solid #4a332814}
+  .card h3{font-size:20px;margin-bottom:8px}
+  .card p,.card li{font-size:15.5px;line-height:1.45;color:#4b3f35;margin:0}
+  .card ul{margin:0;padding-left:18px} .card li{margin-bottom:5px}
+  .ico{font-size:30px;line-height:1;margin-bottom:10px}
+  .photo{position:absolute;background-size:cover;background-position:center}
+  .pill{display:inline-block;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700}
+  /* Maquettes d'écran */
+  .phone{width:300px;height:560px;border-radius:34px;background:#1e1a17;padding:12px;box-shadow:0 14px 40px #0000003a}
+  .screen{width:100%;height:100%;border-radius:24px;background:#fff;overflow:hidden;font-size:12.5px;display:flex;flex-direction:column}
+  .sbar{background:var(--vert);color:#fff;padding:12px 14px 10px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px}
+  .sbar small{font-weight:400;opacity:.85;font-size:11px}
+  .sbody{padding:10px 12px;flex:1;background:#fbfaf7}
+  .row{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #0000000f;border-radius:10px;padding:8px 10px;margin-bottom:7px}
+  .row b{font-size:12.5px} .row span{color:#6b5b4b;font-size:11.5px}
+  .btn{background:var(--terre);color:#fff;border-radius:10px;text-align:center;font-weight:700;padding:9px;margin-top:6px}
+  .btn.g{background:var(--vert)}
+  .seg{display:flex;gap:4px;margin:4px 0 2px} .seg span{flex:1;text-align:center;border:1px solid #cfc6b8;border-radius:7px;padding:4px 0;font-size:11px;color:#6b5b4b}
+  .seg span.on{background:var(--vert);border-color:var(--vert);color:#fff;font-weight:700}
+  .qty{display:flex;align-items:center;gap:6px} .qty i{font-style:normal;width:22px;height:22px;border-radius:6px;border:1px solid #cfc6b8;display:inline-flex;align-items:center;justify-content:center;font-weight:700}
+  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:6px}
+  .cal div{height:30px;border-radius:6px;background:#fff;border:1px solid #0000000d;font-size:10px;color:#9a8b7c;padding:2px 3px;position:relative}
+  .cal div.d{border-color:var(--sauge);background:#f3f8ef;color:var(--brun);font-weight:700}
+  .cal div.d em{position:absolute;bottom:1px;left:3px;font-style:normal;font-size:11px}
+  .desk{background:#fff;border-radius:14px;box-shadow:0 10px 34px #0000002a;overflow:hidden;border:1px solid #0000001a}
+  .desk .top{background:#f1ede6;padding:8px 12px;display:flex;gap:6px;align-items:center}
+  .desk .top i{width:10px;height:10px;border-radius:50%;background:#d6cfc4;display:inline-block}
+  .desk .top span{margin-left:10px;font-size:11.5px;color:#7d6f62;background:#fff;border-radius:6px;padding:3px 10px}
+  .side{background:#2f3a3d;color:#dfe7e9;width:170px;padding:14px 10px;font-size:12.5px}
+  .side div{padding:7px 10px;border-radius:8px;margin-bottom:3px} .side div.on{background:#ffffff1f;color:#fff;font-weight:700}
+  .form label{display:block;font-size:11.5px;color:#6b5b4b;margin:8px 0 3px;font-weight:700}
+  .form .in{border:1px solid #d9d2c6;border-radius:8px;padding:7px 9px;font-size:12.5px;background:#fff}
+  .chips span{display:inline-block;border:1px solid #cfc6b8;border-radius:999px;padding:3px 9px;font-size:11px;margin:0 4px 4px 0;color:#6b5b4b}
+  .chips span.on{background:var(--vert-l);border-color:var(--vert);color:var(--vert);font-weight:700}
+  table.t{border-collapse:collapse;width:100%;font-size:13px}
+  table.t th{background:var(--brun);color:#fff;text-align:left;padding:7px 10px;font-weight:700}
+  table.t td{padding:7px 10px;border-bottom:1px solid #e9e2d6;background:#fff}
+  .st{font-size:11px;font-weight:900;border-radius:6px;padding:2px 7px}
+  .st.ok{background:#e3f0da;color:#3f6a1c} .st.rc{background:var(--miel-l);color:#8d6400} .st.at{background:#eee;color:#777}
+  .arrow{font-size:34px;color:var(--terre);font-weight:900}
+</style>
+</head>
+<body>
+
+<!-- 1. Titre -->
+<section class="slide" style="padding:0">
+  <div class="photo" style="inset:0;background-image:url(img/aravis-prairie.jpg)"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,#FBF8F2 0%,#FBF8F2f2 44%,#FBF8F200 72%)"></div>
+  <div style="position:absolute;left:80px;top:90px;width:640px">
+    <img src="img/logo.png" style="height:170px;margin-left:-10px" alt="Logo">
+    <div class="kicker" style="margin-top:26px;font-size:34px">Refonte du site internet</div>
+    <h1 style="font-size:54px;font-weight:800;line-height:1.08">Un vrai outil pour faire vivre notre AMAP</h1>
+    <p class="lead" style="font-size:21px;margin-top:18px">Contrats, commandes groupées, distributions, permanences et paiements : tout au même endroit, simple pour chacun.</p>
+    <p style="margin-top:34px;color:var(--doux);font-size:15px">AMAP Le Panier des Aravis · Thônes · Présentation au conseil · novembre 2026</p>
+  </div>
+</section>
+
+<!-- 2. Aujourd'hui -->
+<section class="slide">
+  <div class="kicker">Point de départ</div>
+  <h2>Aujourd'hui : un site vitrine… <span class="accent">sans outil de gestion</span></h2>
+  <div class="cols" style="grid-template-columns:repeat(3,1fr);margin-top:22px;gap:18px">
+    <div class="card"><div class="ico">🛒</div><h3>Une boutique détournée</h3><h3>Pas de gestion des contrats</h3><p>Les contrats passent par la boutique Wix, sous forme de « produits » : environ <b>280 fiches</b> à tenir à jour. La boutique ne connaît ni les échéanciers, ni les distributions, ni les permanences.</p></div>
+    <div class="card"><div class="ico">🔑</div><h3>Pas de compte personnel</h3><p>L'espace adhérent s'ouvre avec un code commun. Il n'y a pas de rôle pour les référents ou les producteurs.</p></div>
+    <div class="card"><div class="ico">📋</div><h3>Une gestion en dehors du site</h3><p>Plannings, permanences, pointage des chèques, récapitulatifs pour les producteurs, feuilles d'émargement : ils se préparent dans des tableurs, des PDF et des e-mails.</p></div>
+    <div class="card"><div class="ico">📄</div><h3>Des pages producteurs créées une à une</h3><p>Chaque nouveau producteur demande de dupliquer une page Wix, de l'adapter et de l'ajouter au menu, qui compte aujourd'hui 17 entrées.</p></div>
+    <div class="card"><div class="ico">⚖️</div><h3>Des pages légales à compléter</h3><p>Mentions légales et politique de confidentialité à rédiger. Adresse e-mail à ajouter sur la page Contact.</p></div>
+    <div class="card"><div class="ico">💶</div><h3>Trois prestataires</h3><p>Le domaine, le site et les e-mails sont chez trois prestataires différents, pour environ <b>168 €/an</b> (Wix et hébergement).</p></div>
+  </div>
+  <div class="foot"><img src="img/logo.png" alt=""><span>Audit du site actuel — 15/11/2026</span><span class="num">2</span></div>
+</section>
+
+<!-- 3. Objectifs -->
+<section class="slide" style="padding-right:0">
+  <div class="photo" style="right:0;top:0;bottom:0;width:390px;background-image:url(img/cagette-legumes.jpg)"></div>
+  <div style="width:760px">
+    <div class="kicker">Ce que nous voulons</div>
+    <h2>Cinq objectifs</h2>
+    <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px">
+      <div class="card" style="display:flex;gap:18px;align-items:center;padding:14px 20px"><div class="ico" style="margin:0">👤</div><p><b>Un compte personnel pour chacun</b>, avec un rôle : adhérent, producteur, référent ou administrateur.</p></div>
+      <div class="card" style="display:flex;gap:18px;align-items:center;padding:14px 20px"><div class="ico" style="margin:0">🧺</div><p><b>Contrats et commandes groupées en ligne</b>, avec panier, calendrier et échéancier.</p></div>
+      <div class="card" style="display:flex;gap:18px;align-items:center;padding:14px 20px"><div class="ico" style="margin:0">📅</div><p><b>Distributions et permanences organisées</b> sur le site, avec rappels automatiques.</p></div>
+      <div class="card" style="display:flex;gap:18px;align-items:center;padding:14px 20px"><div class="ico" style="margin:0">✍️</div><p><b>Les référents autonomes</b> : un producteur ou une commande groupée se crée avec un simple formulaire.</p></div>
+      <div class="card" style="display:flex;gap:18px;align-items:center;padding:14px 20px"><div class="ico" style="margin:0">🌱</div><p><b>Un outil libre, sobre et à nous</b> : hébergé en Suisse chez Infomaniak, en open source et réutilisable par d'autres AMAP.</p></div>
+    </div>
+  </div>
+  <div class="foot" style="right:420px"><img src="img/logo.png" alt=""><span class="num">3</span></div>
+</section>
+
+<!-- 4. Rôles -->
+<section class="slide">
+  <div class="kicker">Qui fait quoi</div>
+  <h2>Chacun son espace, <span class="accent">chacun ses outils</span></h2>
+  <p class="lead">Les rôles se cumulent : un référent est aussi adhérent, l'administrateur a tous les droits.</p>
+  <div class="cols" style="grid-template-columns:repeat(4,1fr);margin-top:24px">
+    <div class="card" style="border-top:6px solid var(--terre)"><div class="ico">🧑‍🌾</div><h3>Adhérent</h3><ul><li>Souscrit ses contrats</li><li>Commande dans les commandes groupées</li><li>Voit son calendrier : quoi, quand</li><li>S'inscrit aux permanences</li><li>Suit ses paiements</li></ul></div>
+    <div class="card" style="border-top:6px solid var(--miel)"><div class="ico">🚜</div><h3>Producteur</h3><ul><li>Voit ce qu'il doit préparer pour chaque distribution</li><li>Reçoit ses récapitulatifs par e-mail (PDF, Excel)</li><li>Pointe les chèques et virements reçus</li></ul></div>
+    <div class="card" style="border-top:6px solid var(--vert)"><div class="ico">🤝</div><h3>Référent <span style="font-weight:400;font-size:14px">(environ 10)</span></h3><ul><li>Ajoute ou modifie ses producteurs et leurs produits</li><li>Ouvre les contrats et les commandes groupées</li><li>Suit les commandes et le pointage</li><li>Imprime les feuilles d'émargement</li></ul></div>
+    <div class="card" style="border-top:6px solid var(--ardoise)"><div class="ico">🛠️</div><h3>Administrateur</h3><ul><li>Calendrier des distributions</li><li>Planning des permanences</li><li>Pages du site, adhérents, rôles</li><li>Valide les distributions, e-mails groupés</li></ul></div>
+  </div>
+  <div class="foot"><img src="img/logo.png" alt=""><span>Environ 100 adhérents · 9 producteurs sous contrat · environ 20 en commandes groupées</span><span class="num">4</span></div>
+</section>
+
+<!-- 5. Plan du site -->
+<section class="slide" style="padding:40px 50px">
+  <div class="kicker">Vue d'ensemble</div>
+  <h2 style="font-size:34px">Le plan du nouveau site</h2>
+  <img src="../docs/diagrammes/plan-du-site.png" style="display:block;height:535px;margin:12px auto 0;border-radius:12px;box-shadow:0 4px 20px #0000001f" alt="Plan du site">
+  <div class="foot"><img src="img/logo.png" alt=""><span>Les cases « NOUVEAU » n'existent pas aujourd'hui</span><span class="num">5</span></div>
+</section>
+
+<!-- 6. Contrats -->
+<section class="slide">
+  <div style="display:grid;grid-template-columns:1fr 330px;gap:50px;align-items:start">
+    <div>
+      <div class="kicker">Nouveauté n°1</div>
+      <h2>Souscrire ses contrats <span class="accent">en ligne</span><span class="badge">NOUVEAU</span></h2>
+      <p class="lead">Ce sont les « commandes standard », pour la saison.</p>
+      <div style="margin-top:26px;display:flex;flex-direction:column;gap:12px">
+        <div class="card" style="padding:14px 20px"><p><b>1. Je choisis un producteur et ses produits</b>, la quantité et la <b>fréquence</b> : toutes les distributions, 1 sur 2, ou les dates de mon choix.</p></div>
+        <div class="card" style="padding:14px 20px"><p><b>2. Mon calendrier se remplit en direct</b>, avec une icône par produit sur chaque date. Je vois tout de suite ce que je récupérerai.</p></div>
+        <div class="card" style="padding:14px 20px"><p><b>3. Mon panier fait le total par producteur</b>. Je choisis mon <b>échéancier</b> (1, 3 ou 6 chèques, ou virement), avec l'ordre des chèques et les mois d'encaissement.</p></div>
+        <div class="card" style="padding:14px 20px"><p><b>4. Je valide</b> et je reçois un e-mail avec le récapitulatif et <b>le contrat du producteur pré-rempli en PDF</b>.</p></div>
+      </div>
+      <p style="margin-top:16px;font-size:14.5px;color:var(--doux)">💡 L'AMAP n'encaisse rien : les paiements restent des chèques ou virements à l'ordre du producteur. Le site calcule et suit les échéances.</p>
+    </div>
+    <div class="phone" style="margin-top:6px"><div class="screen">
+      <div class="sbar">🥕 Le Corti des Aravis <small>· saison 2027</small></div>
+      <div class="sbody">
+        <div class="row" style="display:block"><b>Panier légumes & fruits</b><br><span>30,29 € / panier · 6 juin → 27 nov.</span>
+          <div class="seg"><span class="on">Toutes (26)</span><span>1 sur 2 (13)</span><span>Choisir</span></div>
+          <div class="qty" style="margin-top:6px"><i>−</i><b>1</b><i>+</i><span style="margin-left:auto;color:var(--vert);font-weight:700">787,54 €</span></div></div>
+        <div style="font-weight:700;color:var(--brun);margin:8px 0 2px;font-size:12px">Mon calendrier · juin</div>
+        <div class="cal">
+          <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div class="d">6<em>🥕🧀</em></div><div>7</div>
+          <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div class="d">13<em>🥕</em></div><div>14</div>
+          <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div class="d">20<em>🥕🧀🥚</em></div><div>21</div>
+          <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div class="d">27<em>🥕</em></div><div>28</div>
+        </div>
+        <div class="row" style="margin-top:10px;display:block"><b>Mon panier</b>
+          <div style="display:flex;justify-content:space-between;margin-top:4px"><span>Le Corti des Aravis</span><b>787,54 €</b></div>
+          <div style="display:flex;justify-content:space-between"><span>La Ferme du Ponant</span><b>216,00 €</b></div>
+          <div class="seg" style="margin-top:6px"><span>1 chèque</span><span class="on">3 chèques</span><span>6 chèques</span></div>
+          <span>mars · juin · septembre — à l'ordre du producteur</span></div>
+        <div class="btn">Valider mes contrats</div>
+      </div></div></div>
+  </div>
+  <div class="foot"><img src="img/logo.png" alt=""><span>Maquette indicative — le prototype permettra de l'essayer</span><span class="num">6</span></div>
+</section>
+
+<!-- 7. Commandes groupées -->
+<section class="slide">
+  <div style="display:grid;grid-template-columns:330px 1fr;gap:50px;align-items:start">
+    <div class="phone"><div class="screen">
+      <div class="sbar">🍊 Commandes groupées</div>
+      <div class="sbody">
+        <div class="row" style="display:block;border-color:var(--terre)"><b>Agrumes de Sicile</b> <span class="pill" style="background:var(--terre-l);color:var(--terre);font-size:10px;padding:2px 8px">ouverte</span><br><span>Clôture <b>mer. 10 déc. 20h</b> · livraison sam. 9 janv.</span></div>
+        <div class="row"><div><b>Oranges</b><br><span>1 kg · 3,50 €</span></div><div class="qty"><i>−</i><b>3</b><i>+</i></div></div>
+        <div class="row"><div><b>Citrons</b><br><span>1 kg · 4,20 €</span></div><div class="qty"><i>−</i><b>1</b><i>+</i></div></div>
+        <div class="row"><div><b>Mandarines</b><br><span>1 kg · 3,90 €</span></div><div class="qty"><i>−</i><b>2</b><i>+</i></div></div>
+        <div class="row"><div><b>Pamplemousses</b><br><span>pièce · 1,20 €</span></div><div class="qty"><i>−</i><b>0</b><i>+</i></div></div>
+        <div class="row" style="background:var(--vert-l)"><b>Total</b><b>22,50 €</b></div>
+        <div class="btn">Valider ma commande</div>
+        <p style="font-size:11px;color:#7d6f62;text-align:center;margin:8px 0 0">Modifiable jusqu'à la clôture</p>
+      </div></div></div>
+    <div>
+      <div class="kicker">Nouveauté n°2</div>
+      <h2>Des commandes groupées <span class="accent">qui s'organisent seules</span><span class="badge">NOUVEAU</span></h2>
+      <div class="cols" style="grid-template-columns:1fr 1fr;margin-top:24px">
+        <div class="card"><div class="ico">⏱️</div><h3>Ouverture et clôture automatiques</h3><p>Le référent fixe les dates et heures. Le site ouvre et ferme la commande tout seul.</p></div>
+        <div class="card"><div class="ico">📣</div><h3>Annonce par e-mail</h3><p>À l'ouverture, les adhérents sont prévenus. Une relance avant la clôture est possible.</p></div>
+        <div class="card"><div class="ico">🔁</div><h3>« Dupliquer »</h3><p>Les huîtres, l'huile ou le vin reviennent chaque année : on relance la commande de l'an dernier en un clic.</p></div>
+        <div class="card"><div class="ico">📦</div><h3>Récapitulatif immédiat</h3><p>À la clôture : le total par produit et le détail par adhérent, envoyés au producteur, plus la feuille d'émargement.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo.png" alt=""><span>Environ 20 producteurs en commandes groupées</span><span class="num">7</span></div>
+</section>
+
+<!-- 8. Préparation des distributions -->
+<section class="slide">
+  <div class="kicker">Nouveauté n°3</div>
+  <h2>Les distributions <span class="accent">préparées automatiquement</span><span class="badge">NOUVEAU</span></h2>
+  <p class="lead">À la clôture, l'administrateur vérifie puis valide. Les documents partent tout seuls.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:24px">
+    <div class="desk"><div class="top"><i></i><i></i><i></i><span>Récapitulatif producteur — PDF</span></div>
+      <div style="padding:16px 18px">
+        <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:10px"><div><b style="font-size:16px;color:var(--brun)">La Ferme du Ponant</b><br><span style="font-size:12.5px;color:var(--doux)">Distribution n°5 · samedi 13 mars 2027 · EHPAD Thônes</span></div><img src="img/logo.png" style="height:40px"></div>
+        <table class="t"><tr><th>Produit</th><th>Total</th></tr>
+          <tr><td>Tomme fermière (quart)</td><td><b>14</b></td></tr>
+          <tr><td>Tomme fermière (demie)</td><td><b>6</b></td></tr>
+          <tr><td>Raclette 500 g</td><td><b>9</b></td></tr></table>
+        <p style="font-size:12px;color:var(--doux);margin:10px 0 0">+ le détail par adhérent · envoyé par e-mail · disponible dans l'espace producteur (PDF et Excel)</p>
+      </div></div>
+    <div class="desk"><div class="top"><i></i><i></i><i></i><span>Feuille d'émargement — PDF</span></div>
+      <div style="padding:16px 18px">
+        <b style="font-size:16px;color:var(--brun)">Tomme fermière (quart) — 13 mars</b>
+        <table class="t" style="margin-top:10px"><tr><th>Nom de l'adhérent</th><th>Quantité</th><th style="width:38%">Signature</th></tr>
+          <tr><td>Martin Claire</td><td>1</td><td></td></tr>
+          <tr><td>Perrier Jean</td><td>2</td><td></td></tr>
+          <tr><td>Rossi Léa</td><td>1</td><td></td></tr>
+          <tr><td>…</td><td></td><td></td></tr></table>
+        <p style="font-size:12px;color:var(--doux);margin:10px 0 0">Une page par produit · à imprimer pour le responsable de distribution</p>
+      </div></div>
+  </div>
+  <div class="foot"><img src="img/logo.png" alt=""><span>Les modèles reprendront vos documents actuels</span><span class="num">8</span></div>
+</section>
+
+<!-- 9. Permanences -->
+<section class="slide" style="padding-right:0">
+  <div class="photo" style="right:0;top:0;bottom:0;width:360px;background-image:url(img/chevriers.jpg)"></div>
+  <div style="width:800px">
+    <div class="kicker">Nouveauté n°4</div>
+    <h2>Les permanences <span class="accent">sans tableau papier</span><span class="badge">NOUVEAU</span></h2>
+    <p class="lead">On reprend les règles du code de bonne conduite, et le site s'en occupe.</p>
+    <div class="cols" style="grid-template-columns:1fr 1fr;margin-top:22px;gap:16px">
+      <div class="card"><h3>🗓️ Des vœux, puis des équipes</h3><p>Chaque adhérent propose 3 dates (1 date s'il ne fait que des commandes groupées). L'AMAP en retient 1 ou 2 et forme des équipes de 5 à 6 personnes, avec un responsable.</p></div>
+      <div class="card"><h3>🔄 Échanges et remplaçants</h3><p>Un empêchement ? On échange avec un autre adhérent, ou on indique un remplaçant directement sur le site. Le responsable voit toujours la bonne équipe.</p></div>
+      <div class="card"><h3>📧 Rappels automatiques</h3><p>Un e-mail aux permanents quelques jours avant (rendez-vous à 8h30), avec les noms de l'équipe et les consignes.</p></div>
+      <div class="card"><h3>🤝 Pour ceux qui n'ont pas d'ordinateur</h3><p>Un référent ou l'administrateur peut inscrire un adhérent à sa place.</p></div>
+    </div>
+  </div>
+  <div class="foot" style="right:390px"><img src="img/logo.png" alt=""><span class="num">9</span></div>
+</section>
+
+<!-- 10. Pointage -->
+<section class="slide">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;height:100%">
+    <div>
+      <div class="kicker">Nouveauté n°5</div>
+      <h2>Le pointage <span class="accent">des paiements</span><span class="badge">NOUVEAU</span></h2>
+      <p class="lead">L'AMAP n'encaisse rien. Le site <b>sait</b> qui doit quoi, à qui et quand.</p>
+      <div style="margin-top:22px;display:flex;flex-direction:column;gap:12px">
+        <div class="card" style="padding:14px 20px"><p>📋 Les <b>échéances sont créées automatiquement</b> à partir de l'échéancier choisi par l'adhérent.</p></div>
+        <div class="card" style="padding:14px 20px"><p>✅ Le <b>producteur ou le référent</b> coche « reçu » puis « encaissé ».</p></div>
+        <div class="card" style="padding:14px 20px"><p>👀 L'<b>adhérent</b> voit où en sont ses paiements (lecture seule). Il n'y a plus de « avez-vous bien reçu mon chèque ? ».</p></div>
+        <div class="card" style="padding:14px 20px"><p>💳 Seule la <b>cotisation</b> (20 €) peut se payer en ligne, via HelloAsso (gratuit pour l'association).</p></div>
+      </div>
+    </div>
+    <div class="desk"><div class="top"><i></i><i></i><i></i><span>Gestion › Pointage › Le Corti des Aravis</span></div>
+      <div style="padding:14px 16px">
+        <table class="t"><tr><th>Adhérent</th><th>Échéance</th><th>Montant</th><th>Statut</th></tr>
+          <tr><td>Martin Claire</td><td>mars</td><td>262,51 €</td><td><span class="st ok">ENCAISSÉ</span></td></tr>
+          <tr><td>Martin Claire</td><td>juin</td><td>262,51 €</td><td><span class="st rc">REÇU</span></td></tr>
+          <tr><td>Martin Claire</td><td>sept.</td><td>262,52 €</td><td><span class="st rc">REÇU</span></td></tr>
+          <tr><td>Perrier Jean</td><td>juin</td><td>63,33 €</td><td><span class="st at">ATTENDU</span></td></tr>
+          <tr><td>Perrier Jean</td><td>juil.</td><td>63,33 €</td><td><span class="st at">ATTENDU</span></td></tr>
+          <tr><td>Rossi Léa</td><td>mars</td><td>380,00 €</td><td><span class="st ok">ENCAISSÉ</span></td></tr></table>
+        <div style="display:flex;gap:8px;margin-top:12px"><span class="pill" style="background:var(--vert);color:#fff">✓ Marquer reçu</span><span class="pill" style="background:#eee;color:#555">⬇ Export Excel</span></div>
+      </div></div>
+  </div>
+  <div class="foot"><img src="img/logo.png" alt=""><span>Montants fictifs</span><span class="num">10</span></div>
+</section>
+
+<!-- 11. Ajouter un producteur -->
+<section class="slide">
+  <div class="kicker">Nouveauté n°6</div>
+  <h2>Ajouter un producteur : <span class="accent">un formulaire, et c'est en ligne</span><span class="badge">NOUVEAU</span></h2>
+  <div style="display:grid;grid-template-columns:1.25fr 60px 1fr;gap:10px;align-items:center;margin-top:26px">
+    <div class="desk"><div class="top"><i></i><i></i><i></i><span>Gestion › Producteurs › Ajouter</span></div>
+      <div style="display:flex"><div class="side"><div class="on">🚜 Producteurs</div><div>🧀 Produits</div><div>📄 Offres de contrat</div><div>🍊 Commandes groupées</div><div>✅ Pointage</div><div>🖨️ Documents</div></div>
+        <div class="form" style="padding:6px 16px 14px;flex:1">
+          <label>Nom de la ferme</label><div class="in">La Ferme du Coteau</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div><label>Producteurs</label><div class="in">Christophe et Nathalie Raucaz</div></div><div><label>Commune</label><div class="in">Verrens-Arvey</div></div></div>
+          <label>Types de produits</label><div class="chips"><span class="on">Fruits</span><span class="on">Jus</span><span>Légumes</span><span>Fromage</span><span>Pain</span><span class="on">Bio</span></div>
+          <label>Présentation</label><div class="in" style="height:44px;color:#6b5b4b">Notre exploitation arboricole est située sur les contreforts du massif des Bauges…</div>
+          <label>Photos</label><div class="in" style="text-align:center;color:#9a8b7c;border-style:dashed">⬆ Glisser-déposer les photos ici</div>
+          <div class="btn g" style="width:160px;margin-left:auto;margin-top:10px">Enregistrer</div>
+        </div></div></div>
+    <div class="arrow" style="text-align:center">→</div>
+    <div class="desk"><div class="top"><i></i><i></i><i></i><span>lepanierdesaravis.fr/producteurs/la-ferme-du-coteau</span></div>
+      <div class="photo" style="position:relative;height:150px;background-image:url(img/pommes.jpg)"></div>
+      <div style="padding:14px 16px">
+        <b style="font-family:Raleway;font-size:20px;color:var(--brun)">La Ferme du Coteau</b>
+        <div style="margin:6px 0 8px"><span class="pill" style="background:var(--vert-l);color:var(--vert)">Fruits</span> <span class="pill" style="background:var(--vert-l);color:var(--vert)">Jus</span> <span class="pill" style="background:#e3f0da;color:#3f6a1c">AB Bio</span></div>
+        <p style="font-size:12.5px;color:#4b3f35;margin:0">Christophe et Nathalie Raucaz · Verrens-Arvey<br>Fruits, compotes et jus bio au rythme des saisons…</p>
+        <div class="btn" style="margin-top:10px;font-size:13px">Voir les contrats proposés</div>
+      </div></div>
+  </div>
+  <p style="text-align:center;margin-top:20px;font-size:16px;color:var(--doux)">Pas de mise en page à faire, pas de menu à modifier. <b>Toutes les fiches ont la même belle présentation.</b></p>
+  <div class="foot"><img src="img/logo.png" alt=""><span>Accessible sans aucune connaissance technique</span><span class="num">11</span></div>
+</section>
+
+<!-- 12. E-mails automatiques -->
+<section class="slide">
+  <div class="kicker">En coulisses</div>
+  <h2>Les bons e-mails, <span class="accent">au bon moment</span></h2>
+  <p class="lead">Le cycle d'une distribution, vu par le site :</p>
+  <div style="position:relative;margin-top:40px">
+    <div style="position:absolute;left:30px;right:30px;top:38px;height:5px;background:linear-gradient(90deg,var(--sauge),var(--terre));border-radius:4px"></div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative">
+      <div style="text-align:center"><div style="width:80px;height:80px;border-radius:50%;background:#fff;border:5px solid var(--sauge);margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:32px">📣</div><h3 style="font-size:17px;margin-top:12px">Ouverture</h3><p style="font-size:14px;color:var(--doux)">Annonce de la commande groupée aux adhérents</p></div>
+      <div style="text-align:center"><div style="width:80px;height:80px;border-radius:50%;background:#fff;border:5px solid var(--sauge);margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:32px">✉️</div><h3 style="font-size:17px;margin-top:12px">Validation</h3><p style="font-size:14px;color:var(--doux)">Confirmation avec récapitulatif, échéancier et contrat PDF</p></div>
+      <div style="text-align:center"><div style="width:80px;height:80px;border-radius:50%;background:#fff;border:5px solid var(--miel);margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:32px">🔒</div><h3 style="font-size:17px;margin-top:12px">Clôture</h3><p style="font-size:14px;color:var(--doux)">L'admin valide, puis récapitulatifs PDF et Excel envoyés aux producteurs</p></div>
+      <div style="text-align:center"><div style="width:80px;height:80px;border-radius:50%;background:#fff;border:5px solid var(--terre);margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:32px">⏰</div><h3 style="font-size:17px;margin-top:12px">J-5 et J-3</h3><p style="font-size:14px;color:var(--doux)">Rappel aux permanents · « samedi vous récupérez… »</p></div>
+      <div style="text-align:center"><div style="width:80px;height:80px;border-radius:50%;background:#fff;border:5px solid var(--terre);margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:32px">🧺</div><h3 style="font-size:17px;margin-top:12px">Samedi 9h30</h3><p style="font-size:14px;color:var(--doux)">Feuilles d'émargement imprimées, chacun repart avec son panier</p></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:34px;padding:14px 22px"><p>📰 Également : la <b>lettre d'information</b> et des <b>annonces ciblées</b> (par exemple à tous les adhérents d'un producteur), avec désinscription possible. Le formulaire de contact <b>envoie chaque message à la bonne personne</b> selon le sujet (adhésion, permanences, producteurs…).</p></div>
+  <div class="foot"><img src="img/logo.png" alt=""><span class="num">12</span></div>
+</section>
+
+<!-- 13. Technique -->
+<section class="slide">
+  <div class="kicker">Sous le capot</div>
+  <h2>Un outil <span class="accent">libre, sobre et à nous</span></h2>
+  <div class="cols" style="grid-template-columns:repeat(3,1fr);margin-top:28px">
+    <div class="card"><div class="ico">🧩</div><h3>100 % sur mesure</h3><p><b>Laravel</b>, le framework PHP le plus répandu, avec <b>Filament</b> pour l'espace de gestion. Des outils standards, que d'autres développeurs pourront reprendre.</p></div>
+    <div class="card"><div class="ico">🇨🇭</div><h3>Hébergé chez Infomaniak</h3><p>Site, base de données et e-mails au même endroit. Données en Suisse (compatible RGPD), hébergeur engagé pour l'environnement.</p></div>
+    <div class="card"><div class="ico">🐙</div><h3>Open source sur GitHub</h3><p>Le code appartient à l'<b>association</b> (organisation GitHub). Tickets ouverts à tous, développement assisté par Claude Code. Réutilisable par d'autres AMAP.</p></div>
+    <div class="card"><div class="ico">🔐</div><h3>Données protégées</h3><p>Comptes personnels, mots de passe chiffrés, sauvegardes quotidiennes, aucun traceur publicitaire, téléphone partagé seulement avec accord.</p></div>
+    <div class="card"><div class="ico">📱</div><h3>Pensé pour le téléphone</h3><p>Des écrans simples. Chaque rôle ne voit que ce qui le concerne.</p></div>
+    <div class="card" style="background:var(--vert-l);border-color:var(--vert)"><div class="ico">💶</div><h3>Moins cher qu'aujourd'hui</h3><p>Environ <b>100 €/an</b> (hébergement, e-mails et domaine), contre environ <b>168 €/an</b> pour Wix et l'hébergement actuels.</p></div>
+  </div>
+  <div class="foot"><img src="img/logo.png" alt=""><span class="num">13</span></div>
+</section>
+
+<!-- 14. Calendrier -->
+<section class="slide">
+  <div class="kicker">Le calendrier</div>
+  <h2>Prêt pour la <span class="accent">campagne 2028</span></h2>
+  <p class="lead">La campagne 2027 (décembre 2026) se fait encore sur Wix. On ne bascule pas pendant les adhésions.</p>
+  <div style="margin-top:34px;display:grid;grid-template-columns:repeat(6,1fr);gap:10px">
+    <div class="card" style="padding:14px;border-top:6px solid #b9ae9f"><b style="font-size:13px;color:var(--doux)">nov. 26 → janv. 27</b><h3 style="font-size:16px;margin:6px 0">0 · Prototype</h3><p style="font-size:13.5px">Maquette testable, GitHub, transfert du domaine (expire le 13/02)</p></div>
+    <div class="card" style="padding:14px;border-top:6px solid var(--sauge)"><b style="font-size:13px;color:var(--doux)">janv. → mars 27</b><h3 style="font-size:16px;margin:6px 0">1 · Socle</h3><p style="font-size:13.5px">Comptes, rôles, producteurs, site public, site de test</p></div>
+    <div class="card" style="padding:14px;border-top:6px solid var(--sauge)"><b style="font-size:13px;color:var(--doux)">mars → mai 27</b><h3 style="font-size:16px;margin:6px 0">2 · Distributions</h3><p style="font-size:13.5px">Calendrier, permanences et rappels</p></div>
+    <div class="card" style="padding:14px;border-top:6px solid var(--miel)"><b style="font-size:13px;color:var(--doux)">mai → juil. 27</b><h3 style="font-size:16px;margin:6px 0">3 · Commandes groupées</h3><p style="font-size:13.5px">Documents PDF, pointage, espace producteur</p></div>
+    <div class="card" style="padding:14px;border-top:6px solid var(--terre);background:var(--terre-l)"><b style="font-size:13px;color:var(--doux)">sept. 27</b><h3 style="font-size:16px;margin:6px 0">4 · 🚀 Mise en ligne</h3><p style="font-size:13.5px">Fin de Wix. Chaque adhérent crée son compte.</p></div>
+    <div class="card" style="padding:14px;border-top:6px solid var(--terre)"><b style="font-size:13px;color:var(--doux)">sept. → nov. 27</b><h3 style="font-size:16px;margin:6px 0">5 · Contrats</h3><p style="font-size:13.5px">Souscription en ligne, adhésion HelloAsso. Pilote en octobre.</p></div>
+  </div>
+  <div class="card" style="margin-top:22px;display:flex;align-items:center;gap:18px;background:var(--vert-l);border-color:var(--vert)"><div class="ico" style="margin:0">🎯</div><p style="font-size:17px"><b>Décembre 2027 : campagne d'adhésion et de contrats 2028 entièrement sur le nouveau site.</b></p></div>
+  <div class="foot"><img src="img/logo.png" alt=""><span>Calendrier indicatif, sur la base d'un développement bénévole</span><span class="num">14</span></div>
+</section>
+
+<!-- 15. Prochaines étapes -->
+<section class="slide" style="padding:0">
+  <div class="photo" style="inset:0;background-image:url(img/village.jpg)"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,#FBF8F2 0%,#FBF8F2f5 55%,#FBF8F2aa 100%)"></div>
+  <div style="position:absolute;left:70px;top:56px;right:70px">
+    <div class="kicker">Et maintenant ?</div>
+    <h2>Les prochaines étapes</h2>
+    <div class="cols" style="grid-template-columns:1fr 1fr;margin-top:26px;max-width:1000px">
+      <div class="card"><h3>✅ À décider par le conseil</h3><ul><li>Valider le cahier des charges et les rôles</li><li>Créer l'organisation GitHub de l'association (2 propriétaires)</li><li>Ouvrir le compte Infomaniak et transférer le domaine avant le 13/02/2027</li><li>Choisir les adresses e-mail par fonction</li></ul></div>
+      <div class="card"><h3>🙋 Nous cherchons</h3><ul><li><b>2 ou 3 référents testeurs</b> pour le prototype</li><li><b>Quelques adhérents</b> pour essayer les parcours sur téléphone</li><li><b>1 ou 2 producteurs</b> pour valider leur espace</li><li>Vos <b>modèles actuels</b> de feuilles d'émargement et de récapitulatifs</li></ul></div>
+    </div>
+    <p style="margin-top:30px;font-family:Caveat,cursive;font-size:34px;color:var(--vert)">Merci ! Des questions ?</p>
+  </div>
+  <div class="foot"><img src="img/logo.png" alt=""><span>contact@lepanierdesaravis.fr</span><span class="num">15</span></div>
+</section>
+
+</body>
+</html>
