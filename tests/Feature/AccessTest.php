@@ -53,7 +53,7 @@ class AccessTest extends TestCase
     {
         $member = $this->member();
 
-        foreach (['/mon-espace', '/mon-espace/contrats', '/mon-espace/commandes-groupees', '/mon-espace/calendrier', '/mon-espace/paiements', '/mon-espace/compte'] as $url) {
+        foreach (['/mon-espace', '/mon-espace/contrats', '/mon-espace/commandes-groupees', '/mon-espace/calendrier', '/mon-espace/paiements', '/mon-espace/compte', '/mon-espace/echanges'] as $url) {
             $this->actingAs($member)->get($url)->assertOk();
         }
         $this->actingAs($member)->get('/espace-producteur')->assertForbidden();

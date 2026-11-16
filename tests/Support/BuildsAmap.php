@@ -79,7 +79,7 @@ trait BuildsAmap
 
     protected function product(Producer $producer, int $priceCents = 1500): Product
     {
-        return $producer->products()->create(['name' => 'Panier', 'unit' => 'panier', 'price_cents' => $priceCents, 'icon' => '🥕']);
+        return $producer->products()->create(['name' => 'Panier', 'unit' => 'panier', 'price_cents' => $priceCents, 'icon' => 'carotte', 'icon_color' => 'vert']);
     }
 
     protected function contractOffer(Producer $producer, array $attributes = []): ContractOffer

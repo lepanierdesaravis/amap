@@ -35,6 +35,18 @@ class Contract extends Model
         return $this->hasMany(ContractLine::class);
     }
 
+    /** Commandes ponctuelles déduites de cet engagement. */
+    public function groupOrders(): HasMany
+    {
+        return $this->hasMany(GroupOrder::class);
+    }
+
+    /** Estimation du solde restant : le producteur tient le compte exact. */
+    public function remainingCents(): int
+    {
+        return $this->total_cents - (int) $this->groupOrders()->sum('total_cents');
+    }
+
     public function installmentsDue(): MorphMany
     {
         return $this->morphMany(Installment::class, 'payable')->orderBy('number');

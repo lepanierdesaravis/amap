@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 class GroupPurchase extends Model
 {
     protected $fillable = [
-        'title', 'slug', 'producer_id', 'referent_id', 'description', 'photo',
+        'title', 'slug', 'producer_id', 'contract_offer_id', 'referent_id', 'description', 'photo',
         'opens_at', 'closes_at', 'distribution_id', 'payment_info', 'announce_by_email', 'announced_at',
     ];
 
@@ -49,6 +49,33 @@ class GroupPurchase extends Model
     public function producer(): BelongsTo
     {
         return $this->belongsTo(Producer::class);
+    }
+
+    /** Engagement dont les souscripteurs commandent sans régler (montant déduit de leur solde). */
+    public function contractOffer(): BelongsTo
+    {
+        return $this->belongsTo(ContractOffer::class);
+    }
+
+    /** Contrat de l'adhérent sur l'engagement lié, s'il en a un. */
+    public function contractFor(User $user): ?Contract
+    {
+        return $this->contract_offer_id
+            ? Contract::where('contract_offer_id', $this->contract_offer_id)->where('user_id', $user->id)->first()
+            : null;
+    }
+
+    /**
+     * Icône des livraisons : celle du produit de l'engagement lié (le pain de la boulangerie),
+     * sinon le sac des commandes groupées.
+     *
+     * @return array{0: string, 1: ?string}
+     */
+    public function deliveryIcon(): array
+    {
+        $product = $this->contractOffer?->products()->whereNotNull('icon')->first();
+
+        return $product ? [$product->icon, $product->icon_color] : ['sac', 'miel'];
     }
 
     public function referent(): BelongsTo

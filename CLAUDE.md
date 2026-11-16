@@ -15,7 +15,9 @@ Chaque exigence du cahier des charges a un numéro (`ADH-07`, `REF-13`…), qui 
 - Un **référent** gère uniquement les producteurs qu'il a créés (`producers.referent_id`). Un **producteur** consulte son espace, mais ses modifications passent par son référent. L'**administrateur** a tous les droits (`Gate::before`).
 - Pas de modification d'un contrat après sa clôture, ni après le pointage d'un de ses paiements.
 - La table `deliveries` est la référence pour savoir qui reçoit quoi et à quelle distribution. Les contrats et les commandes groupées l'alimentent via `App\Services\OrderService`.
-- L'ouverture et la clôture des offres et des commandes groupées se calculent à partir des dates (`opens_at`, `closes_at`) : aucune tâche planifiée n'est nécessaire.
+- L'ouverture et la clôture des offres et des commandes groupées se calculent à partir des dates (`opens_at`, `closes_at`). Seules les annonces par e-mail passent par une tâche planifiée (`amap:annonces`, voir `routes/console.php`) ; les e-mails groupés passent par la file d'attente.
+- Un **montant d'engagement** est un produit avec `is_amount` : son prix vaut pour la saison. Une commande groupée liée à une offre (`contract_offer_id`) est déduite du contrat des adhérents engagés (`group_orders.contract_id`, sans échéance) et réglée sur place par les autres.
+- Icônes des produits : banque `config/icones.php` + `resources/icons/produits/*.svg` (game-icons.net, CC BY 3.0), affichées par `App\Support\Icons` ou `<x-icone>`. Une icône dans une couleur ne sert qu'à un producteur.
 - Le code doit rester réutilisable par d'autres AMAP : nom, adresses, cotisation et sujets de contact sont dans `config/amap.php`, pas en dur.
 
 ## Conventions de code

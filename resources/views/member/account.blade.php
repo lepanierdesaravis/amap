@@ -16,6 +16,7 @@
                 <div><label class="label" for="city">Commune</label><input class="input" id="city" name="city" value="{{ old('city', $user->city) }}"></div>
             </div>
             <label class="flex items-start gap-2 text-sm"><input type="checkbox" name="share_phone" value="1" class="mt-1 rounded text-vert" @checked($user->share_phone)> J'accepte que mon téléphone soit visible des autres adhérents, pour s'organiser lors des permanences.</label>
+            <label class="flex items-start gap-2 text-sm"><input type="checkbox" name="accepts_member_messages" value="1" class="mt-1 rounded text-vert" @checked($user->accepts_member_messages)> Je reçois les messages des autres adhérents (« Échanges entre adhérents »).</label>
             <p class="text-sm text-doux">E-mail de connexion : <strong>{{ $user->email }}</strong></p>
             <button class="btn-vert">Enregistrer</button>
         </form>

@@ -4,10 +4,11 @@ namespace App\Livewire\Member;
 
 use App\Enums\Frequency;
 use App\Enums\PaymentMethod;
+use App\Models\ContractLine;
 use App\Models\ContractOffer;
-use App\Models\Distribution;
 use App\Services\ContractPlanner;
 use App\Services\OrderService;
+use App\Services\SeasonCalendar;
 use App\Support\Money;
 use Illuminate\Support\Collection;
 use Illuminate\Validation\ValidationException;
@@ -72,7 +73,14 @@ class ContractSubscription extends Component
     #[Computed]
     public function editable(): bool
     {
-        return $this->offer->isOpen() && auth()->user()->canOrder();
+        return $this->offer->isOpen() && auth()->user()->canOrder() && ! $this->offer->isFullFor(auth()->user());
+    }
+
+    /** Places restantes (null si illimité). */
+    #[Computed]
+    public function remainingPlaces(): ?int
+    {
+        return $this->offer->remainingPlaces(auth()->user());
     }
 
     /** @return array<int, list<int>> identifiant du produit => distributions retenues */
@@ -81,15 +89,35 @@ class ContractSubscription extends Component
     {
         $planner = app(ContractPlanner::class);
 
-        return collect($this->lines)->map(fn ($line) => $line['quantity'] > 0
-            ? $planner->distributionIds($this->distributions, Frequency::from($line['frequency']), (int) $line['start'], array_map('intval', $line['custom']))
-            : [])->all();
+        $products = $this->offer->products->keyBy('id');
+
+        return collect($this->lines)->map(function ($line, $productId) use ($planner, $products) {
+            if ($line['quantity'] <= 0) {
+                return [];
+            }
+            // Montant sans fréquence proposée : les livraisons viendront des commandes liées.
+            if ($products[$productId]->is_amount && $this->offer->allowedFrequencies() === []) {
+                return [];
+            }
+
+            return $planner->distributionIds($this->distributions, Frequency::from($line['frequency']), (int) $line['start'], array_map('intval', $line['custom']));
+        })->all();
     }
 
     #[Computed]
     public function totalCents(): int
     {
-        return $this->offer->products->sum(fn ($p) => $p->price_cents * $this->lines[$p->id]['quantity'] * count($this->selectedDates[$p->id]));
+        return $this->offer->products->sum(fn ($p) => $this->lineTotal($p->id));
+    }
+
+    public function lineTotal(int $productId): int
+    {
+        $product = $this->offer->products->firstWhere('id', $productId);
+        $quantity = $this->lines[$productId]['quantity'];
+
+        return $product->is_amount
+            ? $product->price_cents * $quantity
+            : $product->price_cents * $quantity * count($this->selectedDates[$productId]);
     }
 
     #[Computed]
@@ -98,38 +126,70 @@ class ContractSubscription extends Component
         return app(ContractPlanner::class)->installments($this->offer, $this->totalCents, $this->installments);
     }
 
-    /** Mois de la saison, semaine par semaine, avec les icônes des produits choisis. */
+    /**
+     * Ce que l'adhérent récupère déjà à chaque date (autres contrats, commandes groupées),
+     * affiché en petit sous les icônes du contrat en cours.
+     *
+     * @return array<int, list<array>>
+     */
+    #[Computed]
+    public function otherEntries(): array
+    {
+        $contract = auth()->user()->contracts()->where('contract_offer_id', $this->offer->id)->first();
+        $currentLines = $contract ? $contract->lines()->pluck('id') : collect();
+
+        $deliveries = auth()->user()->deliveries()->with('producer')
+            ->whereIn('distribution_id', $this->distributions->pluck('id'))
+            ->whereNot(fn ($q) => $q->where('source_type', (new ContractLine)->getMorphClass())->whereIn('source_id', $currentLines))
+            ->get();
+
+        return SeasonCalendar::entriesFromDeliveries($deliveries);
+    }
+
+    /** @return array<int, list<array>> */
+    #[Computed]
+    public function calendarEntries(): array
+    {
+        $entries = $this->otherEntries;
+        foreach ($this->offer->products as $product) {
+            $quantity = $this->lines[$product->id]['quantity'];
+            foreach ($this->selectedDates[$product->id] as $id) {
+                $entries[$id] ??= [];
+                array_unshift($entries[$id], SeasonCalendar::entry(
+                    $product->icon, $product->icon_color, ($product->is_amount ? '' : $quantity.' × ').$product->name, $this->offer->producer->name, current: true,
+                ));
+            }
+        }
+
+        return $entries;
+    }
+
+    /** Mois de la saison, avec les icônes des produits choisis et des autres commandes. */
     #[Computed]
     public function months(): array
     {
-        $byDate = $this->distributions->keyBy(fn (Distribution $d) => $d->date->toDateString());
-        $icons = [];
-        foreach ($this->offer->products as $product) {
-            foreach ($this->selectedDates[$product->id] as $id) {
-                $icons[$id][] = $product->icon ?: '🧺';
-            }
-        }
+        return app(SeasonCalendar::class)->months($this->offer->starts_on, $this->offer->ends_on, $this->distributions, $this->calendarEntries);
+    }
 
-        $months = [];
-        for ($month = $this->offer->starts_on->copy()->startOfMonth(); $month->lte($this->offer->ends_on); $month->addMonth()) {
-            $cells = array_fill(0, $month->dayOfWeekIso - 1, null);
-            for ($day = $month->copy(); $day->month === $month->month; $day->addDay()) {
-                $distribution = $byDate->get($day->toDateString());
-                $cells[] = [
-                    'day' => $day->day,
-                    'distribution' => $distribution?->id,
-                    'icons' => $distribution ? array_unique($icons[$distribution->id] ?? []) : [],
-                ];
-            }
-            $months[] = ['label' => ucfirst($month->translatedFormat('F Y')), 'cells' => $cells];
-        }
-
-        return $months;
+    #[Computed]
+    public function legend(): array
+    {
+        return app(SeasonCalendar::class)->legend($this->calendarEntries);
     }
 
     public function increment(int $productId): void
     {
         $this->lines[$productId]['quantity'] = min(20, $this->lines[$productId]['quantity'] + 1);
+    }
+
+    /** Montants d'engagement : un seul choix possible, comme des boutons radio. */
+    public function chooseAmount(int $productId): void
+    {
+        $chosen = $this->lines[$productId]['quantity'] > 0;
+        foreach ($this->offer->products->where('is_amount', true) as $product) {
+            $this->lines[$product->id]['quantity'] = 0;
+        }
+        $this->lines[$productId]['quantity'] = $chosen ? 0 : 1;
     }
 
     public function decrement(int $productId): void

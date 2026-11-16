@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Member;
 
+use App\Models\Contract;
 use App\Models\GroupPurchase;
 use App\Services\OrderService;
 use App\Support\Money;
@@ -34,6 +35,25 @@ class GroupOrderForm extends Component
             }
             $this->hasOrder = true;
         }
+    }
+
+    /** Contrat de l'adhérent sur l'engagement lié : la commande en est déduite. */
+    #[Computed]
+    public function contract(): ?Contract
+    {
+        return $this->purchase->contractFor(auth()->user());
+    }
+
+    /** Solde estimé après cette commande (hors commande actuelle déjà enregistrée). */
+    #[Computed]
+    public function remainingAfter(): ?int
+    {
+        if (! $this->contract) {
+            return null;
+        }
+        $already = $this->contract->groupOrders()->where('group_purchase_id', '!=', $this->purchase->id)->sum('total_cents');
+
+        return $this->contract->total_cents - (int) $already - $this->totalCents;
     }
 
     #[Computed]

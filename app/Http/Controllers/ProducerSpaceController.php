@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Enums\InstallmentStatus;
+use App\Models\ContractOffer;
 use App\Models\Distribution;
 use App\Models\Installment;
 use App\Models\Producer;
 use App\Services\DistributionDocuments;
+use App\Services\SubscriberList;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
+use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 /**
  * Espace producteur : consultation des distributions et pointage des paiements.
@@ -30,7 +33,17 @@ class ProducerSpaceController extends Controller
             'producer' => $producer,
             'distributions' => $distributions->map(fn (Distribution $d) => ['distribution' => $d, 'summary' => $documents->summary($d, $producer)]),
             'installments' => $producer->installments()->with('user')->orderBy('status')->orderBy('due_on')->get(),
+            'sharedOffers' => $producer->contractOffers()->where('share_members_with_producer', true)
+                ->whereDate('ends_on', '>=', today()->subMonths(3))->withCount('contracts')->orderBy('starts_on')->get(),
         ]);
+    }
+
+    /** Liste des souscripteurs, si le référent l'a rendue visible. */
+    public function subscribers(Request $request, ContractOffer $offer, string $format, SubscriberList $list): HttpResponse
+    {
+        abort_unless($offer->producer_id === $this->producer($request)->id && $offer->share_members_with_producer, 403);
+
+        return $format === 'csv' ? $list->csv($offer) : $list->pdf($offer);
     }
 
     public function summary(Request $request, Distribution $distribution, DistributionDocuments $documents): Response

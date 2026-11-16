@@ -60,7 +60,14 @@
                 <p class="text-doux">Total</p>
                 <p class="text-2xl font-extrabold text-vert">{{ $this->money($this->totalCents) }}</p>
             </div>
-            @if ($purchase->payment_info)
+            @if ($this->contract)
+                <p class="max-w-md text-sm text-doux">
+                    ✓ Déduit de votre engagement : rien à régler.<br>
+                    Solde restant estimé après cette commande : <strong @class(['text-brun' => $this->remainingAfter >= 0, 'text-tomate' => $this->remainingAfter < 0])>{{ $this->money($this->remainingAfter) }}</strong>
+                </p>
+            @elseif ($purchase->contract_offer_id)
+                <p class="max-w-md text-sm text-doux">💶 Commande ponctuelle : à régler sur place à {{ $purchase->producer->name }}, lors de la distribution du {{ $purchase->distribution->date->translatedFormat('j F') }}.@if ($purchase->payment_info) {{ $purchase->payment_info }}@endif</p>
+            @elseif ($purchase->payment_info)
                 <p class="max-w-md text-sm text-doux">💶 {{ $purchase->payment_info }}</p>
             @endif
             @if ($editable)

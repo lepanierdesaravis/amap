@@ -47,17 +47,21 @@ Commandes utiles :
 ./vendor/bin/sail artisan test              # tests automatiques
 ./vendor/bin/sail artisan migrate:fresh --seed   # remettre la démonstration à zéro
 ./vendor/bin/sail npm run dev               # feuilles de style rechargées en direct
+./vendor/bin/sail artisan queue:work        # envoi des e-mails groupés (annonces, échanges)
+./vendor/bin/sail artisan schedule:work     # annonces automatiques à l'ouverture
 ./vendor/bin/sail pint                      # mise en forme du code PHP
 ./vendor/bin/sail down                      # arrêter les conteneurs
 ```
 
-**Pas encore dans le prototype :** permanences, adhésion en ligne (HelloAsso), e-mails groupés, validation de l'adresse e-mail, mise en ligne.
+**Pas encore dans le prototype :** permanences, adhésion en ligne (HelloAsso), e-mails groupés de l'administration, validation de l'adresse e-mail, mise en ligne.
+
+Les icônes des produits viennent de [game-icons.net](https://game-icons.net) (Lorc, Delapouite et contributeurs), sous licence [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
 
 ## Documents
 | Fichier | Contenu |
 |---|---|
 | [docs/01-audit-et-plan-preliminaire.md](docs/01-audit-et-plan-preliminaire.md) | Audit du site Wix actuel (15/11/2026) |
-| [docs/02-cahier-des-charges.md](docs/02-cahier-des-charges.md) | Cahier des charges v1 (copie de la version restructurée du fichier org) |
+| [docs/02-cahier-des-charges.md](docs/02-cahier-des-charges.md) | Cahier des charges, exigences numérotées |
 | [docs/03-plan-de-developpement.md](docs/03-plan-de-developpement.md) | Phases, technologies, organisation GitHub, budget, prototype |
 | [docs/diagrammes/plan-du-site.pdf](docs/diagrammes/plan-du-site.pdf) | Plan du site par niveau d'accès (source HTML, export PNG et PDF) |
 | [docs/diagrammes/modele-de-donnees.svg](docs/diagrammes/modele-de-donnees.svg) | Modèle de données simplifié (source Graphviz `.dot`) |

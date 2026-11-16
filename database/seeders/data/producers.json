@@ -22,21 +22,27 @@
     "description": "Assortiment de la saison : frais, mi-sec, tomme",
     "unit": "panier",
     "price_cents": 1400,
-    "icon": "🧀"
+    "icon": "chevre",
+    "icon_color": "noir",
+    "category_label": "Fromage de chèvre"
    },
    {
     "name": "Tomme de chèvre (demie)",
     "description": null,
     "unit": "pièce",
     "price_cents": 1250,
-    "icon": "🧀"
+    "icon": "fromage",
+    "icon_color": "noir",
+    "category_label": "Fromage de chèvre"
    },
    {
     "name": "Faisselle de chèvre",
     "description": null,
     "unit": "pot de 500 g",
     "price_cents": 450,
-    "icon": "🥛"
+    "icon": "pot",
+    "icon_color": "noir",
+    "category_label": "Faisselle de chèvre"
    }
   ],
   "cover_photo": "producteurs/la-cabane-marjolaine-1.jpg",
@@ -70,14 +76,18 @@
     "description": null,
     "unit": "pièce",
     "price_cents": 1100,
-    "icon": "🧀"
+    "icon": "chevre",
+    "icon_color": "brun",
+    "category_label": "Fromage de chèvre"
    },
    {
     "name": "Persillé des Aravis",
     "description": null,
     "unit": "pièce",
     "price_cents": 1500,
-    "icon": "🧀"
+    "icon": "fromage",
+    "icon_color": "brun",
+    "category_label": "Persillé"
    }
   ],
   "cover_photo": "producteurs/la-chevrerie-de-lily-1.jpg",
@@ -107,14 +117,18 @@
     "description": null,
     "unit": "pièce",
     "price_cents": 900,
-    "icon": "🧀"
+    "icon": "brebis",
+    "icon_color": "ardoise",
+    "category_label": "Fromage de brebis"
    },
    {
     "name": "Yaourts de brebis nature",
     "description": null,
     "unit": "lot de 4",
     "price_cents": 420,
-    "icon": "🥛"
+    "icon": "pot",
+    "icon_color": "ardoise",
+    "category_label": "Yaourt de brebis"
    }
   ],
   "cover_photo": "producteurs/la-ferme-du-peroset-1.jpg",
@@ -146,21 +160,27 @@
     "description": "environ 1,2 kg",
     "unit": "pièce",
     "price_cents": 2400,
-    "icon": "🧀"
+    "icon": "vache",
+    "icon_color": "terre",
+    "category_label": "Tomme de vache"
    },
    {
     "name": "Tomme fermière (demie)",
     "description": "environ 2,4 kg",
     "unit": "pièce",
     "price_cents": 4800,
-    "icon": "🧀"
+    "icon": "vache",
+    "icon_color": "terre",
+    "category_label": "Tomme de vache"
    },
    {
     "name": "Lait entier pasteurisé",
     "description": null,
     "unit": "litre",
     "price_cents": 170,
-    "icon": "🥛"
+    "icon": "lait",
+    "icon_color": "terre",
+    "category_label": "Lait de vache"
    }
   ],
   "cover_photo": "producteurs/la-ferme-du-ponant-1.jpg",
@@ -196,7 +216,9 @@
     "description": "Panier moyen de saison",
     "unit": "panier",
     "price_cents": 3029,
-    "icon": "🥕"
+    "icon": "carotte",
+    "icon_color": "orange",
+    "category_label": "Légumes et fruits"
    }
   ],
   "cover_photo": "producteurs/le-corti-des-aravis-1.jpg",
@@ -229,14 +251,18 @@
     "description": null,
     "unit": "panier",
     "price_cents": 1400,
-    "icon": "🥕"
+    "icon": "chou",
+    "icon_color": "vert",
+    "category_label": "Légumes"
    },
    {
     "name": "Grand panier de légumes",
     "description": null,
     "unit": "panier",
     "price_cents": 2000,
-    "icon": "🥕"
+    "icon": "chou",
+    "icon_color": "vert",
+    "category_label": "Légumes"
    }
   ],
   "cover_photo": "producteurs/le-jardin-des-solstices-1.jpg",
@@ -269,21 +295,27 @@
     "description": "Cagette",
     "unit": "5 kg",
     "price_cents": 1200,
-    "icon": "🍎"
+    "icon": "pomme",
+    "icon_color": "terre",
+    "category_label": "Pommes"
    },
    {
     "name": "Poires",
     "description": "Barquette",
     "unit": "2 kg",
     "price_cents": 650,
-    "icon": "🍎"
+    "icon": "poire",
+    "icon_color": "miel",
+    "category_label": "Poires"
    },
    {
     "name": "Pur jus de pommes",
     "description": null,
     "unit": "bouteille de 1 l",
     "price_cents": 380,
-    "icon": "🧃"
+    "icon": "jus",
+    "icon_color": "miel",
+    "category_label": "Jus de pommes"
    }
   ],
   "cover_photo": "producteurs/la-ferme-du-coteau-1.jpg",
@@ -314,21 +346,27 @@
     "description": "Blé T80 et seigle",
     "unit": "1 kg",
     "price_cents": 680,
-    "icon": "🍞"
+    "icon": "pain",
+    "icon_color": "miel",
+    "category_label": "Pain"
    },
    {
     "name": "Le Multigraines",
     "description": null,
     "unit": "750 g",
     "price_cents": 620,
-    "icon": "🍞"
+    "icon": "pain",
+    "icon_color": "miel",
+    "category_label": "Pain"
    },
    {
     "name": "Le Petit Épeautre",
     "description": null,
     "unit": "750 g",
     "price_cents": 780,
-    "icon": "🍞"
+    "icon": "pain",
+    "icon_color": "miel",
+    "category_label": "Pain"
    }
   ],
   "cover_photo": "producteurs/boulangerie-chez-geoffrey-1.jpg",
@@ -360,14 +398,18 @@
     "description": "Morceaux variés, sous vide",
     "unit": "colis de 5 kg",
     "price_cents": 9500,
-    "icon": "🥩"
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Viande de bœuf"
    },
    {
     "name": "Colis de veau",
     "description": null,
     "unit": "colis de 3 kg",
     "price_cents": 6600,
-    "icon": "🥩"
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Viande de veau"
    }
   ],
   "cover_photo": "producteurs/gaec-bibollet-1.jpg",
@@ -399,14 +441,18 @@
     "description": null,
     "unit": "boîte de 6",
     "price_cents": 240,
-    "icon": "🥚"
+    "icon": "oeuf",
+    "icon_color": "miel",
+    "category_label": "Œufs"
    },
    {
     "name": "Œufs bio",
     "description": null,
     "unit": "boîte de 12",
     "price_cents": 460,
-    "icon": "🥚"
+    "icon": "oeuf",
+    "icon_color": "miel",
+    "category_label": "Œufs"
    }
   ],
   "cover_photo": "producteurs/les-oeufs-d-alex-1.jpg",

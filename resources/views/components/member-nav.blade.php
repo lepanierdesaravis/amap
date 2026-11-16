@@ -4,13 +4,14 @@
     'espace.commandes-groupees.*' => ['🛍️', 'Commandes groupées'],
     'espace.calendrier' => ['📅', 'Mon calendrier'],
     'espace.paiements' => ['💶', 'Mes paiements'],
+    'espace.echanges' => ['💬', 'Échanges'],
     'espace.compte' => ['👤', 'Mon compte'],
 ])
 <div class="border-b border-brun/10 bg-white">
     <div class="mx-auto flex max-w-6xl items-center gap-1 overflow-x-auto px-4 lg:flex-wrap lg:overflow-visible">
         @foreach ($items as $pattern => [$icon, $label])
             <a href="{{ route(str_replace('.*', '.index', $pattern)) }}"
-               @class(['flex shrink-0 items-center gap-1.5 border-b-[3px] px-3 py-3 text-sm font-bold no-underline',
+               @class(['flex shrink-0 items-center gap-1.5 border-b-[3px] px-2.5 py-3 text-sm font-bold no-underline',
                        'border-terre text-brun' => request()->routeIs($pattern),
                        'border-transparent text-doux hover:text-brun' => ! request()->routeIs($pattern)])>
                 <span aria-hidden="true">{{ $icon }}</span>{{ $label }}

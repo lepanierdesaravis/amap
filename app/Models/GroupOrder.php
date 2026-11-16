@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class GroupOrder extends Model
 {
-    protected $fillable = ['group_purchase_id', 'user_id', 'total_cents', 'validated_at'];
+    protected $fillable = ['group_purchase_id', 'user_id', 'contract_id', 'total_cents', 'validated_at'];
 
     protected function casts(): array
     {
@@ -24,6 +24,12 @@ class GroupOrder extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    /** Engagement sur lequel la commande est déduite (pas de paiement à part). */
+    public function contract(): BelongsTo
+    {
+        return $this->belongsTo(Contract::class);
     }
 
     public function lines(): HasMany

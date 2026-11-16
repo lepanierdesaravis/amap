@@ -37,6 +37,19 @@
             </div>
         @endunless
 
+        @if ($this->remainingPlaces !== null)
+            @if ($this->remainingPlaces === 0 && ! $saved)
+                <div class="mt-6 rounded-2xl bg-terre-clair p-4 ring-1 ring-terre/30">
+                    <p class="font-bold">Ce contrat est complet.</p>
+                    <p class="text-sm text-doux">Le nombre de places est limité par le producteur. Contactez le référent si une place se libère.</p>
+                </div>
+            @elseif (! $saved)
+                <div class="mt-6 rounded-2xl bg-miel-clair p-4 text-sm ring-1 ring-miel/40">
+                    ⏳ Places limitées : <strong>plus que {{ $this->remainingPlaces }} place{{ $this->remainingPlaces > 1 ? 's' : '' }}</strong>. Premier arrivé, premier servi.
+                </div>
+            @endif
+        @endif
+
         @if ($saved && $editable)
             <div class="mt-6 rounded-2xl bg-vert-clair p-4 text-sm ring-1 ring-vert/30">
                 ✓ Vous avez déjà un contrat avec {{ $producer->name }}. Vous pouvez le modifier jusqu'au {{ $offer->closes_at->translatedFormat('j F') }}.
@@ -53,21 +66,41 @@
                         @php($dates = $selected[$product->id])
                         <article wire:key="product-{{ $product->id }}" @class(['card transition', 'ring-2 ring-vert' => $line['quantity'] > 0])>
                             <div class="flex items-start gap-4">
-                                <div class="text-3xl" aria-hidden="true">{{ $product->icon ?: '🧺' }}</div>
+                                @if ($product->photo)
+                                    <img src="{{ $product->photoUrl() }}" alt="" class="size-14 shrink-0 rounded-full object-cover">
+                                @else
+                                    {!! $product->iconBadge('3.5rem') !!}
+                                @endif
                                 <div class="flex-1">
                                     <h3 class="text-lg font-bold">{{ $product->name }}</h3>
-                                    <p class="text-sm text-doux">{{ $this->money($product->price_cents) }} par {{ $product->unit }}@if ($product->description) · {{ $product->description }}@endif</p>
+                                    <p class="text-sm text-doux">{{ $product->is_amount ? $this->money($product->price_cents).' pour la saison' : $this->money($product->price_cents).' par '.$product->unit }}@if ($product->description) · {{ $product->description }}@endif</p>
                                 </div>
+                                @if ($product->is_amount)
+                                    <button type="button" wire:click="chooseAmount({{ $product->id }})" @disabled(! $editable) aria-pressed="{{ $line['quantity'] > 0 ? 'true' : 'false' }}"
+                                            @class(['rounded-xl px-4 py-2 text-sm font-bold ring-1 disabled:opacity-40',
+                                                    'bg-vert text-white ring-vert' => $line['quantity'] > 0,
+                                                    'bg-white ring-brun/20 hover:bg-vert-clair' => $line['quantity'] === 0])>
+                                        {{ $line['quantity'] > 0 ? '✓ Choisi' : 'Choisir' }}
+                                    </button>
+                                @else
                                 <div class="flex items-center gap-2" role="group" aria-label="Quantité de {{ $product->name }}">
                                     <button type="button" wire:click="decrement({{ $product->id }})" @disabled(! $editable || $line['quantity'] === 0) class="size-10 rounded-xl bg-creme text-xl font-bold ring-1 ring-brun/20 hover:bg-vert-clair disabled:opacity-40" aria-label="Moins">−</button>
                                     <span class="w-6 text-center text-lg font-extrabold" aria-live="polite">{{ $line['quantity'] }}</span>
                                     <button type="button" wire:click="increment({{ $product->id }})" @disabled(! $editable) class="size-10 rounded-xl bg-vert text-xl font-bold text-white hover:bg-vert-fonce disabled:opacity-40" aria-label="Plus">+</button>
                                 </div>
+                                @endif
                             </div>
 
-                            @if ($line['quantity'] > 0)
+                            @if ($line['quantity'] > 0 && $product->is_amount && $offer->allowedFrequencies() === [])
+                                <p class="mt-4 border-t border-brun/10 pt-4 text-sm">
+                                    Engagement de <strong class="text-vert">{{ $this->money($product->price_cents) }}</strong> pour la saison.
+                                    @if ($offer->groupPurchases()->exists())
+                                        Vous commanderez vos produits au fil de la saison ; le producteur les déduit de ce montant.
+                                    @endif
+                                </p>
+                            @elseif ($line['quantity'] > 0)
                                 <div class="mt-4 border-t border-brun/10 pt-4">
-                                    <p class="label">À quel rythme ?</p>
+                                    <p class="label">{{ $product->is_amount ? 'Quand est-ce que je viens chercher mes produits ?' : 'À quel rythme ?' }}</p>
                                     <div class="flex flex-wrap gap-2">
                                         @foreach ($offer->allowedFrequencies() as $frequency)
                                             <label @class(['cursor-pointer rounded-xl px-3 py-2 text-sm font-bold ring-1 transition',
@@ -110,9 +143,14 @@
                                     @endif
 
                                     <p class="mt-4 text-sm">
-                                        <strong>{{ count($dates) }} livraison{{ count($dates) > 1 ? 's' : '' }}</strong>
-                                        × {{ $line['quantity'] }} × {{ $this->money($product->price_cents) }}
-                                        = <strong class="text-vert">{{ $this->money($product->price_cents * $line['quantity'] * count($dates)) }}</strong>
+                                        @if ($product->is_amount)
+                                            <strong>{{ count($dates) }} livraison{{ count($dates) > 1 ? 's' : '' }}</strong>
+                                            pour un engagement de <strong class="text-vert">{{ $this->money($this->lineTotal($product->id)) }}</strong>
+                                        @else
+                                            <strong>{{ count($dates) }} livraison{{ count($dates) > 1 ? 's' : '' }}</strong>
+                                            × {{ $line['quantity'] }} × {{ $this->money($product->price_cents) }}
+                                            = <strong class="text-vert">{{ $this->money($this->lineTotal($product->id)) }}</strong>
+                                        @endif
                                     </p>
                                 </div>
                             @endif
@@ -133,35 +171,8 @@
                 <section class="card" aria-labelledby="titre-calendrier">
                     <h2 id="titre-calendrier" class="text-xl font-bold">2. Mon calendrier</h2>
                     <p class="mt-1 text-sm text-doux">Vos livraisons apparaissent ici au fur et à mesure.</p>
-                    <div class="mt-4 max-h-[26rem] space-y-5 overflow-y-auto pr-1">
-                        @foreach ($this->months as $month)
-                            <div>
-                                <p class="mb-1.5 text-sm font-bold">{{ $month['label'] }}</p>
-                                <div class="grid grid-cols-7 gap-1 text-center text-[11px]">
-                                    @foreach (['L', 'M', 'M', 'J', 'V', 'S', 'D'] as $d)<div class="text-doux/70">{{ $d }}</div>@endforeach
-                                    @foreach ($month['cells'] as $cell)
-                                        @if ($cell === null)
-                                            <div></div>
-                                        @elseif ($cell['distribution'])
-                                            <div @class(['flex h-11 flex-col items-center justify-start rounded-lg pt-0.5 font-bold ring-1',
-                                                         'bg-vert-clair ring-vert' => $cell['icons'],
-                                                         'bg-white text-doux ring-sauge/60' => ! $cell['icons']])
-                                                 title="Distribution du {{ $cell['day'] }}">
-                                                {{ $cell['day'] }}
-                                                <span class="text-sm leading-none">{{ implode('', $cell['icons']) }}</span>
-                                            </div>
-                                        @else
-                                            <div class="h-11 pt-0.5 text-doux/40">{{ $cell['day'] }}</div>
-                                        @endif
-                                    @endforeach
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <p class="mt-3 flex items-center gap-2 text-xs text-doux">
-                        <span class="inline-block size-3 rounded bg-white ring-1 ring-sauge"></span> date de distribution
-                        <span class="ml-2 inline-block size-3 rounded bg-vert-clair ring-1 ring-vert"></span> je récupère un panier
-                    </p>
+                    <x-calendrier-saison :months="$this->months" :legend="$this->legend" compact class="mt-4 max-h-[30rem] overflow-y-auto pr-1 pb-24" />
+                    <p class="mt-3 text-xs text-doux">Les grandes icônes sont ce contrat ; les petites, ce que vous avez déjà commandé ailleurs. Survolez ou touchez une date pour le détail.</p>
                 </section>
 
                 <section class="card" aria-labelledby="titre-panier">

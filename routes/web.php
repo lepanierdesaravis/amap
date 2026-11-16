@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ExchangeController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProducerSpaceController;
 use App\Http\Controllers\PublicController;
@@ -43,6 +44,8 @@ Route::middleware('auth')->prefix('mon-espace')->name('espace.')->group(function
     Route::livewire('/commandes-groupees/{purchase:slug}', GroupOrderForm::class)->name('commandes-groupees.show');
     Route::get('/calendrier', [MemberController::class, 'calendar'])->name('calendrier');
     Route::get('/paiements', [MemberController::class, 'payments'])->name('paiements');
+    Route::get('/echanges', [ExchangeController::class, 'show'])->name('echanges');
+    Route::post('/echanges', [ExchangeController::class, 'store'])->middleware('throttle:10,60')->name('echanges.store');
     Route::get('/compte', [MemberController::class, 'account'])->name('compte');
     Route::put('/compte', [MemberController::class, 'updateAccount'])->name('compte.update');
 });
@@ -53,6 +56,7 @@ Route::middleware(['auth', 'role:producteur'])->prefix('espace-producteur')->nam
     Route::get('/distributions/{distribution}/recapitulatif', [ProducerSpaceController::class, 'summary'])->name('recapitulatif');
     Route::get('/distributions/{distribution}/emargement', [ProducerSpaceController::class, 'signInSheets'])->name('emargement');
     Route::post('/paiements/{installment}', [ProducerSpaceController::class, 'mark'])->name('pointage');
+    Route::get('/contrats/{offer}/adherents.{format}', [ProducerSpaceController::class, 'subscribers'])->whereIn('format', ['csv', 'pdf'])->name('adherents');
 });
 
 // Prototype uniquement : connexion en un clic aux comptes de démonstration (jamais en production).

@@ -36,7 +36,11 @@
                 <ul class="mt-4 divide-y divide-brun/10 rounded-2xl bg-white ring-1 ring-brun/10">
                     @foreach ($producer->products as $product)
                         <li class="flex items-center gap-3 px-4 py-3">
-                            <span class="text-2xl" aria-hidden="true">{{ $product->icon ?: '🧺' }}</span>
+                            @if ($product->photo)
+                                <img src="{{ $product->photoUrl() }}" alt="" loading="lazy" class="size-12 shrink-0 rounded-full object-cover">
+                            @else
+                                {!! $product->iconBadge('3rem') !!}
+                            @endif
                             <div class="flex-1"><p class="font-bold">{{ $product->name }}</p>@if ($product->description)<p class="text-sm text-doux">{{ $product->description }}</p>@endif</div>
                             <span class="text-sm font-bold whitespace-nowrap">{{ $product->priceLabel() }}</span>
                         </li>

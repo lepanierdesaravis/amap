@@ -24,7 +24,7 @@
                         <ul class="mt-2 grid gap-2 sm:grid-cols-2">
                             @foreach ($nextDeliveries as $d)
                                 <li class="flex items-center gap-3 rounded-xl bg-vert-clair px-3 py-2">
-                                    <span class="text-2xl" aria-hidden="true">{{ $d->icon ?: '🧺' }}</span>
+                                    <x-icone :icon="$d->icon" :color="$d->icon_color" size="2.25rem" />
                                     <span><strong>{{ $d->quantity }} × {{ $d->label }}</strong><br><span class="text-sm text-doux">{{ $d->producer->name }}</span></span>
                                 </li>
                             @endforeach

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Delivery extends Model
 {
-    protected $fillable = ['user_id', 'distribution_id', 'producer_id', 'source_type', 'source_id', 'label', 'icon', 'quantity'];
+    protected $fillable = ['user_id', 'distribution_id', 'producer_id', 'source_type', 'source_id', 'label', 'icon', 'icon_color', 'quantity'];
 
     public function user(): BelongsTo
     {

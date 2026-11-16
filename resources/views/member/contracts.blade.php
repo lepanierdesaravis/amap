@@ -22,14 +22,25 @@
                     @if ($contract)
                         <ul class="mt-4 space-y-1 rounded-xl bg-vert-clair p-3 text-sm">
                             @foreach ($contract->lines as $line)
-                                <li>✓ {{ $line->quantity }} × {{ $line->product->name }} — {{ $line->frequency->shortLabel() }} ({{ count($line->distribution_ids) }} livraisons)</li>
+                                @if ($line->is_amount && ! $line->distribution_ids)
+                                    <li>✓ {{ $line->product->name }}</li>
+                                @else
+                                    <li>✓ {{ $line->quantity }} × {{ $line->product->name }} — {{ $line->frequency->shortLabel() }} ({{ count($line->distribution_ids) }} livraisons)</li>
+                                @endif
                             @endforeach
                             <li class="pt-1 font-bold">Total : {{ \App\Support\Money::format($contract->total_cents) }} en {{ $contract->installments }} fois</li>
+                            @if ($contract->groupOrders()->exists() || $offer->groupPurchases()->exists())
+                                <li class="text-doux">Solde restant estimé : <strong class="text-brun">{{ \App\Support\Money::format($contract->remainingCents()) }}</strong> (le producteur tient le compte exact)</li>
+                            @endif
                         </ul>
                     @endif
 
                     <div class="mt-auto pt-4">
-                        @if ($offer->isOpen() && $canOrder)
+                        @if ($offer->max_contracts && ! $contract && $offer->isOpen())
+                            @php($left = $offer->remainingPlaces())
+                            <p @class(['mb-2 text-sm font-bold', 'text-tomate' => $left === 0, 'text-miel' => $left > 0])>{{ $left === 0 ? 'Complet' : "Plus que {$left} place".($left > 1 ? 's' : '') }}</p>
+                        @endif
+                        @if ($offer->isOpen() && $canOrder && ($contract || ! $offer->isFullFor()))
                             <a href="{{ route('espace.contrats.show', $offer) }}" class="{{ $contract ? 'btn-ghost' : 'btn-primary' }}">{{ $contract ? 'Modifier mon contrat' : 'Souscrire' }}</a>
                             <span class="ml-2 text-xs text-doux">jusqu'au {{ $offer->closes_at->translatedFormat('j F à H\hi') }}</span>
                         @elseif ($contract)

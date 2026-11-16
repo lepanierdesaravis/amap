@@ -27,6 +27,7 @@
 }
 
 @layer base {
+    [x-cloak] { display: none !important; }
     body { @apply bg-creme text-brun font-sans antialiased; }
     h1, h2, h3 { @apply font-display text-brun; }
     a { @apply underline-offset-2; }

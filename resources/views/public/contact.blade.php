@@ -3,7 +3,7 @@
         Votre message est transmis directement à la bonne personne selon le sujet choisi.
     </x-page-header>
     <div class="mx-auto grid max-w-6xl gap-10 px-4 py-10 lg:grid-cols-[1fr_340px]">
-        <form method="POST" action="{{ route('contact.store') }}" class="card space-y-4" novalidate>
+        <form method="POST" action="{{ route('contact.store') }}" class="card space-y-4" x-data="{ sender: @js(old('sender_type', 'curieux')) }" novalidate>
             @csrf
             <div class="hidden" aria-hidden="true"><label>Ne pas remplir <input type="text" name="site_web" tabindex="-1" autocomplete="off"></label></div>
             <div class="grid gap-4 sm:grid-cols-2">
@@ -14,7 +14,7 @@
             <div class="grid gap-4 sm:grid-cols-2">
                 <div>
                     <label class="label" for="sender_type">Je suis</label>
-                    <select class="input" id="sender_type" name="sender_type" required>
+                    <select class="input" id="sender_type" name="sender_type" x-model="sender" required>
                         @foreach ($senderTypes as $key => $label)<option value="{{ $key }}" @selected(old('sender_type', 'curieux') === $key)>{{ $label }}</option>@endforeach
                     </select>
                 </div>
@@ -24,6 +24,12 @@
                         @foreach ($subjects as $key => $label)<option value="{{ $key }}" @selected(old('subject') === $key)>{{ $label }}</option>@endforeach
                     </select>
                 </div>
+            </div>
+            <div x-show="sender === 'adherent'" x-cloak class="rounded-2xl bg-vert-clair p-4 text-sm ring-1 ring-vert/30">
+                <p class="font-bold">Vous êtes adhérent·e ?</p>
+                <p class="mt-1">Depuis votre espace, la page <strong>Échanges entre adhérents</strong> vous permet d'écrire à tous les adhérents, au référent d'un producteur ou au bureau.</p>
+                <a href="{{ route('espace.echanges') }}" class="btn-vert mt-3 py-2 text-sm">{{ auth()->check() ? 'Aller aux échanges' : 'Me connecter' }} →</a>
+                <p class="mt-2 text-xs text-doux">Vous pouvez aussi utiliser ce formulaire.</p>
             </div>
             <div><label class="label" for="message">Message</label><textarea class="input" id="message" name="message" rows="6" required>{{ old('message') }}</textarea>@error('message')<p class="mt-1 text-sm text-tomate">{{ $message }}</p>@enderror</div>
             <button class="btn-primary">Envoyer mon message</button>

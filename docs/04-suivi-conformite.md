@@ -1,6 +1,6 @@
 # Suivi de conformité au cahier des charges
 
-*État au 16/11/2026, sur le prototype (commit `ad05ad9`). Il est établi en relisant le code et les tests, pas encore par une recette complète.*
+*État au 16/11/2026, sur le prototype (commit `ad05ad9`, plus les retours du 16/11/2026 : CON-04, ADH-23 à ADH-26, REF-20 à REF-27, PRO-05, MEL-11 à MEL-13). Il est établi en relisant le code et les tests, pas encore par une recette complète.*
 
 Ce tableau dit, pour chaque exigence du [cahier des charges](02-cahier-des-charges.md), si le site la remplit. On le met à jour à chaque modification du cahier des charges et à chaque fonctionnalité fusionnée.
 
@@ -15,11 +15,11 @@ La colonne **Ticket** reçoit le numéro du ticket GitHub (`#12`) quand quelqu'u
 
 ## Résumé
 
-Sur 120 exigences : **57 faites**, **38 partielles**, **20 à faire**, **5 en attente**. Les évolutions futures (EVO) ne sont pas comptées.
+Sur 137 exigences : **75 faites**, **37 partielles**, **20 à faire**, **5 en attente**. Les évolutions futures (EVO) ne sont pas comptées.
 
 Ce qui manque surtout :
 - **Les permanences** : inscription, équipes, échanges, rappels, planning (ADH-17 à ADH-21, DOC-07, MEL-07). C'est le plus gros bloc, prévu en phase 2.
-- **Les e-mails automatiques** : validation de l'adresse, rappels, annonce automatique (MEL-01, MEL-05, MEL-07 à MEL-10). Il faut une tâche planifiée chez l'hébergeur.
+- **Les e-mails automatiques** : validation de l'adresse et rappels (MEL-01, MEL-05, MEL-07 à MEL-10). Les annonces d'ouverture sont faites ; elles demandent une tâche planifiée et une file d'attente chez l'hébergeur.
 - **Le contrat d'engagement en PDF** joint à la confirmation (DOC-05).
 - **Les exports Excel** (REF-17, PRO-02, ADM-08).
 - **L'adhésion en ligne** avec HelloAsso (ADH-04, PUB-06).
@@ -63,6 +63,7 @@ Ce qui manque surtout :
 | CON-01 | Champs du formulaire | ✅ | Formulation « Je suis » à valider (Q-10) | |
 | CON-02 | Routage par sujet | ✅ | Adresses dans `config/amap.php`. Aucun test automatique | |
 | CON-03 | Anti-spam et accusé de réception | ✅ | Champ piège, 5 envois par 10 minutes, accusé de réception. Aucun test automatique | |
+| CON-04 | Lien vers les échanges entre adhérents | ✅ | Encadré affiché quand on choisit « Adhérent·e » | |
 
 ## 5. Espace adhérent
 
@@ -90,6 +91,10 @@ Ce qui manque surtout :
 | ADH-20 | Absences consignées | ❌ | | |
 | ADH-21 | Inscription par un référent | ❌ | | |
 | ADH-22 | Mes paiements | ✅ | Attendu, reçu, encaissé | |
+| ADH-23 | Échanges entre adhérents | 🟡 | `/mon-espace/echanges` : à tous (3 par jour au plus), au référent d'un producteur, au bureau. Désinscription dans « Mon compte ». Pas encore d'écran de modération dans le back-office. Tests `FeedbackFeaturesTest` | |
+| ADH-24 | Calendrier de souscription avec les autres commandes | ✅ | Icônes du contrat en grand, autres en petit, infobulle au survol ou au toucher | |
+| ADH-25 | Vue d'ensemble dans « Mon calendrier » | ✅ | Un mois à la fois avec des flèches (ouvre sur le premier mois avec une livraison), bouton « Agrandir » : fenêtre avec tous les mois, jusqu'à la dernière livraison (un an au plus). Liste date par date en dessous | |
+| ADH-26 | Commande liée à un engagement | ✅ | Engagés : déduit, solde estimé affiché. Non engagés : réglé sur place. Test `une_commande_liee_a_un_engagement…` | |
 
 ## 6. Espace référent
 
@@ -99,6 +104,9 @@ Ce qui manque surtout :
 | REF-02 | Fiche publique générée | ✅ | | |
 | REF-03 | Inviter le producteur à créer son compte | 🟡 | On rattache un compte existant. Pas d'e-mail d'invitation | |
 | REF-04 | Produits, duplication | ✅ | | |
+| REF-20 | Banque d'icônes, couleur, type de produit | ✅ | 76 icônes (game-icons.net, CC BY 3.0) dans `config/icones.php`, 10 couleurs, le sélecteur suit la couleur choisie. Une icône dans une couleur par producteur. Test `le_referent_choisit_une_icone_libre…` | |
+| REF-21 | Photo du produit | ✅ | Fiche producteur et souscription. Le calendrier garde l'icône | |
+| REF-22 | Montants d'engagement | ✅ | Produit « montant » : le prix vaut pour la saison. Test `un_montant_d_engagement_vaut_pour_la_saison` | |
 | REF-05 | Période et distributions de l'offre | ✅ | Calculées d'après la présence du producteur | |
 | REF-06 | Produits et prix de l'offre | ✅ | | |
 | REF-07 | Fréquences autorisées | ✅ | | |
@@ -106,11 +114,16 @@ Ce qui manque surtout :
 | REF-09 | Ordre des chèques et RIB | ✅ | Sur la fiche producteur | |
 | REF-10 | Texte du contrat à partir d'un modèle | 🟡 | Texte libre, pas de modèle | |
 | REF-11 | Ouverture et clôture des souscriptions | ✅ | | |
-| REF-12 | Dupliquer l'offre de l'an dernier | ✅ | | |
+| REF-12 | Dupliquer l'offre de l'an dernier | ✅ | Décalage d'un an, six mois ou trois mois | |
+| REF-23 | Liste des adhérents pour le producteur | ✅ | PDF et CSV, dans le back-office et, si la case est cochée, dans l'espace producteur | |
+| REF-25 | Contrats trimestriels | ✅ | Durée annuelle, semestrielle ou trimestrielle dans le formulaire | |
+| REF-26 | Nombre de contrats limité | ✅ | Verrou en base contre les dépassements. Test `le_nombre_de_contrats_peut_etre_limite` | |
+| REF-27 | Annonce de l'ouverture d'un contrat | ✅ | À tous ou aux contrats en cours avec le producteur (Q-11). Demande la tâche planifiée | |
 | REF-13 | Formulaire de commande groupée | 🟡 | Tout, sauf la quantité maximale au total | |
 | REF-14 | Ouverture et fermeture automatiques | ✅ | Calculées à partir des dates | |
-| REF-15 | Annonce par e-mail à l'ouverture | 🟡 | Bouton « Annoncer aux adhérents ». L'envoi automatique à l'ouverture n'est pas fait (il demande une tâche planifiée) | |
+| REF-15 | Annonce par e-mail à l'ouverture | ✅ | Automatique (`amap:annonces`, toutes les 5 minutes), plus le bouton « Annoncer aux adhérents ». Demande la tâche planifiée | |
 | REF-16 | Dupliquer une commande groupée | ✅ | | |
+| REF-24 | Commande liée à un engagement, répétée | ✅ | Action « Répéter à chaque distribution », mêmes horaires. Test `une_commande_se_repete…` | |
 | REF-17 | Listes, filtres, export Excel | 🟡 | Listes et filtres : oui. Export Excel : non | |
 | REF-18 | Outil de pointage | ✅ | Reçu, encaissé, n° de chèque, pointage groupé | |
 | REF-19 | Documents de distribution | ✅ | Récapitulatif et émargement en PDF | |
@@ -123,6 +136,7 @@ Ce qui manque surtout :
 | PRO-02 | Récapitulatif en ligne, PDF, Excel, e-mail | 🟡 | En ligne, PDF et e-mail : oui. Excel : non | |
 | PRO-03 | Pointage de ses paiements | ✅ | | |
 | PRO-04 | Modifier sa fiche (à décider) | ⏸ | Q-01 : pour l'instant, il passe par son référent | |
+| PRO-05 | Liste de ses adhérents engagés | ✅ | Si le référent l'autorise (REF-23) | |
 
 ## 8. Administration
 
@@ -162,20 +176,23 @@ Ce qui manque surtout :
 
 ## 11. E-mails automatiques
 
-Les rappels (MEL-05, MEL-07 à MEL-10) demandent une tâche planifiée (cron), à prévoir chez l'hébergeur.
+Les annonces (MEL-04, MEL-11, MEL-12) et les rappels (MEL-05, MEL-07 à MEL-10) demandent la tâche planifiée `* * * * * php artisan schedule:run`, et l'envoi des e-mails groupés une file d'attente (`queue:work`). À prévoir chez l'hébergeur.
 
 | N° | Exigence | État | Remarques | Ticket |
 |----|----------|------|-----------|--------|
 | MEL-01 | Validation de l'adresse e-mail | ❌ | Voir ADH-02 | |
 | MEL-02 | Formulaire de contact | ✅ | | |
 | MEL-03 | Confirmation de contrat ou de commande | 🟡 | Envoyé à l'adhérent. Sans copie au référent, sans contrat PDF | |
-| MEL-04 | Ouverture d'une commande groupée | 🟡 | Envoi manuel par le référent (REF-15) | |
+| MEL-04 | Ouverture d'une commande groupée | ✅ | Automatique si l'option est cochée (REF-15) | |
 | MEL-05 | J-2 avant clôture d'une commande groupée | ❌ | | |
 | MEL-06 | Clôture d'une distribution | ✅ | PDF joint | |
 | MEL-07 | J-5 avant une permanence | ❌ | | |
 | MEL-08 | J-3 avant une distribution | ❌ | Facultatif | |
 | MEL-09 | Échéance de paiement à venir | ❌ | Facultatif | |
 | MEL-10 | Renouvellement de l'adhésion | ❌ | | |
+| MEL-11 | Ouverture des souscriptions d'un contrat | ✅ | REF-27 | |
+| MEL-12 | Ouverture d'une commande liée | ✅ | Aux adhérents engagés seulement (Q-12) | |
+| MEL-13 | Message d'échange entre adhérents | ✅ | « Répondre » écrit à l'expéditeur | |
 
 ## 12. Exigences non fonctionnelles
 
@@ -187,7 +204,7 @@ Les rappels (MEL-05, MEL-07 à MEL-10) demandent une tâche planifiée (cron), �
 | NF-04 | RGPD | 🟡 | Politique de confidentialité, consentement téléphone, aucun traceur. Suppression de son compte par l'adhérent : non | |
 | NF-05 | Sécurité | 🟡 | Mots de passe chiffrés, droits testés côté serveur, HTTPS sur la recette. Pas de journal des actions sensibles | |
 | NF-06 | Sauvegardes | ❌ | À mettre en place chez l'hébergeur | |
-| NF-07 | Tests, environnement de test, déploiement automatisé | 🟡 | 19 tests automatiques, site de recette. Déploiement manuel, pas d'intégration continue | |
+| NF-07 | Tests, environnement de test, déploiement automatisé | 🟡 | 30 tests automatiques, site de recette. Déploiement manuel, pas d'intégration continue | |
 | NF-08 | Portabilité | 🟡 | Nom, adresses, cotisation et sujets dans `config/amap.php`. Logo, couleurs et textes des pages restent propres à l'AMAP. Installation documentée pour le développement seulement | |
 | NF-09 | Performance | ✅ | Pages légères. Optimisation automatique des images à faire | |
 
@@ -213,7 +230,7 @@ EVO-01 à EVO-06 : ⏸ hors V1.
 |----|----------|------|--------------------------|
 | Q-01 | Le producteur modifie-t-il sa fiche ? | Tranché le 15/11/2026 : il passe par son référent | Pas de modification par le producteur |
 | Q-02 | Plusieurs référents par producteur ? | Ouvert | Un seul référent |
-| Q-03 | Produits « Engagement de 50 / 100 / 1000 € » | Ouvert | Non gérés |
+| Q-03 | Produits « Engagement de 50 / 100 / 1000 € » | Tranché le 16/11/2026 : montant comme un produit, ou crédit pour des commandes liées | REF-22, ADH-26 |
 | Q-04 | Fréquences des contrats | Ouvert | Toutes, 1 sur 2 et dates au choix, au choix du référent |
 | Q-05 | Modifier son contrat après la clôture ? | Ouvert | Non |
 | Q-06 | Livraisons hors distribution AMAP en V1 ? | Ouvert | Non gérées |
@@ -221,3 +238,5 @@ EVO-01 à EVO-06 : ⏸ hors V1.
 | Q-08 | Permanences « 3 vœux » : qui sélectionne ? | Ouvert | Fonction absente |
 | Q-09 | Prix visibles publiquement ? | Ouvert | Visibles |
 | Q-10 | Formulation « Je suis » | Ouvert | « Je découvre l'AMAP » |
+| Q-11 | Annonce d'un contrat : à qui par défaut ? | Ouvert | Au choix du référent, pour chaque offre |
+| Q-12 | Commandes liées : prévenir aussi les non-engagés ? | Ouvert | Seuls les engagés reçoivent l'e-mail |

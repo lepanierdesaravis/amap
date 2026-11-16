@@ -7,6 +7,7 @@ use Database\Factories\UserFactory;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasName;
 use Filament\Panel;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -22,7 +23,7 @@ class User extends Authenticatable implements FilamentUser, HasName
 
     protected $fillable = [
         'first_name', 'last_name', 'email', 'password',
-        'phone', 'phone_secondary', 'address', 'postal_code', 'city', 'share_phone',
+        'phone', 'phone_secondary', 'address', 'postal_code', 'city', 'share_phone', 'accepts_member_messages',
     ];
 
     protected $hidden = ['password', 'remember_token'];
@@ -33,6 +34,7 @@ class User extends Authenticatable implements FilamentUser, HasName
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'share_phone' => 'boolean',
+            'accepts_member_messages' => 'boolean',
         ];
     }
 
@@ -93,6 +95,12 @@ class User extends Authenticatable implements FilamentUser, HasName
             ->whereIn('year', [now()->year, now()->year + 1])
             ->whereNotNull('paid_at')
             ->exists();
+    }
+
+    /** Adhérents à jour de cotisation (année en cours ou suivante). */
+    public function scopeMembersInGoodStanding(Builder $query): void
+    {
+        $query->whereHas('memberships', fn ($q) => $q->whereIn('year', [now()->year, now()->year + 1])->whereNotNull('paid_at'));
     }
 
     /** Producteurs gérés par ce référent (celui qui les a créés). */

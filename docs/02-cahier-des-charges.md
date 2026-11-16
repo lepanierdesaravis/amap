@@ -1,4 +1,4 @@
-# Cahier des charges (v1.1 – 16/11/2026)
+# Cahier des charges (v1.2 – 16/11/2026)
 
 *Version mise en forme du cahier des charges initial (fichier org de l'AMAP). Elle intègre les réponses à l'audit et les règles tirées des documents existants : contrat type 2026 du Corti des Aravis, code de bonne conduite 2026, bulletin d'adhésion et planning 2026.*
 
@@ -115,6 +115,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 -   **CON-01** Champs : Nom, Prénom, E-mail, « Je suis » (adhérent·e / producteur·rice / personne intéressée par l'AMAP — formulation à affiner), Sujet (liste déroulante), Message.
 -   **CON-02** Les sujets proposés sont : Adhésion, Commandes et contrats, Permanences, Devenir producteur partenaire, Site internet, Autre. Chaque sujet est **envoyé à l'adresse ou à l'alias adapté** (§13).
 -   **CON-03** Anti-spam : champ caché piège et limitation du nombre d'envois, sans captcha intrusif. La vérification de l'adresse e-mail est inutile pour un simple message. Un accusé de réception est envoyé à l'expéditeur.
+-   **CON-04** Quand l'expéditeur choisit « Je suis adhérent·e », le formulaire propose un lien vers « Échanges entre adhérents » (ADH-23), après connexion.
 
 ## 5. Espace adhérent
 
@@ -163,6 +164,21 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 
 **ADH-22** Il affiche la liste de mes échéances par producteur et leur statut de pointage (en lecture seule) : attendu, reçu ou encaissé.
 
+### 5.7 Échanges entre adhérents (retours du 16/11/2026)
+
+-   **ADH-23** Page « Échanges entre adhérents » dans l'espace adhérent. L'adhérent écrit :
+    -   à **tous les adhérents** (réservé aux adhérents à jour de cotisation, nombre de messages par jour limité) ;
+    -   au **référent d'un producteur**, choisi dans une liste (par exemple pour une question sur ses produits) ;
+    -   au **bureau** (administrateurs).
+
+    Les adresses ne sont pas affichées : le message part par e-mail, et « Répondre » écrit directement à l'expéditeur. Les derniers messages à tous restent consultables sur la page. Chaque adhérent peut refuser de recevoir les messages des autres adhérents (case dans « Mon compte »). Fonctionnalité de base, à enrichir.
+
+### 5.8 Calendrier enrichi et commandes liées à un engagement (retours du 16/11/2026)
+
+-   **ADH-24** Pendant la souscription, le calendrier montre aussi ce que l'adhérent reçoit déjà chez d'autres producteurs : icônes du contrat en cours en grand, autres commandes en petit. Au survol (ou au toucher) d'une date, une infobulle détaille tout ce qui est commandé.
+-   **ADH-25** « Mon calendrier » commence par la même vue, en petit : un mois à la fois, avec des flèches pour passer au mois suivant, et un bouton pour l'agrandir en fenêtre avec tous les mois. Elle garde toutes les icônes et les infobulles. La liste date par date reste en dessous.
+-   **ADH-26** **Commande liée à un engagement** (exemple : boulangerie). L'adhérent s'engage sur un montant pour l'année (REF-22), puis commande ses produits tous les 15 jours (REF-24). S'il est engagé, il n'a rien à régler : le producteur déduit la commande du solde, et le site affiche une **estimation du solde restant**. Un adhérent non engagé peut aussi commander, pour du ponctuel : le site calcule le montant à régler **sur place** au producteur, à la distribution.
+
 ## 6. Espace référent (back-office)
 
 ### 6.1 Ajouter ou modifier un producteur
@@ -180,6 +196,9 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 ### 6.2 Produits et offres de contrat (le « magasin » standard)
 
 -   **REF-04** **Produits** : nom, description, photo, unité (panier, pièce, kg, litre…), prix unitaire, actif ou inactif. On peut **dupliquer** un produit.
+-   **REF-20** **Icône de chaque produit**, choisie dans une banque d'icônes (légumes, fruits, animaux, pain…), avec une **couleur** et un type de produit pour la légende (par exemple une chèvre noire pour « Fromage de chèvre »). Une même icône dans une même couleur ne peut pas servir à deux producteurs : deux chevriers prennent la chèvre en noir et en blanc. Dans le sélecteur, les icônes prennent la couleur choisie.
+-   **REF-21** Une **photo** peut remplacer l'icône sur la fiche producteur et l'écran de souscription. Le calendrier garde toujours l'icône.
+-   **REF-22** **Montants d'engagement** : au lieu de produits, le référent peut proposer plusieurs montants qu'il définit (par exemple 50 €, 100 €, 200 €), pour les producteurs dont les produits varient dans l'année. Le montant vaut pour toute la saison, quel que soit le nombre de livraisons.
 -   **Offre de contrat** (par producteur et par saison) :
     -   **REF-05** période (par exemple du 6 juin au 27 novembre) et distributions concernées, cochées automatiquement selon la présence du producteur ;
     -   **REF-06** produits proposés et prix ;
@@ -189,6 +208,10 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
     -   **REF-10** texte du contrat (articles), à partir d'un modèle ;
     -   **REF-11** **date et heure d'ouverture et de clôture des souscriptions**.
 -   **REF-12** Le bouton « Dupliquer l'offre de l'an dernier » permet de préparer la saison suivante.
+-   **REF-23** Case à cocher « le producteur peut télécharger la liste des adhérents » : prénom, nom, e-mail et engagement des souscripteurs, en PDF ou en tableur (PRO-05). Le référent peut toujours la télécharger.
+-   **REF-25** Les contrats sont en général **annuels**, mais certains sont **trimestriels** (ou semestriels) : le choix de la durée remplit les dates, et la duplication décale l'offre d'un an, de six mois ou de trois mois.
+-   **REF-26** **Nombre de contrats limité** (facultatif) : premier arrivé, premier servi. L'écran indique les places restantes, puis « Complet ».
+-   **REF-27** **Annonce de l'ouverture** des souscriptions par e-mail (MEL-11), au choix : à tous les adhérents, ou seulement à ceux qui ont un contrat en cours avec ce producteur.
 
 ### 6.3 Créer une commande groupée
 
@@ -196,6 +219,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 -   **REF-14** Ouverture et fermeture automatiques.
 -   **REF-15** Option : **e-mail d'annonce aux adhérents** à l'ouverture.
 -   **REF-16** Le bouton « Dupliquer » permet de relancer une commande d'une année sur l'autre.
+-   **REF-24** Une commande groupée peut être **liée à un engagement** (ADH-26) et **répétée à chaque distribution** du producteur, avec les mêmes horaires (par exemple ouverture le mercredi à 12 h, clôture le jeudi à 18 h). Les adhérents engagés reçoivent à chaque ouverture un e-mail qui les invite à commander (MEL-12).
 
 ### 6.4 Suivi et pointage
 
@@ -209,6 +233,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 -   **PRO-02** **Récapitulatif des commandes** passées chez lui : par distribution, par produit et par adhérent. Il peut le consulter en ligne, le télécharger en PDF ou en Excel, et le reçoit par e-mail.
 -   **PRO-03** **Outil de pointage** de ses paiements (mêmes fonctions que pour le référent, limitées à ses adhérents).
 -   **PRO-04** (À décider) Modification de sa propre fiche et de ses produits, avec validation par le référent.
+-   **PRO-05** Téléchargement de la liste de ses adhérents engagés (PDF ou tableur), si le référent l'a autorisé (REF-23).
 
 ## 8. Administration
 
@@ -258,6 +283,9 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 | MEL-08 | J-3 avant une distribution (option)             | Adhérents concernés                     | « Samedi vous récupérez : … »             |
 | MEL-09 | Échéance de paiement à venir (option)           | Adhérent                                | Rappel                                    |
 | MEL-10 | Renouvellement de l'adhésion (novembre)         | Adhérents                               | Invitation à réadhérer                    |
+| MEL-11 | Ouverture des souscriptions d'un contrat        | Tous les adhérents ou ceux en contrat avec le producteur (au choix) | Annonce et lien |
+| MEL-12 | Ouverture d'une commande liée à un engagement   | Adhérents engagés                       | Invitation à commander, avec le lien      |
+| MEL-13 | Message « Échanges entre adhérents »            | Adhérents, référent ou bureau           | Message, réponse directe à l'expéditeur   |
 
 ## 12. Exigences non fonctionnelles
 
@@ -299,7 +327,9 @@ Le responsable fonctionnel les tranche avec l'association. La réponse est alors
 
 -   **Q-01** Le producteur modifie-t-il lui-même sa fiche et ses produits, ou passe-t-il toujours par son référent ? (ROL-10, PRO-04)
 -   **Q-02** Plusieurs référents peuvent-ils gérer un même producteur ? (ROL-17)
--   **Q-03** Que recouvrent les produits « Engagement de 50 € / 100 € / 1000 € pour l'année » de la boutique actuelle : un crédit à utiliser, ou un contrat au montant ?
+-   **Q-03** ~~Que recouvrent les produits « Engagement de 50 € / 100 € / 1000 € pour l'année » de la boutique actuelle : un crédit à utiliser, ou un contrat au montant ?~~ Tranché le 16/11/2026 : les deux. Un montant peut se proposer comme un produit (REF-22), et servir de crédit pour des commandes liées (ADH-26, REF-24).
+-   **Q-11** L'annonce d'ouverture d'un contrat va-t-elle par défaut à tous les adhérents, ou seulement à ceux qui ont un contrat en cours ? Le site permet les deux (REF-27).
+-   **Q-12** Pour les commandes liées à un engagement, les adhérents non engagés doivent-ils aussi recevoir l'e-mail d'ouverture ? Aujourd'hui, seuls les engagés le reçoivent ; les autres voient la commande dans leur espace. (MEL-12)
 -   **Q-04** Les contrats ont-ils tous les mêmes fréquences (toutes / 1 sur 2), ou faut-il des choix de dates libres ? (ADH-07)
 -   **Q-05** Après la clôture des souscriptions, l'adhérent peut-il encore modifier son contrat ? (ADH-10)
 -   **Q-06** Faut-il gérer les livraisons hors distribution AMAP (autre lieu ou autre jour) dès la V1 ? (DIS-02)

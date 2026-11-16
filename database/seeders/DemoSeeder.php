@@ -2,12 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Enums\Audience;
 use App\Enums\DistributionStatus;
 use App\Enums\Frequency;
 use App\Enums\InstallmentStatus;
 use App\Enums\Participation;
 use App\Enums\PaymentMethod;
 use App\Enums\Role;
+use App\Filament\Resources\GroupPurchases\Tables\GroupPurchasesTable;
 use App\Models\ContractOffer;
 use App\Models\Distribution;
 use App\Models\GroupPurchase;
@@ -21,6 +23,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 
 class DemoSeeder extends Seeder
 {
@@ -41,7 +44,9 @@ class DemoSeeder extends Seeder
         $this->distributions();
         $this->offers();
         $this->groupPurchases();
+        $this->bakery();
         $this->ordersAndContracts();
+        $this->breadOrders();
     }
 
     private function user(string $first, string $last, string $email, array $roles, bool $member = true): User
@@ -143,23 +148,92 @@ class DemoSeeder extends Seeder
     {
         $plans = [['installments' => 1, 'months' => [3]], ['installments' => 3, 'months' => [3, 6, 9]]];
 
-        foreach (Producer::whereIn('participation', [Participation::Contract, Participation::Both])->get() as $producer) {
+        foreach (Producer::whereIn('participation', [Participation::Contract, Participation::Both])->where('slug', '!=', 'boulangerie-chez-geoffrey')->get() as $producer) {
             $corti = $producer->slug === 'le-corti-des-aravis';
-            $offer = ContractOffer::updateOrCreate(['producer_id' => $producer->id, 'title' => $corti ? 'Paniers légumes et fruits 2027' : 'Contrat 2027'], [
+            // La Ferme du Coteau propose des contrats trimestriels.
+            $quarterly = $producer->slug === 'la-ferme-du-coteau';
+            $title = match (true) {
+                $corti => 'Paniers légumes et fruits 2027',
+                $quarterly => 'Fruits – 1er trimestre 2027',
+                default => 'Contrat 2027',
+            };
+            $offer = ContractOffer::updateOrCreate(['producer_id' => $producer->id, 'title' => $title], [
                 'starts_on' => $corti ? '2027-06-01' : '2027-01-01',
-                'ends_on' => $corti ? '2027-11-30' : '2027-12-31',
+                'ends_on' => match (true) {
+                    $corti => '2027-11-30',
+                    $quarterly => '2027-03-31',
+                    default => '2027-12-31',
+                },
+                // Places limitées chez La Chèvrerie de Lily (premier arrivé, premier servi).
+                'max_contracts' => $producer->slug === 'la-chevrerie-de-lily' ? 9 : null,
+                'share_members_with_producer' => $corti,
+                'announce_to' => Audience::AllMembers,
+                'announced_at' => '2026-11-14 08:05',
                 'opens_at' => '2026-11-14 08:00',
                 'closes_at' => '2026-12-20 20:00',
                 'frequencies' => match ($producer->slug) {
                     'gaec-bibollet', 'la-ferme-du-coteau' => [Frequency::Every->value, Frequency::Alternate->value, Frequency::Custom->value],
                     default => [Frequency::Every->value, Frequency::Alternate->value],
                 },
-                'payment_plans' => $corti ? [...$plans, ['installments' => 6, 'months' => [6, 7, 8, 9, 10, 11]]] : $plans,
+                'payment_plans' => match (true) {
+                    $corti => [...$plans, ['installments' => 6, 'months' => [6, 7, 8, 9, 10, 11]]],
+                    $quarterly => [['installments' => 1, 'months' => [1]], ['installments' => 3, 'months' => [1, 2, 3]]],
+                    default => $plans,
+                },
                 'terms' => '<p><strong>Engagement du producteur :</strong> livrer des produits de saison, au fur et à mesure des récoltes, et informer les adhérents sur ses pratiques.</p><p><strong>Engagement de l\'adhérent :</strong> régler d\'avance, récupérer ou faire récupérer ses produits, accepter les aléas de la production. En cas d\'absence, aucun remboursement ni rattrapage.</p><p><em>Texte d\'exemple du prototype.</em></p>',
                 'is_published' => true,
             ]);
-            $offer->products()->sync($producer->products()->pluck('id'));
+            $offer->products()->sync($producer->products()->where('is_amount', false)->pluck('id'));
         }
+    }
+
+    /**
+     * Boulangerie : engagement annuel en montant, puis pain commandé tous les 15 jours
+     * (ouverture le mercredi à 12 h, clôture le jeudi à 18 h). La boulangère déduit les
+     * commandes du solde ; les adhérents non engagés commandent aussi et règlent sur place.
+     */
+    private function bakery(): void
+    {
+        $producer = Producer::firstWhere('slug', 'boulangerie-chez-geoffrey');
+        $amounts = collect([100_00, 200_00, 300_00])->map(fn (int $cents, int $i) => $producer->products()->updateOrCreate(
+            ['name' => 'Engagement '.($cents / 100).' €'],
+            ['unit' => 'engagement', 'price_cents' => $cents, 'is_amount' => true, 'icon' => 'pain', 'icon_color' => 'miel', 'category_label' => 'Pain', 'sort' => 10 + $i],
+        ));
+
+        $offer = ContractOffer::updateOrCreate(['producer_id' => $producer->id, 'title' => 'Engagement pain 2027'], [
+            'starts_on' => '2026-11-21', 'ends_on' => '2027-12-31',
+            'opens_at' => '2026-11-10 08:00', 'closes_at' => '2026-12-20 20:00',
+            'frequencies' => [],
+            'payment_plans' => [['installments' => 1, 'months' => [12]], ['installments' => 2, 'months' => [12, 6]]],
+            'share_members_with_producer' => true,
+            'terms' => '<p>Vous vous engagez sur un montant pour l\'année. Tous les 15 jours, vous commandez le pain que vous voulez : la boulangère déduit chaque commande de votre engagement.</p><p><em>Texte d\'exemple du prototype.</em></p>',
+            'is_published' => true,
+        ]);
+        $offer->products()->sync($amounts->pluck('id'));
+
+        $first = Distribution::whereDate('date', '2026-11-21')->first();
+        $model = GroupPurchase::updateOrCreate(['title' => 'Pain de la quinzaine – 21 novembre'], [
+            'producer_id' => $producer->id, 'contract_offer_id' => $offer->id, 'referent_id' => $producer->referent_id,
+            'description' => 'Pains au levain, cuits au feu de bois.',
+            'opens_at' => '2026-11-18 12:00', 'closes_at' => '2026-11-19 18:00', 'distribution_id' => $first->id,
+        ]);
+        foreach ($producer->products()->where('is_amount', false)->get() as $i => $bread) {
+            $model->items()->updateOrCreate(['name' => $bread->name], ['packaging' => $bread->unit, 'price_cents' => $bread->price_cents, 'max_per_member' => 4, 'sort' => $i]);
+        }
+        GroupPurchasesTable::repeat($model, Carbon::parse('2027-02-28'));
+
+        // Pour la démonstration, la première commande est déjà ouverte.
+        $model->update(['opens_at' => now()->subHour()->startOfHour()]);
+    }
+
+    /** Une partie des adhérents engagés a déjà commandé son pain. */
+    private function breadOrders(): void
+    {
+        $purchase = GroupPurchase::where('title', 'Pain de la quinzaine – 21 novembre')->with('items', 'contractOffer.contracts.user')->first();
+        foreach ($purchase->contractOffer->contracts->take(5) as $contract) {
+            app(OrderService::class)->saveGroupOrder($contract->user, $purchase, $purchase->items->random(2)->mapWithKeys(fn ($item) => [$item->id => mt_rand(1, 2)])->all());
+        }
+        $purchase->update(['announced_at' => now()]);
     }
 
     private function groupPurchases(): void
@@ -185,7 +259,7 @@ class DemoSeeder extends Seeder
 
         foreach ($purchases as [$title, $slug, $opens, $closes, $date, $description, $payment, $items]) {
             $purchase = GroupPurchase::updateOrCreate(['title' => $title], [
-                'producer_id' => $producer($slug), 'referent_id' => $marc->id, 'description' => $description,
+                'producer_id' => $producer($slug), 'referent_id' => $marc->id, 'description' => $description, 'announced_at' => $opens,
                 'opens_at' => $opens, 'closes_at' => $closes, 'distribution_id' => $dist($date), 'payment_info' => $payment,
             ]);
             foreach ($items as $i => [$name, $packaging, $price, $max]) {
@@ -215,13 +289,27 @@ class DemoSeeder extends Seeder
                         'product_id' => $product->id,
                         'quantity' => 1,
                         'frequency' => $frequency,
-                        'distribution_ids' => $planner->distributionIds($distributions, $frequency, mt_rand(0, 1)),
+                        // Engagement en montant sans fréquence : les livraisons viennent des commandes.
+                        'distribution_ids' => $product->is_amount && ! $offer->allowedFrequencies()
+                            ? [] : $planner->distributionIds($distributions, $frequency, mt_rand(0, 1)),
                     ];
                 }
                 $plan = collect($offer->paymentPlans())->random();
-                $orders->saveContract($member, $offer, $lines, $plan['installments'], mt_rand(0, 3) ? PaymentMethod::Cheque : PaymentMethod::Transfer);
+                try {
+                    $orders->saveContract($member, $offer, $lines, $plan['installments'], mt_rand(0, 3) ? PaymentMethod::Cheque : PaymentMethod::Transfer);
+                } catch (ValidationException) {
+                    // Contrat complet : l'adhérent n'a pas eu de place.
+                }
             }
         }
+
+        // Claire a déjà ses œufs : ses autres souscriptions montrent les œufs en petit dans le calendrier.
+        $claire = User::firstWhere('email', 'claire.martin@exemple.fr');
+        $eggs = $offers->first(fn ($o) => $o->producer->slug === 'les-oeufs-d-alex');
+        $orders->saveContract($claire, $eggs, [[
+            'product_id' => $eggs->products->first()->id, 'quantity' => 1, 'frequency' => Frequency::Alternate,
+            'distribution_ids' => $planner->distributionIds($eggs->distributions(), Frequency::Alternate),
+        ]], 1, PaymentMethod::Cheque);
 
         // Commandes groupées ouvertes : une partie des adhérents a déjà commandé.
         foreach (GroupPurchase::open()->with('items')->get() as $purchase) {

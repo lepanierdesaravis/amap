@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ContractOffer;
 use App\Models\Distribution;
 use App\Models\GroupPurchase;
+use App\Services\SeasonCalendar;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -54,7 +55,7 @@ class MemberController extends Controller
         ]);
     }
 
-    public function calendar(Request $request): View
+    public function calendar(Request $request, SeasonCalendar $calendar): View
     {
         $deliveries = $request->user()->deliveries()
             ->with(['distribution', 'producer'])
@@ -63,9 +64,17 @@ class MemberController extends Controller
 
         $distributions = Distribution::whereDate('date', '>=', today()->subMonth())->orderBy('date')->take(30)->get();
 
+        // Vue d'ensemble : du mois en cours à la dernière livraison prévue (un an au plus).
+        $from = today()->startOfMonth();
+        $last = $deliveries->max(fn ($d) => $d->distribution->date);
+        $to = $last ? min($last, today()->addMonths(11)->endOfMonth()) : today()->addMonths(2)->endOfMonth();
+        $entries = SeasonCalendar::entriesFromDeliveries($deliveries, current: true);
+
         return view('member.calendar', [
             'distributions' => $distributions,
             'byDistribution' => $deliveries->groupBy('distribution_id'),
+            'months' => $calendar->months($from, $to, Distribution::whereBetween('date', [$from, $to])->get(), $entries),
+            'legend' => $calendar->legend($entries),
         ]);
     }
 
@@ -96,7 +105,7 @@ class MemberController extends Controller
             'city' => ['nullable', 'string', 'max:80'],
         ]);
 
-        $request->user()->update([...$data, 'share_phone' => $request->boolean('share_phone')]);
+        $request->user()->update([...$data, 'share_phone' => $request->boolean('share_phone'), 'accepts_member_messages' => $request->boolean('accepts_member_messages')]);
 
         return back()->with('status', 'Vos informations sont enregistrées.');
     }

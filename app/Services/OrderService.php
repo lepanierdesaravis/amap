@@ -30,15 +30,23 @@ class OrderService
     {
         $this->ensureCanOrder($user, $offer->isOpen(), 'Les souscriptions de ce contrat sont fermées.');
 
-        $lines = array_values(array_filter($lines, fn ($l) => $l['quantity'] > 0 && count($l['distribution_ids']) > 0));
+        $products = $offer->products()->get()->keyBy('id');
+        // Un montant d'engagement peut n'avoir aucune date : les livraisons viennent alors des commandes liées.
+        $lines = array_values(array_filter($lines, fn ($l) => $l['quantity'] > 0
+            && (count($l['distribution_ids']) > 0 || $products->get($l['product_id'])?->is_amount)));
         if ($lines === []) {
             throw ValidationException::withMessages(['lines' => 'Choisissez au moins un produit.']);
         }
 
         $validDistributions = $offer->distributions()->pluck('id');
-        $products = $offer->products()->get()->keyBy('id');
 
         $contract = DB::transaction(function () use ($user, $offer, $lines, $installments, $method, $validDistributions, $products) {
+            // Places limitées : premier arrivé, premier servi. Le verrou évite de dépasser la limite.
+            $locked = ContractOffer::whereKey($offer->id)->lockForUpdate()->first();
+            if ($locked->isFullFor($user)) {
+                throw ValidationException::withMessages(['order' => 'Ce contrat est complet : toutes les places ont été prises.']);
+            }
+
             $contract = Contract::firstOrNew(['user_id' => $user->id, 'contract_offer_id' => $offer->id]);
             if ($contract->exists) {
                 $this->clear($contract->lines()->get(), $contract);
@@ -55,6 +63,7 @@ class OrderService
                     'frequency' => $data['frequency'],
                     'distribution_ids' => $validDistributions->intersect($data['distribution_ids'])->values()->all(),
                     'unit_price_cents' => $product->price_cents,
+                    'is_amount' => $product->is_amount,
                 ]);
                 foreach ($line->distribution_ids as $distributionId) {
                     $line->deliveries()->create([
@@ -63,6 +72,7 @@ class OrderService
                         'producer_id' => $offer->producer_id,
                         'label' => $product->name,
                         'icon' => $product->icon,
+                        'icon_color' => $product->icon_color,
                         'quantity' => $line->quantity,
                     ]);
                 }
@@ -104,7 +114,10 @@ class OrderService
             }
         }
 
-        $order = DB::transaction(function () use ($user, $purchase, $items, $quantities) {
+        // Adhérent engagé sur le contrat lié : la commande est déduite de son solde, sans paiement à part.
+        $contract = $purchase->contractFor($user);
+
+        $order = DB::transaction(function () use ($user, $purchase, $items, $quantities, $contract) {
             $order = GroupOrder::firstWhere(['user_id' => $user->id, 'group_purchase_id' => $purchase->id]);
             if ($order) {
                 $this->clear($order->lines()->get(), $order);
@@ -120,9 +133,10 @@ class OrderService
             }
 
             $order ??= new GroupOrder(['user_id' => $user->id, 'group_purchase_id' => $purchase->id]);
-            $order->fill(['total_cents' => 0, 'validated_at' => now()])->save();
+            $order->fill(['contract_id' => $contract?->id, 'total_cents' => 0, 'validated_at' => now()])->save();
 
             $total = 0;
+            $icon = $purchase->deliveryIcon();
             foreach ($quantities as $id => $q) {
                 $item = $items[$id];
                 $line = $order->lines()->create(['group_purchase_item_id' => $id, 'quantity' => $q, 'unit_price_cents' => $item->price_cents]);
@@ -131,19 +145,24 @@ class OrderService
                     'distribution_id' => $purchase->distribution_id,
                     'producer_id' => $purchase->producer_id,
                     'label' => $item->fullName(),
-                    'icon' => '🛍️',
+                    'icon' => $icon[0],
+                    'icon_color' => $icon[1],
                     'quantity' => $q,
                 ]);
                 $total += $q * $item->price_cents;
             }
             $order->update(['total_cents' => $total]);
+            if ($contract) {
+                return $order;
+            }
             $order->installmentsDue()->create([
                 'user_id' => $user->id,
                 'producer_id' => $purchase->producer_id,
                 'number' => 1,
                 'amount_cents' => $total,
                 'due_on' => $purchase->distribution->date,
-                'payment_method' => PaymentMethod::Cheque,
+                // Commande ponctuelle sur un engagement : réglée sur place au producteur.
+                'payment_method' => $purchase->contract_offer_id ? PaymentMethod::OnSite : PaymentMethod::Cheque,
                 'status' => InstallmentStatus::Expected,
             ]);
 

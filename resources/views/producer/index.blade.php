@@ -32,6 +32,24 @@
             @endforelse
         </div>
 
+        @if ($sharedOffers->isNotEmpty())
+            <h2 class="mt-10 text-xl font-bold">Mes adhérents engagés</h2>
+            <div class="mt-3 grid gap-3 md:grid-cols-2">
+                @foreach ($sharedOffers as $offer)
+                    <section class="card flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                            <h3 class="font-bold">{{ $offer->title }}</h3>
+                            <p class="text-sm text-doux">{{ $offer->contracts_count }} adhérent(s) · du {{ $offer->starts_on->translatedFormat('j M') }} au {{ $offer->ends_on->translatedFormat('j M Y') }}</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="{{ route('producteur.adherents', [$offer, 'pdf']) }}" class="btn-vert py-2 text-sm">⬇ PDF</a>
+                            <a href="{{ route('producteur.adherents', [$offer, 'csv']) }}" class="btn-ghost py-2 text-sm">⬇ Tableur</a>
+                        </div>
+                    </section>
+                @endforeach
+            </div>
+        @endif
+
         <h2 class="mt-10 text-xl font-bold">Pointage de mes paiements</h2>
         <div class="mt-3 overflow-x-auto rounded-2xl bg-white ring-1 ring-brun/10">
             <table class="w-full text-sm">

@@ -1,7 +1,11 @@
 <x-mail::message>
 # {{ $purchase->title }}
 
+@if ($purchase->contract_offer_id)
+Les commandes sont ouvertes chez **{{ $purchase->producer->name }}**. Vous êtes engagé·e auprès de ce producteur : votre commande sera déduite de votre engagement, vous n'avez rien à régler.
+@else
 Une nouvelle commande groupée est ouverte avec **{{ $purchase->producer->name }}**.
+@endif
 
 {{ $purchase->description }}
 

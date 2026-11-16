@@ -15,7 +15,11 @@ Votre commande **{{ $purchase->title }}** ({{ $purchase->producer->name }}) est 
 
 **Livraison :** {{ $purchase->distribution->label() }}, {{ $purchase->distribution->timeRange() }}, {{ $purchase->distribution->place }}.
 
-@if ($purchase->payment_info)
+@if ($order->contract_id)
+**Paiement :** rien à régler, la commande est déduite de votre engagement. Solde restant estimé : {{ \App\Support\Money::format($order->contract->remainingCents()) }}.
+@elseif ($purchase->contract_offer_id)
+**Paiement :** à régler sur place à {{ $purchase->producer->name }}, lors de la distribution.
+@elseif ($purchase->payment_info)
 **Paiement :** {{ $purchase->payment_info }}
 @endif
 

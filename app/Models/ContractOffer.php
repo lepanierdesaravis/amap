@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Audience;
 use App\Enums\Frequency;
 use App\Enums\OpeningStatus;
 use Illuminate\Database\Eloquent\Builder;
@@ -15,7 +16,8 @@ class ContractOffer extends Model
 {
     protected $fillable = [
         'producer_id', 'title', 'starts_on', 'ends_on', 'opens_at', 'closes_at',
-        'frequencies', 'payment_plans', 'terms', 'is_published',
+        'frequencies', 'payment_plans', 'max_contracts', 'share_members_with_producer',
+        'terms', 'is_published', 'announce_to', 'announced_at',
     ];
 
     protected function casts(): array
@@ -28,6 +30,9 @@ class ContractOffer extends Model
             'frequencies' => 'array',
             'payment_plans' => 'array',
             'is_published' => 'boolean',
+            'share_members_with_producer' => 'boolean',
+            'announce_to' => Audience::class,
+            'announced_at' => 'datetime',
         ];
     }
 
@@ -44,6 +49,29 @@ class ContractOffer extends Model
     public function contracts(): HasMany
     {
         return $this->hasMany(Contract::class);
+    }
+
+    /** Commandes ponctuelles liées à cet engagement (ex. pain à commander tous les 15 jours). */
+    public function groupPurchases(): HasMany
+    {
+        return $this->hasMany(GroupPurchase::class);
+    }
+
+    /** Places restantes, ou null si le nombre de contrats n'est pas limité. */
+    public function remainingPlaces(?User $except = null): ?int
+    {
+        if (! $this->max_contracts) {
+            return null;
+        }
+        $taken = $this->contracts()->when($except, fn ($q) => $q->where('user_id', '!=', $except->id))->count();
+
+        return max(0, $this->max_contracts - $taken);
+    }
+
+    /** Complet pour cet adhérent : un adhérent déjà engagé garde sa place. */
+    public function isFullFor(?User $user = null): bool
+    {
+        return $this->remainingPlaces($user) === 0;
     }
 
     public function status(): OpeningStatus
