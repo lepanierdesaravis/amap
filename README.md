@@ -40,7 +40,7 @@ cp .env.example .env
 | `admin@exemple.fr` | Administrateur |
 | `zoe.nouvelle@exemple.fr` | Nouvelle adhérente, cotisation non réglée (ne peut pas commander) |
 
-Les producteurs et leurs photos viennent du site actuel. Les adhérents, les commandes et les prix sont fictifs.
+Les producteurs, leurs photos, leurs produits et leurs tarifs viennent du site actuel (voir `docs/05-import-boutique.md`). Les adhérents et les commandes sont fictifs.
 
 Commandes utiles :
 ```sh
@@ -63,6 +63,7 @@ Les icônes des produits viennent de [game-icons.net](https://game-icons.net) (L
 | [docs/01-audit-et-plan-preliminaire.md](docs/01-audit-et-plan-preliminaire.md) | Audit du site Wix actuel (15/11/2026) |
 | [docs/02-cahier-des-charges.md](docs/02-cahier-des-charges.md) | Cahier des charges, exigences numérotées |
 | [docs/03-plan-de-developpement.md](docs/03-plan-de-developpement.md) | Phases, technologies, organisation GitHub, budget, prototype |
+| [docs/05-import-boutique.md](docs/05-import-boutique.md) | Produits repris de la boutique Wix, à vérifier avec l'association |
 | [docs/diagrammes/plan-du-site.pdf](docs/diagrammes/plan-du-site.pdf) | Plan du site par niveau d'accès (source HTML, export PNG et PDF) |
 | [docs/diagrammes/modele-de-donnees.svg](docs/diagrammes/modele-de-donnees.svg) | Modèle de données simplifié (source Graphviz `.dot`) |
 | [presentation/presentation-refonte.pdf](presentation/presentation-refonte.pdf) | Présentation de la refonte (source HTML) |

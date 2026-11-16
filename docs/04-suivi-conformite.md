@@ -55,7 +55,7 @@ Ce qui manque surtout :
 | PUB-01 | Accueil | 🟡 | Accroche, prochaine distribution, commandes ouvertes, bouton « Adhérer ». Pas de période d'adhésion ni d'encadré « actualité » gérés à part (texte de la page seulement) | |
 | PUB-02 | L'AMAP + charte et code de bonne conduite | ✅ | Les deux PDF sont en ligne | |
 | PUB-03 | Nos producteurs, filtrable | ✅ | Filtre par type de produit | |
-| PUB-04 | Fiche producteur | 🟡 | Tout est affiché. L'option « masquer les prix » n'existe pas (Q-09) | |
+| PUB-04 | Fiche producteur | 🟡 | Tout est affiché. Produits groupés par type ; un clic ouvre une fenêtre avec la photo et le texte complet. Produits et tarifs repris de la boutique Wix (`docs/05-import-boutique.md`). L'option « masquer les prix » n'existe pas (Q-09) | |
 | PUB-05 | Calendrier | 🟡 | Distributions et producteurs présents. Pas les permanences d'adhésion | |
 | PUB-06 | Adhérer | 🟡 | Étapes, cotisation, création de compte. Pas de dates de permanence ni de paiement en ligne | |
 | PUB-07 | Contact / Nous rencontrer | 🟡 | Formulaire, adresses, prochaines distributions. Pas de carte | |

@@ -32,20 +32,60 @@
             @endif
 
             @if ($producer->products->isNotEmpty())
+                <section x-data="vitrine" x-on:keydown.escape.prevent="close()">
                 <h2 class="mt-10 text-2xl font-bold">Produits proposés</h2>
-                <ul class="mt-4 divide-y divide-brun/10 rounded-2xl bg-white ring-1 ring-brun/10">
-                    @foreach ($producer->products as $product)
-                        <li class="flex items-center gap-3 px-4 py-3">
+                <p class="mt-1 text-sm text-doux">Touchez un produit pour le voir en grand.</p>
+                {{-- Groupés par type de produit quand il y en a plusieurs (bœuf, veau, porc…). --}}
+                @php($groups = $producer->products->groupBy(fn ($p) => $p->is_amount ? 'Engagements' : ($p->category_label ?: '')))
+                @foreach ($groups as $category => $products)
+                @if ($groups->count() > 1 && $category !== '')
+                    <h3 class="mt-6 text-lg font-bold text-vert">{{ $category }}</h3>
+                @endif
+                <ul @class(['divide-y divide-brun/10 overflow-hidden rounded-2xl bg-white ring-1 ring-brun/10', 'mt-2' => $groups->count() > 1, 'mt-4' => $groups->count() === 1])>
+                    @foreach ($products as $product)
+                        <li role="button" tabindex="0" aria-haspopup="dialog" aria-label="{{ $product->name }} : voir le détail"
+                            x-on:click="open({{ $product->id }}, $el)" x-on:keydown.enter.prevent="open({{ $product->id }}, $el)" x-on:keydown.space.prevent="open({{ $product->id }}, $el)"
+                            class="flex cursor-pointer items-center gap-3 px-4 py-3 transition-colors outline-none hover:bg-creme focus-visible:bg-creme focus-visible:ring-2 focus-visible:ring-terre focus-visible:ring-inset">
                             @if ($product->photo)
                                 <img src="{{ $product->photoUrl() }}" alt="" loading="lazy" class="size-12 shrink-0 rounded-full object-cover">
                             @else
                                 {!! $product->iconBadge('3rem') !!}
                             @endif
-                            <div class="flex-1"><p class="font-bold">{{ $product->name }}</p>@if ($product->description)<p class="text-sm text-doux">{{ $product->description }}</p>@endif</div>
+                            <div class="min-w-0 flex-1"><p class="font-bold">{{ $product->name }}</p>@if ($product->description)<p class="line-clamp-2 text-sm text-doux">{{ $product->description }}</p>@endif</div>
                             <span class="text-sm font-bold whitespace-nowrap">{{ $product->priceLabel() }}</span>
                         </li>
                     @endforeach
                 </ul>
+                @endforeach
+
+                {{-- Fenêtre du produit : texte complet et photo en grand. --}}
+                <dialog x-ref="dialog" x-on:click.self="close()" x-on:cancel.prevent="close()" aria-label="Détail du produit"
+                        class="m-auto max-h-[calc(100dvh-2rem)] w-[min(40rem,calc(100vw-2rem))] overflow-visible bg-transparent p-0 backdrop:bg-brun/60">
+                    <div x-ref="panel" class="max-h-[calc(100dvh-2rem)] origin-top-left overflow-y-auto rounded-2xl bg-white shadow-2xl">
+                        @foreach ($producer->products as $product)
+                            <article data-product="{{ $product->id }}" x-show="current === {{ $product->id }}" x-cloak class="relative">
+                                <button type="button" x-on:click="close()" aria-label="Fermer"
+                                        class="absolute top-3 right-3 z-10 grid size-10 place-items-center rounded-full bg-white/90 text-xl shadow hover:bg-creme">✕</button>
+                                <div class="grid place-items-center bg-creme p-4 sm:p-6">
+                                    @if ($product->photo)
+                                        <img data-photo src="{{ $product->photoUrl() }}" alt="{{ $product->name }}" loading="lazy" class="max-h-[50dvh] w-auto max-w-full rounded-xl object-contain">
+                                    @else
+                                        <span data-photo class="py-6">{!! $product->iconBadge('8rem') !!}</span>
+                                    @endif
+                                </div>
+                                <div class="p-5 sm:p-6">
+                                    <p data-fade class="text-sm font-semibold text-vert">{{ $product->is_amount ? 'Engagement' : $product->category_label }}</p>
+                                    <h3 data-fade class="mt-1 text-2xl font-extrabold">{{ $product->name }}</h3>
+                                    <p data-fade class="mt-2 inline-block rounded-full bg-vert-clair px-3 py-1 font-bold">{{ $product->priceLabel() }}</p>
+                                    @if ($product->description)
+                                        <p data-fade class="mt-4 leading-relaxed whitespace-pre-line text-doux">{{ $product->description }}</p>
+                                    @endif
+                                </div>
+                            </article>
+                        @endforeach
+                    </div>
+                </dialog>
+                </section>
             @endif
         </div>
 

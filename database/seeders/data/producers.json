@@ -18,31 +18,34 @@
   "description": "<p>La Cabane Marjolaine a pris la suite du GAEC Marjolaine le 1<sup>er</sup> janvier 2019. Pauline et Cyril, forts d'une solide expérience en agriculture biologique et en production de fromages, ont décidé de prolonger et renforcer l'aventure Marjolaine.</p><p>Installés sur les hauteurs de Thônes, ils élèvent environ quatre-vingts chèvres. L'hiver, les chèvres restent au chaud ; les beaux jours venus, elles parcourent les prairies naturelles qui les entourent et donnent un caractère unique aux fromages.</p><p>Les prairies servent aussi à la fauche, pour rentrer le fourrage qui nourrit les animaux l'hiver.</p>",
   "products": [
    {
-    "name": "Panier fromages de chèvre",
-    "description": "Assortiment de la saison : frais, mi-sec, tomme",
-    "unit": "panier",
-    "price_cents": 1400,
-    "icon": "chevre",
-    "icon_color": "noir",
-    "category_label": "Fromage de chèvre"
-   },
-   {
-    "name": "Tomme de chèvre (demie)",
-    "description": null,
-    "unit": "pièce",
-    "price_cents": 1250,
-    "icon": "fromage",
-    "icon_color": "noir",
-    "category_label": "Fromage de chèvre"
-   },
-   {
-    "name": "Faisselle de chèvre",
-    "description": null,
-    "unit": "pot de 500 g",
-    "price_cents": 450,
+    "name": "Fromage Blanc de Chèvre",
+    "description": "Le pot de 500g.",
     "icon": "pot",
     "icon_color": "noir",
-    "category_label": "Faisselle de chèvre"
+    "category_label": "Fromage de chèvre",
+    "photo": "produits/la-cabane-marjolaine/5f3f14-e69f881dcb0b41499beeb1e402dd86da.jpg",
+    "unit": "pot de 500 g",
+    "price_cents": 400
+   },
+   {
+    "name": "Petit panier à 7 €",
+    "description": "Prix moyen du panier comprenant, selon saison :\nCrottins frais, affinés ou secs. Crottins aromatisés ( ciboulette, poivron ou poivre )Tomme / Tommette / Raclette Bûche ou Rocher CendréLachail (Ail et fines herbes )",
+    "icon": "chevre",
+    "icon_color": "noir",
+    "category_label": "Fromage de chèvre",
+    "photo": "produits/la-cabane-marjolaine/8eb090-412a3801d6f8429d9cf5657baded271e.jpg",
+    "unit": "panier",
+    "price_cents": 700
+   },
+   {
+    "name": "Grand panier à 14 €",
+    "description": "C'est deux fois plus de fromages qu'un petit panier en essayant au maximum de varier les plaisirs\nPrix moyen du panier comprenant, selon saison :\nCrottins frais, affinés ou secs. Crottins aromatisés ( ciboulette, poivron ou poivre )Tomme / Tommette / Raclette Bûche ou Rocher CendréLachail (Ail et fines herbes )",
+    "icon": "chevre",
+    "icon_color": "noir",
+    "category_label": "Fromage de chèvre",
+    "photo": "produits/la-cabane-marjolaine/8eb090-b5a160b0d5ce4fe3a924827d1e5f291e.jpg",
+    "unit": "panier",
+    "price_cents": 1400
    }
   ],
   "cover_photo": "producteurs/la-cabane-marjolaine-1.jpg",
@@ -72,22 +75,44 @@
   "description": "<p>En novembre 2018, Morgan et Lily rachètent un troupeau de chèvres de race locale, la chèvre des Savoie, et créent leur chèvrerie dans le massif des Aravis.</p><p>Afin de perpétuer les savoir-faire ancestraux, ils transforment le lait biologique de leurs chèvres principalement en fromages locaux : le chevrotin AOP et le Persillé des Aravis.</p>",
   "products": [
    {
-    "name": "Chevrotin AOP",
-    "description": null,
-    "unit": "pièce",
-    "price_cents": 1100,
+    "name": "Persillé des Aravis",
+    "description": "Environ 500g pour une moitié.",
     "icon": "chevre",
     "icon_color": "brun",
-    "category_label": "Fromage de chèvre"
+    "category_label": "Fromage de chèvre",
+    "photo": "produits/la-chevrerie-de-lily/5f3f14-beebfcbb99224b23949282a5dcc164f0.jpg",
+    "unit": "pièce",
+    "price_cents": 1400
    },
    {
-    "name": "Persillé des Aravis",
-    "description": null,
-    "unit": "pièce",
-    "price_cents": 1500,
-    "icon": "fromage",
+    "name": "Faisselle de chèvre",
+    "description": "Lactique au lait cru, fabriqué à partir du caillé frais du jour.\nLes faisselles sont moulées avec amour à la louche.\nElles sont vendues par 4 pour un poids de 500g.",
+    "icon": "pot",
     "icon_color": "brun",
-    "category_label": "Persillé"
+    "category_label": "Fromage de chèvre",
+    "photo": "produits/la-chevrerie-de-lily/5f3f14-71aed7d9d20a45a7b0d73a4db5a983a3.jpg",
+    "unit": "pièce",
+    "price_cents": 400
+   },
+   {
+    "name": "Chevrotin AOP",
+    "description": "Fromage de Chèvre au lait cru, exclusivement fabriqué à la ferme",
+    "icon": "chevre",
+    "icon_color": "brun",
+    "category_label": "Fromage de chèvre",
+    "photo": "produits/la-chevrerie-de-lily/5f3f14-f99fbd964e8843e9b7db4e0a9fbfe2ab.jpg",
+    "unit": "pièce",
+    "price_cents": 800
+   },
+   {
+    "name": "Sérac de Chèvre",
+    "description": "Pot de 500g\nUn fromage frais fabriqué à partir du \"petit lait\".\nIl se consomme dans les jours suivant sa fabrication.\nIl rapelle le célèbre fromage italien \"Ricotta\"\nIl se déguste sans modération, en version sucrée ou salée.",
+    "icon": "pot",
+    "icon_color": "brun",
+    "category_label": "Fromage de chèvre",
+    "photo": "produits/la-chevrerie-de-lily/5f3f14-c78057960e0a4718adbfd87e6267d1d0.jpg",
+    "unit": "pot de 500 g",
+    "price_cents": 500
    }
   ],
   "cover_photo": "producteurs/la-chevrerie-de-lily-1.jpg",
@@ -113,22 +138,34 @@
   "description": "<p>En 2008, Bertrand Aguettand reprend le troupeau de brebis de son père et se lance dans la production de tommettes de brebis.</p><p>Au printemps, en été et à l'automne, les brebis profitent de l'herbe des champs autour de l'exploitation. À l'arrivée de la neige, elles rentrent et sont nourries tout l'hiver du foin coupé durant l'été.</p><p>C'est à Manigod, toute l'année, directement après la traite, que Bertrand fabrique ses tommettes.</p>",
   "products": [
    {
-    "name": "Tommette de brebis",
-    "description": null,
-    "unit": "pièce",
-    "price_cents": 900,
-    "icon": "brebis",
-    "icon_color": "ardoise",
-    "category_label": "Fromage de brebis"
-   },
-   {
-    "name": "Yaourts de brebis nature",
-    "description": null,
-    "unit": "lot de 4",
-    "price_cents": 420,
+    "name": "Sérac",
+    "description": "-",
     "icon": "pot",
     "icon_color": "ardoise",
-    "category_label": "Yaourt de brebis"
+    "category_label": "Fromage de brebis",
+    "photo": "produits/la-ferme-du-peroset/5f3f14-48fb8f417a59480e952b6173623e7ec0.jpg",
+    "unit": "pot",
+    "price_cents": 250
+   },
+   {
+    "name": "Demi-tommette de brebis",
+    "description": "Demi-Tommette de Brebis",
+    "icon": "brebis",
+    "icon_color": "ardoise",
+    "category_label": "Fromage de brebis",
+    "photo": "produits/la-ferme-du-peroset/5f3f14-2d5820e67e124e5681145e49403930c9.jpg",
+    "unit": "pièce",
+    "price_cents": 450
+   },
+   {
+    "name": "Tommette de brebis",
+    "description": "Tommette de Brebis",
+    "icon": "brebis",
+    "icon_color": "ardoise",
+    "category_label": "Fromage de brebis",
+    "photo": "produits/la-ferme-du-peroset/8eb090-d358cc05ffff4045a9ab76b87ce3258b.jpg",
+    "unit": "pièce",
+    "price_cents": 900
    }
   ],
   "cover_photo": "producteurs/la-ferme-du-peroset-1.jpg",
@@ -156,31 +193,94 @@
   "description": "<p>Johann Bocquet, agriculteur à La Chapelle-Saint-Maurice, a repris La Ferme du Ponant en 2018. Passionné par son métier, il élève une vingtaine de vaches laitières.</p><p>Il travaille dans la continuité de ses prédécesseurs, la famille Bouvet, avec le même respect des animaux et de la terre : aucun pesticide et très peu de compléments alimentaires.</p><p>Son but : des produits laitiers certifiés bio et de qualité, et des fromages artisanaux aux recettes inventives.</p>",
   "products": [
    {
-    "name": "Tomme fermière (quart)",
-    "description": "environ 1,2 kg",
-    "unit": "pièce",
-    "price_cents": 2400,
-    "icon": "vache",
+    "name": "Demi Bleu de Laudon",
+    "description": "Demi fromage",
+    "icon": "fromage",
     "icon_color": "terre",
-    "category_label": "Tomme de vache"
-   },
-   {
-    "name": "Tomme fermière (demie)",
-    "description": "environ 2,4 kg",
+    "category_label": "Fromage de vache",
+    "photo": "produits/la-ferme-du-ponant/5f3f14-f71645ab339641a69bd352812ae7fb28.jpg",
     "unit": "pièce",
-    "price_cents": 4800,
-    "icon": "vache",
-    "icon_color": "terre",
-    "category_label": "Tomme de vache"
+    "price_cents": 450
    },
    {
     "name": "Lait entier pasteurisé",
-    "description": null,
-    "unit": "litre",
-    "price_cents": 170,
+    "description": "Bouteille 1 litre",
     "icon": "lait",
     "icon_color": "terre",
-    "category_label": "Lait de vache"
+    "category_label": "Fromage de vache",
+    "photo": "produits/la-ferme-du-ponant/5f3f14-5e03c00ccf6c4ac5b548b33bf41135ca.jpg",
+    "unit": "bouteille de 1 l",
+    "price_cents": 170
+   },
+   {
+    "name": "Tomme Fermière du Ponant (Demie)",
+    "description": "Demie soit environ 700g",
+    "icon": "fromage",
+    "icon_color": "terre",
+    "category_label": "Fromage de vache",
+    "photo": "produits/la-ferme-du-ponant/5f3f14-6cd4e13aa797475393f874f1fbbf6dbc.jpg",
+    "unit": "pièce",
+    "price_cents": 1200
+   },
+   {
+    "name": "Tomme Fermière du Ponant (Quart)",
+    "description": "Quart soit environ 350g",
+    "icon": "fromage",
+    "icon_color": "terre",
+    "category_label": "Fromage de vache",
+    "photo": "produits/la-ferme-du-ponant/5f3f14-6cd4e13aa797475393f874f1fbbf6dbc.jpg",
+    "unit": "pièce",
+    "price_cents": 600
+   },
+   {
+    "name": "Tomme Fermière Saint-Maurice (Demie)",
+    "description": "Demie soit environ 700g",
+    "icon": "fromage",
+    "icon_color": "terre",
+    "category_label": "Fromage de vache",
+    "photo": "produits/la-ferme-du-ponant/5f3f14-ab52acba08664ee88358011783d150b3.jpg",
+    "unit": "pièce",
+    "price_cents": 1200
+   },
+   {
+    "name": "Tomme Fermière Saint-Maurice (Quart)",
+    "description": "Quart soit environ 350g",
+    "icon": "fromage",
+    "icon_color": "terre",
+    "category_label": "Fromage de vache",
+    "photo": "produits/la-ferme-du-ponant/5f3f14-ab52acba08664ee88358011783d150b3.jpg",
+    "unit": "pièce",
+    "price_cents": 600
+   },
+   {
+    "name": "Raclette Nature du Laudon Demi-Meule",
+    "description": "3.5 kg",
+    "icon": "fromage",
+    "icon_color": "terre",
+    "category_label": "Fromage de vache",
+    "photo": "produits/la-ferme-du-ponant/5f3f14-e0fa95e0125d4da6b81ee605902e4b60.jpg",
+    "unit": "pièce",
+    "price_cents": 4500
+   },
+   {
+    "name": "Raclette Nature du Laudon 500g",
+    "description": "Pour 2 personnes",
+    "icon": "fromage",
+    "icon_color": "terre",
+    "category_label": "Fromage de vache",
+    "photo": "produits/la-ferme-du-ponant/5f3f14-e0fa95e0125d4da6b81ee605902e4b60.jpg",
+    "unit": "pièce",
+    "price_cents": 900
+   },
+   {
+    "name": "Bleu de Laudon",
+    "description": "Entier",
+    "icon": "fromage",
+    "icon_color": "terre",
+    "category_label": "Fromage de vache",
+    "photo": "produits/la-ferme-du-ponant/5f3f14-f71645ab339641a69bd352812ae7fb28.jpg",
+    "unit": "pièce",
+    "price_cents": 900
    }
   ],
   "cover_photo": "producteurs/la-ferme-du-ponant-1.jpg",
@@ -212,13 +312,14 @@
   "description": "<p>François Sylvestre-Boncheval a débuté le maraîchage bio au printemps 2022, aux Villards-sur-Thônes.</p><p>Inscrit dans une démarche de transition, il vise un fonctionnement en agroécologie : des arbres intégrés au jardin (agroforesterie, verger maraîcher), le moins de plastique et d'emballages possible (barquettes consignées), peu de pétrole (travail manuel à la grelinette) et un travail avec la nature, pas contre elle.</p><p>Il cherche à augmenter la biodiversité, à stocker du carbone dans les arbres et le sol, et à limiter la consommation d'eau. Petits fruits, fruits du verger et légumineuses complètent peu à peu les paniers.</p>",
   "products": [
    {
-    "name": "Panier légumes et fruits",
-    "description": "Panier moyen de saison",
-    "unit": "panier",
-    "price_cents": 3029,
+    "name": "Panier de Légumes et Fruits Bio",
+    "description": "(du 6 juin au 27 novembre 2026)\nSemaine amap : le samedi matin lors de la permanence : 13 paniers pour 380€\nSemaine hors amap : le vendredi soir aux Villards sur Thônes : 13 paniers pour 380€\nPrix moyen du panier : 30.29€  quantité variable selon la saison (cf tableau sur la page producteur)",
     "icon": "carotte",
     "icon_color": "orange",
-    "category_label": "Légumes et fruits"
+    "category_label": "Légumes et fruits",
+    "photo": "produits/le-corti-des-aravis/5f3f14-c1dd35e00e4a4bc6b25bcc28b83f8397.jpg",
+    "unit": "panier",
+    "price_cents": 2923
    }
   ],
   "cover_photo": "producteurs/le-corti-des-aravis-1.jpg",
@@ -247,22 +348,24 @@
   "description": "<p>Le Jardin des Solstices est une exploitation maraîchère en agriculture biologique, créée en 2012 par Thomas et Audrey Roset après une reconversion professionnelle.</p><p>Située à Saint-Vital en Savoie, elle s'étend sur 8 ha en plein champ et 4 200 m² sous serres et tunnels, et emploie de 3 à 10 salariés selon les saisons.</p><p>Ils produisent toute l'année de nombreuses variétés de légumes locaux et de saison, en mettant l'accent sur le goût et la fraîcheur : carottes, pommes de terre, choux variés, courges, poivrons… et des variétés oubliées.</p>",
   "products": [
    {
-    "name": "Petit panier de légumes",
-    "description": null,
-    "unit": "panier",
-    "price_cents": 1400,
+    "name": "Panier à 15 €",
+    "description": "Panier composé de divers légumes de saison.",
     "icon": "chou",
     "icon_color": "vert",
-    "category_label": "Légumes"
+    "category_label": "Légumes",
+    "photo": "produits/le-jardin-des-solstices/8eb090-8003c72459cd4bbfa29625bfc0ea3ba5.jpg",
+    "unit": "panier",
+    "price_cents": 1500
    },
    {
-    "name": "Grand panier de légumes",
-    "description": null,
-    "unit": "panier",
-    "price_cents": 2000,
+    "name": "Panier à 22 €",
+    "description": "Panier composé de divers légumes de saison.",
     "icon": "chou",
     "icon_color": "vert",
-    "category_label": "Légumes"
+    "category_label": "Légumes",
+    "photo": "produits/le-jardin-des-solstices/8eb090-8003c72459cd4bbfa29625bfc0ea3ba5.jpg",
+    "unit": "panier",
+    "price_cents": 2200
    }
   ],
   "cover_photo": "producteurs/le-jardin-des-solstices-1.jpg",
@@ -291,31 +394,204 @@
   "description": "<p>L'exploitation arboricole de Christophe et Nathalie Raucaz est située à Verrens-Arvey et Tournon, sur les contreforts sud-est du massif des Bauges, entre 400 et 600 mètres d'altitude.</p><p>Ils cultivent environ 28 hectares en agriculture biologique, sous le contrôle de Bureau Veritas (FR-BIO-10).</p><p>Ils proposent leurs fruits, compotes et jus bio au rythme des saisons, en quantités variables selon les caprices du temps !</p>",
   "products": [
    {
-    "name": "Pommes",
-    "description": "Cagette",
-    "unit": "5 kg",
-    "price_cents": 1200,
-    "icon": "pomme",
+    "name": "Pur Jus de Pommes",
+    "description": "Pur jus de Pomme Bio.\nPasteurisé par un artisan en agroalimentaire agréé.\nNe contient aucun additif.",
+    "icon": "jus",
     "icon_color": "terre",
-    "category_label": "Pommes"
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-a33b8682a0c34cf2bfe144df09f89251.jpg",
+    "unit": "bouteille de 33 cl",
+    "price_cents": 270
    },
    {
     "name": "Poires",
-    "description": "Barquette",
-    "unit": "2 kg",
-    "price_cents": 650,
+    "description": "Williams, Conférence, Doyenne du Comice, Passe-Crassane, Louise Bonne.",
     "icon": "poire",
-    "icon_color": "miel",
-    "category_label": "Poires"
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-23931bf15a2a4c77aa349dee42def7e8.jpg",
+    "unit": "barquette de 2 kg",
+    "price_cents": 860
    },
    {
-    "name": "Pur jus de pommes",
+    "name": "Pommes",
+    "description": "Reine des Reinettes, Canada blanche, Canada grise, Golden, Jonagored, Idared, Belle de Boskoop, Royal Gala, Elstar, Jonagold, Fuji, Chanteclerc, Pilot, Braeburn, Opale",
+    "icon": "pomme",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-8cb7225bd1004a30be1fff06f9ef243d.jpg",
+    "unit": "cagette de 5 kg",
+    "price_cents": 1600
+   },
+   {
+    "name": "Purée pommes/poires sans sucre ajouté",
+    "description": "Purée Bio sans addition de sucre, de conservateur, de colorant.",
+    "icon": "bocal",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-f3c27aa9c22a4c8c8fbeb8e2f9a47d5e.jpg",
+    "unit": "pot de 480 g",
+    "price_cents": 320
+   },
+   {
+    "name": "Compote de pommes/fraises",
     "description": null,
-    "unit": "bouteille de 1 l",
-    "price_cents": 380,
+    "icon": "bocal",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/5f3f14-dc757a7e2b3e420589b7a19a67aef504.jpg",
+    "unit": "pot de 480 g",
+    "price_cents": 248
+   },
+   {
+    "name": "Purée de pommes sans sucre ajouté",
+    "description": "Purée Bio sans addition de sucre, de conservateur ou de colorant.",
+    "icon": "bocal",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/5f3f14-1e7375e712954bb7b3ba4a9a6fe7b9c5.jpg",
+    "unit": "pot de 830 g",
+    "price_cents": 445
+   },
+   {
+    "name": "Compote de pommes",
+    "description": "Compotes Bio sans addition de conservateur ni de colorant.\n7% de sucre bio ajouté.",
+    "icon": "bocal",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/5f3f14-9f76e8f3d1fd45b7961ccec267f0b94a.jpg",
+    "unit": "pot de 830 g",
+    "price_cents": 445
+   },
+   {
+    "name": "Jus de pommes-coings",
+    "description": "Pur jus de Pomme-Coing Bio.\nPasteurisé par un artisan en agroalimentaire agréé.\nNe contient aucun additif.",
     "icon": "jus",
-    "icon_color": "miel",
-    "category_label": "Jus de pommes"
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/5f3f14-67815a103275453c8440d2596a883296.jpg",
+    "unit": "bouteille de 1 l",
+    "price_cents": 540
+   },
+   {
+    "name": "Purée de poires sans sucre ajouté",
+    "description": "Purée Bio sans addition de sucre, de conservateur ou de colorant.",
+    "icon": "bocal",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/5f3f14-1593972eaaae4181b8b08809bad8e7c7.jpg",
+    "unit": "pot de 480 g",
+    "price_cents": 325
+   },
+   {
+    "name": "Jus de pommes/poires",
+    "description": "Pur jus de Pomme/Poire Bio.\nPasteurisé par un artisan en agroalimentaire agréé.\nNe contient aucun additif.",
+    "icon": "jus",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-573c4d6728f548229e8e5209de92573e.jpg",
+    "unit": "bouteille de 1 l",
+    "price_cents": 325
+   },
+   {
+    "name": "Pommes",
+    "description": "Reine des Reinettes, Canada blanche, Canada grise, Golden, Jonagored, Idared, Belle de Boskoop, Royal Gala, Elstar, Jonagold, Fuji, Chanteclerc, Pilot, Braeburn, Opale",
+    "icon": "pomme",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-8cb7225bd1004a30be1fff06f9ef243d.jpg",
+    "unit": "kg",
+    "price_cents": 330
+   },
+   {
+    "name": "Poires",
+    "description": "Williams, Conférence, Doyenne du Comice, Passe-Crassane, Louise Bonne.",
+    "icon": "poire",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-23931bf15a2a4c77aa349dee42def7e8.jpg",
+    "unit": "kg",
+    "price_cents": 430
+   },
+   {
+    "name": "Compote de pommes",
+    "description": "Compotes Bio sans addition de conservateur ni de colorant.\n7% de sucre bio ajouté.",
+    "icon": "bocal",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-75db7c9e9ec24ebb89130512c8feb9be.jpg",
+    "unit": "pot de 480 g",
+    "price_cents": 305
+   },
+   {
+    "name": "Compote de pommes/poires",
+    "description": "Compotes Bio sans addition de conservateur ni de colorant.\n7% de sucre bio ajouté.",
+    "icon": "bocal",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-f3c27aa9c22a4c8c8fbeb8e2f9a47d5e.jpg",
+    "unit": "pot de 480 g",
+    "price_cents": 320
+   },
+   {
+    "name": "Purée de pommes sans sucre ajouté",
+    "description": "Purée Bio sans addition de sucre, de conservateur ou de colorant.",
+    "icon": "bocal",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-732f0aa0a0804cae933b0c8fc5abf674.jpg",
+    "unit": "pot de 480 g",
+    "price_cents": 305
+   },
+   {
+    "name": "Pur Jus de Pommes",
+    "description": "Pur jus de Pomme Bio.\nPasteurisé par un artisan en agroalimentaire agréé.\nNe contient aucun additif.",
+    "icon": "jus",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-a33b8682a0c34cf2bfe144df09f89251.jpg",
+    "unit": "bouteille de 1 l",
+    "price_cents": 315
+   },
+   {
+    "name": "Jus de poires",
+    "description": "Bouteille de 1L\nPur jus de Poire Bio.\nPasteurisé par un artisan en agroalimentaire agréé.\nNe contient aucun additif.",
+    "icon": "jus",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-42763d97f34d4ba99f0e99c733b6f410.jpg",
+    "unit": "bouteille de 1 l",
+    "price_cents": 395
+   },
+   {
+    "name": "Cidre doux",
+    "description": "Bouteille de 0,75L\nCidre Doux Bio sans addition de sucre, de conservateur ou de colorant.",
+    "icon": "jus",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-4a029f704f294b5ba7e2f6512ee41607.jpg",
+    "unit": "bouteille de 0,75 l",
+    "price_cents": 430
+   },
+   {
+    "name": "Cidre brut",
+    "description": "Bouteille de 0,75L\nCidres Brut Bio sans addition de sucre, de conservateur ou de colorant.",
+    "icon": "jus",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-8de1c97960f74226bab60539bfe3a3cb.jpg",
+    "unit": "bouteille de 0,75 l",
+    "price_cents": 430
+   },
+   {
+    "name": "Jus de pommes pétillant",
+    "description": "Bouteille de 0.75L\nPétillant de Pommes Bio sans addition de sucre, de conservateur ou de colorant.",
+    "icon": "jus",
+    "icon_color": "terre",
+    "category_label": "Fruits",
+    "photo": "produits/la-ferme-du-coteau/8eb090-342cca41e1f84c97b730cfb3a5d6dd0b.jpg",
+    "unit": "bouteille de 0,75 l",
+    "price_cents": 405
    }
   ],
   "cover_photo": "producteurs/la-ferme-du-coteau-1.jpg",
@@ -342,31 +618,192 @@
   "description": "<p>Geoffrey est un artisan passionné. Après son CAP, il s'est formé aux différentes panifications, et notamment à la fermentation lente : deux tiers de sel en moins, trois quarts de levain en moins, et des matières premières bien plus respectées.</p><p>Morgane, passionnée par les relations humaines, s'est intéressée à la naissance du métier de boulanger, autrefois bien plus lié aux rencontres qu'aujourd'hui. Ensemble, ils ouvrent leur premier fournil en 2016, puis leur boutique à Saint-Laurent en 2020.</p><p>Pains et viennoiseries sont certifiés bio, au levain, avec au minimum 18 heures de fermentation. La farine vient de paysans meuniers de Massongy, qui sèment des semences paysannes.</p>",
   "products": [
    {
-    "name": "Le Campagnard",
-    "description": "Blé T80 et seigle",
-    "unit": "1 kg",
-    "price_cents": 680,
-    "icon": "pain",
+    "name": "Engagement de 50 €",
+    "description": null,
+    "icon": "pieces",
     "icon_color": "miel",
-    "category_label": "Pain"
+    "category_label": "Engagement",
+    "photo": "produits/boulangerie-chez-geoffrey/5f3f14-86757e66eefd40e294653a8b033667a4.jpg",
+    "unit": "engagement",
+    "price_cents": 5000,
+    "is_amount": true
    },
    {
-    "name": "Le Multigraines",
+    "name": "Engagement de 100 €",
     "description": null,
-    "unit": "750 g",
-    "price_cents": 620,
-    "icon": "pain",
+    "icon": "pieces",
     "icon_color": "miel",
-    "category_label": "Pain"
+    "category_label": "Engagement",
+    "photo": "produits/boulangerie-chez-geoffrey/5f3f14-86757e66eefd40e294653a8b033667a4.jpg",
+    "unit": "engagement",
+    "price_cents": 10000,
+    "is_amount": true
    },
    {
-    "name": "Le Petit Épeautre",
+    "name": "Engagement de 150 €",
     "description": null,
-    "unit": "750 g",
-    "price_cents": 780,
+    "icon": "pieces",
+    "icon_color": "miel",
+    "category_label": "Engagement",
+    "photo": "produits/boulangerie-chez-geoffrey/5f3f14-86757e66eefd40e294653a8b033667a4.jpg",
+    "unit": "engagement",
+    "price_cents": 15000,
+    "is_amount": true
+   },
+   {
+    "name": "Engagement de 200 €",
+    "description": null,
+    "icon": "pieces",
+    "icon_color": "miel",
+    "category_label": "Engagement",
+    "photo": "produits/boulangerie-chez-geoffrey/5f3f14-86757e66eefd40e294653a8b033667a4.jpg",
+    "unit": "engagement",
+    "price_cents": 20000,
+    "is_amount": true
+   },
+   {
+    "name": "Meule",
+    "description": "T80 de blé, levain, sel, eau",
+    "unit": "kg",
+    "price_cents": 615,
     "icon": "pain",
     "icon_color": "miel",
-    "category_label": "Pain"
+    "category_label": "Pains"
+   },
+   {
+    "name": "Campagne",
+    "description": "T80 de blé, 15 % de T150 de seigle, levain, sel, eau",
+    "unit": "kg",
+    "price_cents": 615,
+    "icon": "pain",
+    "icon_color": "miel",
+    "category_label": "Pains"
+   },
+   {
+    "name": "Complet",
+    "description": "T110 de blé, levain, sel, eau",
+    "unit": "kg",
+    "price_cents": 615,
+    "icon": "pain",
+    "icon_color": "miel",
+    "category_label": "Pains"
+   },
+   {
+    "name": "Kartoffelbrot",
+    "description": "T80 de blé, 10 % de flocons de pomme de terre, levain, sel, eau",
+    "unit": "kg",
+    "price_cents": 715,
+    "icon": "pain",
+    "icon_color": "miel",
+    "category_label": "Pains"
+   },
+   {
+    "name": "Craquant",
+    "description": "T80 de blé, noisettes, noix, levain, sel, eau",
+    "unit": "kg",
+    "price_cents": 915,
+    "icon": "pain",
+    "icon_color": "miel",
+    "category_label": "Pains"
+   },
+   {
+    "name": "Multigraines",
+    "description": "T80 de blé, graines de lin brun, lin doré, sésame et tournesol, levain, sel, eau",
+    "unit": "kg",
+    "price_cents": 815,
+    "icon": "pain",
+    "icon_color": "miel",
+    "category_label": "Pains"
+   },
+   {
+    "name": "Seigle en tourte ou demi-tourte",
+    "description": "Tourte d'environ 1,5 kg. T150 de seigle, levain, sel, eau",
+    "unit": "kg",
+    "price_cents": 715,
+    "icon": "pain",
+    "icon_color": "miel",
+    "category_label": "Pains"
+   },
+   {
+    "name": "Petit épeautre en tourte ou demi-tourte",
+    "description": "Tourte d'environ 1,5 kg. T110 de petit épeautre, levain, sel, eau",
+    "unit": "kg",
+    "price_cents": 1165,
+    "icon": "pain",
+    "icon_color": "miel",
+    "category_label": "Pains"
+   },
+   {
+    "name": "Croissant pur beurre",
+    "description": null,
+    "unit": "pièce",
+    "price_cents": 130,
+    "icon": "croissant",
+    "icon_color": "miel",
+    "category_label": "Viennoiseries"
+   },
+   {
+    "name": "Pain au chocolat pur beurre",
+    "description": null,
+    "unit": "pièce",
+    "price_cents": 140,
+    "icon": "croissant",
+    "icon_color": "miel",
+    "category_label": "Viennoiseries"
+   },
+   {
+    "name": "Croissant ordinaire",
+    "description": null,
+    "unit": "pièce",
+    "price_cents": 120,
+    "icon": "croissant",
+    "icon_color": "miel",
+    "category_label": "Viennoiseries"
+   },
+   {
+    "name": "Pain au chocolat ordinaire",
+    "description": null,
+    "unit": "pièce",
+    "price_cents": 130,
+    "icon": "croissant",
+    "icon_color": "miel",
+    "category_label": "Viennoiseries"
+   },
+   {
+    "name": "Torsade",
+    "description": null,
+    "unit": "pièce",
+    "price_cents": 180,
+    "icon": "croissant",
+    "icon_color": "miel",
+    "category_label": "Viennoiseries"
+   },
+   {
+    "name": "Viennois nature",
+    "description": null,
+    "unit": "pièce",
+    "price_cents": 220,
+    "icon": "croissant",
+    "icon_color": "miel",
+    "category_label": "Viennoiseries"
+   },
+   {
+    "name": "Viennois chocolat",
+    "description": null,
+    "unit": "pièce",
+    "price_cents": 250,
+    "icon": "croissant",
+    "icon_color": "miel",
+    "category_label": "Viennoiseries"
+   },
+   {
+    "name": "Brioche tressée nature ou chocolat",
+    "description": null,
+    "unit": "pièce",
+    "price_cents": 800,
+    "icon": "croissant",
+    "icon_color": "miel",
+    "category_label": "Viennoiseries"
    }
   ],
   "cover_photo": "producteurs/boulangerie-chez-geoffrey-1.jpg",
@@ -394,22 +831,1119 @@
   "description": "<p>Sylvie et Fred Bibollet gèrent leur exploitation 100 % en agriculture biologique : sans engrais chimique, sans pesticide, sans antibiotique et sans OGM.</p><p>Leur cheptel de races à viande (Aubrac, Salers, Gascogne…) est élevé à son rythme et nourri essentiellement d'herbe ; foin et céréales prennent le relais l'hiver. Veaux, agneaux et cabris sont en liberté et se nourrissent du lait de leur mère. Tous les animaux passent l'été en alpage.</p><p>La viande est livrée sous vide pour conserver toute sa saveur.</p>",
   "products": [
    {
-    "name": "Colis de bœuf",
-    "description": "Morceaux variés, sous vide",
-    "unit": "colis de 5 kg",
-    "price_cents": 9500,
-    "icon": "taureau",
+    "name": "Engagement de 105 €",
+    "description": null,
+    "icon": "pieces",
     "icon_color": "brun",
-    "category_label": "Viande de bœuf"
+    "category_label": "Engagement",
+    "photo": "produits/gaec-bibollet/8eb090-7955975192e6472b9b4af7e6e2381fc3.jpg",
+    "unit": "engagement",
+    "price_cents": 10500,
+    "is_amount": true
    },
    {
-    "name": "Colis de veau",
+    "name": "Engagement de 150 €",
     "description": null,
-    "unit": "colis de 3 kg",
-    "price_cents": 6600,
+    "icon": "pieces",
+    "icon_color": "brun",
+    "category_label": "Engagement",
+    "photo": "produits/gaec-bibollet/8eb090-7955975192e6472b9b4af7e6e2381fc3.jpg",
+    "unit": "engagement",
+    "price_cents": 15000,
+    "is_amount": true
+   },
+   {
+    "name": "Engagement de 300 €",
+    "description": null,
+    "icon": "pieces",
+    "icon_color": "brun",
+    "category_label": "Engagement",
+    "photo": "produits/gaec-bibollet/8eb090-7955975192e6472b9b4af7e6e2381fc3.jpg",
+    "unit": "engagement",
+    "price_cents": 30000,
+    "is_amount": true
+   },
+   {
+    "name": "Engagement de 450 €",
+    "description": null,
+    "icon": "pieces",
+    "icon_color": "brun",
+    "category_label": "Engagement",
+    "photo": "produits/gaec-bibollet/8eb090-7955975192e6472b9b4af7e6e2381fc3.jpg",
+    "unit": "engagement",
+    "price_cents": 45000,
+    "is_amount": true
+   },
+   {
+    "name": "Engagement de 600 €",
+    "description": null,
+    "icon": "pieces",
+    "icon_color": "brun",
+    "category_label": "Engagement",
+    "photo": "produits/gaec-bibollet/8eb090-7955975192e6472b9b4af7e6e2381fc3.jpg",
+    "unit": "engagement",
+    "price_cents": 60000,
+    "is_amount": true
+   },
+   {
+    "name": "Filet de bœuf",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 4960,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Côte de bœuf",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3495,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Entrecôtes",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3495,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Faux-filet",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3495,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Pavés de rumsteck",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3495,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Fondue",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3495,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Steak (bavette, surprise, mouvant…)",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3495,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Rosbif",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3090,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Steak (tranche…)",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3090,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Bœuf pour hacher",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2320,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Basse côte à griller",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2320,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Braisé",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1895,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Bourguignon",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1895,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Pot-au-feu",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1450,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Plat de côte",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1295,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Jarret",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1795,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Haché de bœuf",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2130,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Diots de bœuf",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2130,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Merguez de bœuf",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2130,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Chipolatas de bœuf",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2130,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Brochettes de bœuf",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3910,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Os à moelle",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 975,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Langue, joue de bœuf",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1795,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Foie de bœuf",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1260,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Tripes fraîches",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1020,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Queue, cœur, rognons, tripes",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1020,
+    "icon": "taureau",
+    "icon_color": "brun",
+    "category_label": "Bœuf bio (génisse)",
+    "in_offer": false
+   },
+   {
+    "name": "Filet mignon de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 4960,
     "icon": "vache",
     "icon_color": "rose",
-    "category_label": "Viande de veau"
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Escalope de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3495,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Grenadin de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3495,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Noix de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3495,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Longe de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3495,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Côte de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3185,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Rôti d'épaule de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2645,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Osso buco",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2645,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Blanquette sans os",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2645,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Tendrons de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2290,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Quenelles de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3020,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Brochettes de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3910,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Foie de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3650,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Tête de veau (demie)",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1790,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Rognons, cervelle",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1790,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Cœur de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1500,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Pieds de veau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 550,
+    "icon": "vache",
+    "icon_color": "rose",
+    "category_label": "Veau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Steaks hachés, carton de 30",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1960,
+    "icon": "steak",
+    "icon_color": "brun",
+    "category_label": "Steak haché bio 5 % MG (congelé)",
+    "in_offer": false
+   },
+   {
+    "name": "Steaks hachés, carton de 10",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2220,
+    "icon": "steak",
+    "icon_color": "brun",
+    "category_label": "Steak haché bio 5 % MG (congelé)",
+    "in_offer": false
+   },
+   {
+    "name": "Filet mignon de porc",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2970,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Rôti de filet sans os",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2015,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Escalope de porc",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2015,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Côte filet de porc",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1945,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Côte échine de porc",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1945,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Rouelle",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1895,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Rôti de jambon",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1895,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Sauté de porc",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1895,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Poitrine fraîche tranchée",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1605,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Poitrine fraîche en bloc",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1475,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Joue, langue de porc",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1655,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Pâté de campagne",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2285,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Diots, saucisson à cuire",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2060,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Chair à saucisse",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2060,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Chipolatas de porc",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2085,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Chorizo à griller",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2195,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Merguez de porc",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2130,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Brochettes de porc",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2675,
+    "icon": "cochon",
+    "icon_color": "rose",
+    "category_label": "Porc fermier bio",
+    "in_offer": false
+   },
+   {
+    "name": "Poitrine, jarret saumuré",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1860,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Rôti farci",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2165,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Travers de porc (ribs)",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1455,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Côtes sans os (ou échine)",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2110,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Côtes sans os marinées",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2410,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Boudin noir",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1865,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Saucisson cuit à l'ail",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2320,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Lardons nature",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2445,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Lardons fumés",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2595,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Saucisse aux choux",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2150,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Saucisson pistaché",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2280,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Poitrine roulée cuite",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2110,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Caillette",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2490,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Fromage de tête",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1985,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Jambon blanc",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3595,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Pâté en croûte",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2810,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Diots de porc fumés",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2300,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Saucisson à cuire fumé",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2300,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Saucisson à l'ail cuit",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2300,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Lard paysan fumé",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2920,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Poitrine fumée",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2190,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Coppa, bacon",
+    "description": null,
+    "unit": "100 g",
+    "price_cents": 590,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Saucisson, chorizo sec",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3835,
+    "icon": "saucisse",
+    "icon_color": "rose",
+    "category_label": "Produits occasionnels bio",
+    "in_offer": false
+   },
+   {
+    "name": "Gigot entier",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3399,
+    "icon": "brebis",
+    "icon_color": "blanc",
+    "category_label": "Agneau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Souris, selle, tranche",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3399,
+    "icon": "brebis",
+    "icon_color": "blanc",
+    "category_label": "Agneau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Gigot sans os",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3599,
+    "icon": "brebis",
+    "icon_color": "blanc",
+    "category_label": "Agneau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Épaule entière",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2885,
+    "icon": "brebis",
+    "icon_color": "blanc",
+    "category_label": "Agneau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Épaule sans os",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3419,
+    "icon": "brebis",
+    "icon_color": "blanc",
+    "category_label": "Agneau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Côtes filet, baronne",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2679,
+    "icon": "brebis",
+    "icon_color": "blanc",
+    "category_label": "Agneau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Côtes découvertes",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2575,
+    "icon": "brebis",
+    "icon_color": "blanc",
+    "category_label": "Agneau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Carré de côtes",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2575,
+    "icon": "brebis",
+    "icon_color": "blanc",
+    "category_label": "Agneau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Ragoût",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1760,
+    "icon": "brebis",
+    "icon_color": "blanc",
+    "category_label": "Agneau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Palets de brebis",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 3199,
+    "icon": "brebis",
+    "icon_color": "blanc",
+    "category_label": "Agneau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Brochettes d'agneau",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 4294,
+    "icon": "brebis",
+    "icon_color": "blanc",
+    "category_label": "Agneau bio",
+    "in_offer": false
+   },
+   {
+    "name": "Colis de bœuf, 10 kg",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1900,
+    "icon": "viande",
+    "icon_color": "brun",
+    "category_label": "Colis sous vide bio",
+    "in_offer": false
+   },
+   {
+    "name": "Colis de veau, 5 kg",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2500,
+    "icon": "viande",
+    "icon_color": "brun",
+    "category_label": "Colis sous vide bio",
+    "in_offer": false
+   },
+   {
+    "name": "Agneau découpé",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 2200,
+    "icon": "viande",
+    "icon_color": "brun",
+    "category_label": "Colis sous vide bio",
+    "in_offer": false
+   },
+   {
+    "name": "Colis de porc, 10 kg",
+    "description": null,
+    "unit": "kg",
+    "price_cents": 1550,
+    "icon": "viande",
+    "icon_color": "brun",
+    "category_label": "Colis sous vide bio",
+    "in_offer": false
+   },
+   {
+    "name": "Verrine 200 g (mousse de foie, campagne nature, cèpes, piment d'Espelette, rillettes)",
+    "description": null,
+    "unit": "pot",
+    "price_cents": 695,
+    "icon": "bocal",
+    "icon_color": "brun",
+    "category_label": "Verrines et plats cuisinés bio",
+    "in_offer": false
+   },
+   {
+    "name": "Bolognaise 200 g",
+    "description": null,
+    "unit": "pot",
+    "price_cents": 580,
+    "icon": "bocal",
+    "icon_color": "brun",
+    "category_label": "Verrines et plats cuisinés bio",
+    "in_offer": false
+   },
+   {
+    "name": "Bolognaise 400 g",
+    "description": null,
+    "unit": "pot",
+    "price_cents": 1700,
+    "icon": "bocal",
+    "icon_color": "brun",
+    "category_label": "Verrines et plats cuisinés bio",
+    "in_offer": false
+   },
+   {
+    "name": "Sauté de porc 240 g",
+    "description": null,
+    "unit": "pot",
+    "price_cents": 790,
+    "icon": "bocal",
+    "icon_color": "brun",
+    "category_label": "Verrines et plats cuisinés bio",
+    "in_offer": false
+   },
+   {
+    "name": "Sauté de porc 480 g",
+    "description": null,
+    "unit": "pot",
+    "price_cents": 1090,
+    "icon": "bocal",
+    "icon_color": "brun",
+    "category_label": "Verrines et plats cuisinés bio",
+    "in_offer": false
    }
   ],
   "cover_photo": "producteurs/gaec-bibollet-1.jpg",
@@ -438,21 +1972,53 @@
   "products": [
    {
     "name": "Œufs bio",
-    "description": null,
-    "unit": "boîte de 6",
-    "price_cents": 240,
+    "description": "Œufs Bio livrés en vrac. Nécessité d'apporter vos boites.\nSoit 0,416€/œuf",
     "icon": "oeuf",
     "icon_color": "miel",
-    "category_label": "Œufs"
+    "category_label": "Œufs",
+    "photo": "produits/les-oeufs-d-alex/8eb090-a671fbf767da45dcb3ed88e778939ac7.jpg",
+    "unit": "les 24",
+    "price_cents": 1000
    },
    {
     "name": "Œufs bio",
-    "description": null,
-    "unit": "boîte de 12",
-    "price_cents": 460,
+    "description": "Œufs Biolivrés en vrac. Nécessité d'apporter vos boites.\nSoit 0,40€/œuf",
     "icon": "oeuf",
     "icon_color": "miel",
-    "category_label": "Œufs"
+    "category_label": "Œufs",
+    "photo": "produits/les-oeufs-d-alex/8eb090-a671fbf767da45dcb3ed88e778939ac7.jpg",
+    "unit": "les 30",
+    "price_cents": 1200
+   },
+   {
+    "name": "Œufs bio",
+    "description": "Œufs Bio livrés en vrac. Nécessité d'apporter vos boites.\nSoit 0,416€/œuf",
+    "icon": "oeuf",
+    "icon_color": "miel",
+    "category_label": "Œufs",
+    "photo": "produits/les-oeufs-d-alex/8eb090-a671fbf767da45dcb3ed88e778939ac7.jpg",
+    "unit": "les 18",
+    "price_cents": 750
+   },
+   {
+    "name": "Œufs bio",
+    "description": "Œufs Bio livrés en vrac. Nécessité d'apporter vos boites.\nSoit 0,483€/œuf",
+    "icon": "oeuf",
+    "icon_color": "miel",
+    "category_label": "Œufs",
+    "photo": "produits/les-oeufs-d-alex/8eb090-a671fbf767da45dcb3ed88e778939ac7.jpg",
+    "unit": "les 6",
+    "price_cents": 290
+   },
+   {
+    "name": "Œufs bio",
+    "description": "Soit 0,458€/oeuf\nOeufs Bio livrés en vrac. Nécessité d'apporter vos boites.",
+    "icon": "oeuf",
+    "icon_color": "miel",
+    "category_label": "Œufs",
+    "photo": "produits/les-oeufs-d-alex/8eb090-a671fbf767da45dcb3ed88e778939ac7.jpg",
+    "unit": "les 12",
+    "price_cents": 550
    }
   ],
   "cover_photo": "producteurs/les-oeufs-d-alex-1.jpg",
@@ -481,7 +2047,188 @@
   "documents": [
    "documents/nos-farines.pdf"
   ],
-  "products": []
+  "products": [
+   {
+    "name": "Tarte Briochée aux Pralines",
+    "description": "Ingrédients : farine bio, levain naturel bio, œufs de la ferme bio, sucre bio, beurre de baratte doux bio, pralines amandes artisanales NON BIO, sel, eau.\nLes pralines sont fabriquées par un artisan confiseur de Lyon.\nTarte pour 4/6 personnes.\nCongélation possible entière ou tranchée",
+    "icon": "gateau",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-b1937ebd306c4e93b7535ab037a3d25b.jpg",
+    "unit": "pièce",
+    "price_cents": 1230
+   },
+   {
+    "name": "Lentilles de Mésigny",
+    "description": "Lentilles vertes de notre ferme.\nPoids : 1kg",
+    "icon": "ble",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-e8d2cb7d1cf047e08f54f7372106db58.jpg",
+    "unit": "sachet de 1 kg",
+    "price_cents": 550
+   },
+   {
+    "name": "Pâton à Pizza",
+    "description": "Ingrédients : farine bio, levain naturel bio, huile d’olives bio, sel, eau.\nPâton de 500g au levain naturel fabriqué avec la farine de blé semi-complète (T80) bio.\nLe pâton se conserve 48h au réfrigérateur ou congélation possible (décongélation de 12h par la suite).\nUtilisation : Une pizza de la grandeur d’une plaque de four ou 2 pizzas moyennes\nCuisson : 200°c pendant environ 15 minutes",
+    "icon": "pain",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-019069c5c8484985ad0120344bec2869.jpg",
+    "unit": "pièce",
+    "price_cents": 330
+   },
+   {
+    "name": "Brioche Chocolat",
+    "description": "Farine bio, levain naturel bio, œufs de la ferme bio, sucre bio, beurre de baratte doux bio, morceaux de chocolat bio, sel, eau.\nCongélation possible entière ou tranchée.",
+    "icon": "gateau",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-e55781b3453142c7accd3eb1847eb832.jpg",
+    "unit": "pièce",
+    "price_cents": 620
+   },
+   {
+    "name": "Brioche Nature",
+    "description": "Farine bio, levain naturel bio, œufs de la ferme bio, sucre bio, beurre de baratte doux bio, sel, eau.\nCongélation possible entière ou tranchée.",
+    "icon": "gateau",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-e55781b3453142c7accd3eb1847eb832.jpg",
+    "unit": "pièce",
+    "price_cents": 600
+   },
+   {
+    "name": "Biscuits Sablés au Petit Epeautre",
+    "description": "Farine de petit épeautre (T110) bio, sucre bio, beurre de baratte doux bio, œufs bio de la ferme bio, bicarbonate (pas d’arômes artificiel ni levure)\nPoids:  250g\nSachet de 10 biscuits sablés fabriqués avec de la farine de petit épeautre (T110), du sucre, du beurre de baratte doux, des œufs bio de la ferme et du bicarbonate (pas d’arômes artificiel ni levure).\nA conserver de préférence dans un endroit frais et sec.\nA partager (ou pas !) au goûter avec un thé ou un café",
+    "icon": "gateau",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-cd9006ba153546e1b3954121ad8f9fbc.jpg",
+    "unit": "sachet de 250 g",
+    "price_cents": 530
+   },
+   {
+    "name": "Cookies au Chocolat",
+    "description": "Farine de blé (T80) bio, sucre bio, beurre de baratte doux bio, œufs bio de la ferme, bicarbonate, morceaux de chocolat (pas d’arômes artificiel ni levure)\nPoids : 250g\nSachet de 10 cookies fabriqués avec de la farine de blé (T80), du sucre, du beurre de baratte doux, des morceaux de chocolat, des œufs bio de la ferme et du bicarbonate (pas d’arômes artificiel ni levure).\nA conserver de préférence dans un endroit frais et sec.\nA partager (ou pas !) au goûter avec un thé ou un café",
+    "icon": "gateau",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-a6d93251bf974d14b76972a800372683.jpg",
+    "unit": "sachet de 250 g",
+    "price_cents": 600
+   },
+   {
+    "name": "Apérigraines",
+    "description": "Farine de blé T80, levain, huile d’olives bio, graines de lin bio, tournesol bio, courges bio, herbes de Provence bio, sel.\nPoids : 250g\nA déguster en famille ou entre amis lors de l’apéritif.\nA conserver de préférence dans un endroit frais et sec dans une boite ou un pot fermé.",
+    "icon": "pain",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-0cd05f187c4e4b4eaaa3b1d1652acad5.jpg",
+    "unit": "sachet de 250 g",
+    "price_cents": 520
+   },
+   {
+    "name": "Le « Noix »",
+    "description": "Pain au levain naturel, cuit au feu de bois, fabriqué avec les farines de la ferme et labellisés Agriculture Biologique.\nFarine semi-complète de blé (T80), cerneaux de noix (origine Grenoble), levain naturel,\nsel, eau\nPoids : 500g",
+    "icon": "pain",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-3210fbf46b7d46ae8a59362176c31fb8.jpg",
+    "unit": "pain de 500 g",
+    "price_cents": 420
+   },
+   {
+    "name": "Le « Grand Multigraines »",
+    "description": "Pain au levain naturel, cuit au feu de bois, fabriqué avec les farines de la ferme et labellisés Agriculture Biologique.\nFarine semi-complète de blé (T80), graines de lin, de tournesol et de courges (origine\nFrance), levain naturel, sel, eau\nPoids : 1kg",
+    "icon": "pain",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-3f3c45f5d9e74cc5aba1e785c83d263e.jpg",
+    "unit": "pain de 1 kg",
+    "price_cents": 730
+   },
+   {
+    "name": "Le « Multigraines »",
+    "description": "Pain au levain naturel, cuit au feu de bois, fabriqué avec les farines de la ferme et labellisés Agriculture Biologique.\nFarine semi-complète de blé (T80), graines de lin, de tournesol et de courges (origine\nFrance), levain naturel, sel, eau\nPoids : 500g",
+    "icon": "pain",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-366596fd10f54921a5ed300cd5446966.jpg",
+    "unit": "pain de 500 g",
+    "price_cents": 380
+   },
+   {
+    "name": "Le « Montagnard »",
+    "description": "Pain au levain naturel, cuit au feu de bois, fabriqué avec les farines de la ferme et labellisés Agriculture Biologique.\nFarine complète de seigle (T110), levain naturel, sel, eau\nPoids : 500g",
+    "icon": "pain",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-2bcb131b79034f67a81e9644e7113f09.jpg",
+    "unit": "pain de 500 g",
+    "price_cents": 340
+   },
+   {
+    "name": "Le « Petit Epeautre »",
+    "description": "Pain au levain naturel, cuit au feu de bois, fabriqué avec les farines de la ferme et labellisés Agriculture Biologique.\nFarines complète de Petit Epeautre (T110) et semi-complète de blés anciens (T80),\nlevain naturel, sel, eau\nPoids : 500g",
+    "icon": "pain",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-456957b98eec41028deacedb13e83b1c.jpg",
+    "unit": "pain de 500 g",
+    "price_cents": 410
+   },
+   {
+    "name": "Le « Complet »",
+    "description": "Pain au levain naturel, cuit au feu de bois, fabriqué avec les farines de la ferme et labellisés Agriculture Biologique.\nFarine complète de blé (T110), levain naturel, sel, eau\nPoids : 500g",
+    "icon": "pain",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-31b65d0edf8947008b4dc6b002367e94.jpg",
+    "unit": "pain de 500 g",
+    "price_cents": 310
+   },
+   {
+    "name": "Le « Grand Campagnard »",
+    "description": "Pain au levain naturel, cuit au feu de bois, fabriqué avec les farines de la ferme et labellisés Agriculture Biologique.\nFarine semi-complète de blé (T80), levain naturel, sel, eau\nPoids : 1kg",
+    "icon": "pain",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-860f8b9190f548a2aa48bd728b368507.jpg",
+    "unit": "pain de 1 kg",
+    "price_cents": 580
+   },
+   {
+    "name": "Le « Campagnard »",
+    "description": "Pain au levain naturel, cuit au feu de bois, fabriqué avec les farines de la ferme et labellisés Agriculture Biologique.\nFarine semi-complète de blé (T80), levain naturel, sel, eau\nPoids : 500g",
+    "icon": "pain",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-636a5ba67e6542998c048b968dba584e.jpg",
+    "unit": "pain de 500 g",
+    "price_cents": 310
+   },
+   {
+    "name": "Le « Graine de la Semaine »",
+    "description": "Tous les pains sont au levain naturel, cuits au feu de bois, fabriqués avec les farines de la ferme et labellisés Agriculture Biologique.\nPoids : 500g\nQue vous choisissiez Semaine Paire ou Impaire ou les 2, votre pain sera différent à chaque distribution.\nSi vous avez des allergies, il vous suffit de me le signaler et vous n’aurez pas le pain concerné.",
+    "icon": "pain",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-82d4fc352847451f8f1e0fbfc230ff2a.jpg",
+    "unit": "pain de 500 g",
+    "price_cents": 390
+   },
+   {
+    "name": "Le « Nature de la Semaine »",
+    "description": "Tous les pains sont au levain naturel, cuits au feu de bois, fabriqués avec les farines de la ferme et labellisés Agriculture Biologique.\nPoids : 500g\nQue vous choisissiez Semaine Paire ou Impaire ou les 2, votre pain sera différent à chaque distribution.",
+    "icon": "pain",
+    "icon_color": "terre",
+    "category_label": "Pain",
+    "photo": "produits/le-fournil-des-paysans/5f3f14-79b4dd6fa0094d21b1f902905f3c8142.jpg",
+    "unit": "pain de 500 g",
+    "price_cents": 350
+   }
+  ]
  },
  {
   "slug": "vale-douro",
@@ -540,7 +2287,158 @@
    "producteurs/domaine-du-rieu-frais-2.jpg"
   ],
   "documents": [],
-  "products": []
+  "products": [
+   {
+    "name": "Merlot Rouge – Cuvée Benjamin 2021",
+    "description": "D’un rouge profond, grenat, au nez d’eucalyptus, de groseille, de fruits rouges. Une bouche avec beaucoup de rondeur où la finesse des tannins donne une belle harmonie. A servir avec des viandes rouges, charcuterie, viande rôtie, entrecôte à la tapenade, gigot d’agneau au romarin, fromage.\nTempérature conseillée de 16° à 18 °..\nConservation 10 ans.\nBouteille de 75cl",
+    "icon": "vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-c4e45b7332744bc681befc77e6e0d927.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 3636
+   },
+   {
+    "name": "Rosé 2023",
+    "description": "Léger et fruité - 13° - Syrah Cabernet Sauvignon\nArômes de fruits rouges.\nLéger et fruité.\nA partir de mars\nA boire dans les 2 ans\n2.75€/litre en Fontaine à Vin de 05 litres\n2.34€/litre en Fontaine à Vin de 10 litres",
+    "icon": "vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-c793e922cded4bea9cdb00c55da463f4.jpg",
+    "unit": "fontaine de 5 l",
+    "price_cents": 1590
+   },
+   {
+    "name": "Chardonnay Roussanne Marsanne 2024",
+    "description": "Frais et aromatique\n100 % Chardonnay.\nTrès aromatique, floral sur la fraîcheur.\n13% VOL\n3.02€ le litre en Fontaine à Vin de 05 litres",
+    "icon": "verre-vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-9106066232c9494b875518fb400e0989.jpg",
+    "unit": "fontaine de 5 l",
+    "price_cents": 1746
+   },
+   {
+    "name": "Alliance de trois grands cépages 2022",
+    "description": "Souple et fruité - Merlot Cabernet Sauvignon Syrah\nAlliance de trois grands cépages.\nSouplesse et fruité.\n13 % VOL\nA boire dans les 2 ans\n2.66€/litre en Fontaine à vin de 05L\n2.29€/litre en Fontaine à vin de 10L",
+    "icon": "vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-fa99fab3b3554b04b9089757de45abf2.jpg",
+    "unit": "fontaine de 5 l",
+    "price_cents": 1530
+   },
+   {
+    "name": "Pinot noir Essence Terrestre 2022",
+    "description": "Robe rouge élégante aux arômes séducteurs de petits fruits rouges : griotte, kirsch, fraises\nsauvages. Les tanins sont élégants et fondus grâce aux douze mois d’élevage en barrique de 1 à 6\nvins.\nUn beau pinot noir charmeur et structuré qui saura accompagner tout un repas ; charcuterie,\ncaillette, gigot d’agneau, pintadeau de la Drôme, fromage\nTempérature : 18 à 20 degrés\nVin de grande garde\nBouteille de 75cl",
+    "icon": "vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/5f3f14-0f4e4d85f638488db72dc73e2917c423.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 6300
+   },
+   {
+    "name": "Chardonnay 2023",
+    "description": "Robe claire avec des reflets verts, aux arômes délicats de fleurs blanches, pomme, citron et banane.\nBouche équilibrée où la fraîcheur vient se fondre dans la rondeur et l'élégance.\nAccompagnement : poissons et fruits de mer, fromages doux et desserts.\nTempérature : 10 à 12 degrés\nÀ boire dans les 5 ans",
+    "icon": "verre-vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-f131e8a6ce3044358904413b41d3ff59.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 3564
+   },
+   {
+    "name": "Chardonnay Roussanne Marsanne 2024",
+    "description": "Frais et aromatique\n100 % Chardonnay.\nTrès aromatique, floral sur la fraîcheur.\n13% VOL\n3.02€ le litre en Fontaine à Vin de 05 litres",
+    "icon": "verre-vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-9106066232c9494b875518fb400e0989.jpg",
+    "unit": "fontaine de 10 l",
+    "price_cents": 2976
+   },
+   {
+    "name": "Rosé 2023",
+    "description": "Léger et fruité - 13° - Syrah Cabernet Sauvignon\nArômes de fruits rouges.\nLéger et fruité.\nA partir de mars\nA boire dans les 2 ans\n2.75€/litre en Fontaine à Vin de 05 litres\n2.34€/litre en Fontaine à Vin de 10 litres",
+    "icon": "vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-c793e922cded4bea9cdb00c55da463f4.jpg",
+    "unit": "fontaine de 10 l",
+    "price_cents": 2706
+   },
+   {
+    "name": "Alliance de trois grands cépages 2022",
+    "description": "Souple et fruité - Merlot Cabernet Sauvignon Syrah\nAlliance de trois grands cépages.\nSouplesse et fruité.\n13 % VOL\nA boire dans les 2 ans\n2.66€/litre en Fontaine à vin de 05L\n2.29€/litre en Fontaine à vin de 10L",
+    "icon": "vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-fa99fab3b3554b04b9089757de45abf2.jpg",
+    "unit": "fontaine de 10 l",
+    "price_cents": 2658
+   },
+   {
+    "name": "Cuvée vol libre sans soufre ajouté 2023",
+    "description": "Sans soufre ajouté\nCabernet Sauvignon\nCette cuvée sans soufre ajouté est la sélection de notre meilleur cépage sur notre meilleure parcelle de l'année.\nA boire en apéritif, avec des viandes ou du fromages.\nTempérature : de 8 à 15 degrés\nÀ boire dans les 3 ans\nBouteille de 75cl",
+    "icon": "vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/5f3f14-3112912284074f2990a49e5cec148f42.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 4104
+   },
+   {
+    "name": "Révélation 2022",
+    "description": "Cabernet 33%, Merlot 33%, Syrah 33%\nCuvée que nous ne vinifions que les plus grandes années, mariage subtil de trois grands cépages rouges : Syrah, Merlot, Cabernet-Sauvignon.\nNous la gardons en cave 5 ans dont 12 mois en barriques de chêne avant de la proposer à nos clients.\nUne robe dense grenat, des arômes de fruits rouges très mûrs, un boisé très discret et des tanins bien fondus.\nTempérature : 18 à 20 degrés\nVin de grande garde",
+    "icon": "vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-ab2e96c37ecd4d43b146dd0b6732aa40.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 5580
+   },
+   {
+    "name": "Cabernet Sauvignon – Cuvée Alexandre 2021",
+    "description": "12 mois d’élevage en barriques lui confèrent un nez de cassis confits où la vanille et les sous-bois apportent la complexité des vins d'autrefois.\nEn bouche, le fondu et le coulant des plus grands.\nÀ servir avec des viandes en sauce, gibiers et fromages.\nTempérature : 18 à 20 degrés\nVin de garde 10 ans\nBouteille de 75cl",
+    "icon": "vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-c4e45b7332744bc681befc77e6e0d927.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 3996
+   },
+   {
+    "name": "Syrah – Cuvée Julien 2023",
+    "description": "Elevé en foudre de chêne, cépage d’un rouge rubis, grenat dense.\nNez très aromatique, poivré avec des notes florales de violette.\nCharnu et équilibré.\nUne belle Syrah typique de la vallée du Rhône, qui peut accompagner tout un repas.\nTempérature : de 14 à 18 degrés\nÀ boire dans les 5 ans\nBouteilles de 75cl",
+    "icon": "vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-f928f28028554b2a98e9be7e5b6bee41.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 2916
+   },
+   {
+    "name": "Rosé de Syrah – Cuvée Clémentine 2023",
+    "description": "Un rosé qui vous séduira tant par sa finesse et ses arômes de fruits rouges frais et bonbons anglais que par le caractère et la robe vive que lui confère le cépage Syrah.\nAccompagnement : crudités, charcuteries, pizzas, grillades, fromages frais.\nTempérature : 10 à 12 degrés\nÀ boire dans les 5 ans",
+    "icon": "vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-373b877bd2bb45cdb66c12541c6b1937.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 2916
+   },
+   {
+    "name": "Viognier 2023",
+    "description": "Médaille d'argent - Concours général agricole.\nPour ce cépage aromatique, robe jaune or, au nez puissant et complexe de pêche, coing, abricot et violette, à la bouche ample et longue.\nRondeur et féminité.\nIl met agréablement en valeur poissons en sauce, coquillages, foie gras, fromages de chèvre et desserts.\nExcellent en apéritif.\nTempérature : 10 à 12 degrés\nÀ boire dans les 5 ans",
+    "icon": "verre-vin",
+    "icon_color": "violet",
+    "category_label": "Vin",
+    "photo": "produits/domaine-du-rieu-frais/8eb090-7ca8bd5bac784db3b3dbb7b61269ecb4.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 4968
+   }
+  ]
  },
  {
   "slug": "chateau-farizeau",
@@ -561,7 +2459,98 @@
    "producteurs/chateau-farizeau-3.jpg"
   ],
   "documents": [],
-  "products": []
+  "products": [
+   {
+    "name": "Cadillac Côtes de Bordeaux Rouge 2022 Cuvée Victoria",
+    "description": "Pour ma fille Victoria, mais aussi pour nos enfants, nous nous devons de préserver la nature.\nCette cuvée d'une belle complexité leur est dédiée.\nVous prendrez plaisir à la partager en famille ou  entre amis.\nCépage : 40 % Cabernet-Franc, 40 % Cabernet Sauvignon, 20 % merlot\nVin de garde.\nA boire dans les 15 – 20 ans",
+    "icon": "vin",
+    "icon_color": "rose",
+    "category_label": "Vin",
+    "photo": "produits/chateau-farizeau/5f3f14-ce4df7a433be4fcc8a642ec73dedf333.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 5400
+   },
+   {
+    "name": "Cadillac Côtes de Bordeaux Rouge 2022 Cuvée F",
+    "description": "Cette cuvée est le résultat de trente années de réflexion et de la conversion du vignole en agriculture biologique.\n​L'importance des polyphénols ainsi que ses notes aromatiques de fruits noirs en font un vin de garde.\nCépage : 40 % Cabernet-Franc, 40 % Cabernet Sauvignon, 20 % merlot\nA boire dans les 10 – 12 ans",
+    "icon": "vin",
+    "icon_color": "rose",
+    "category_label": "Vin",
+    "photo": "produits/chateau-farizeau/5f3f14-acab9e97d96c4609b9dbe22eb3a52f45.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 3960
+   },
+   {
+    "name": "Côtes de Bordeaux Rouge 2022",
+    "description": "Comme pour le Bordeaux, nous récoltons à maturation voire sur-maturation.\nLe sol sur la commune de Saint Caprais de Bordeaux est sablo-graveleux donc plus pauvre et filtrant.\nNous y produisons des vins avec plus de densité et plus de tenue arômatique.\nAssemblage : 60 % Merlot20 % Cabernet-Franc20 % Cabernet-Sauvignon\nElevé 12 mois en fûts.\n7 à 8 ans minimum",
+    "icon": "vin",
+    "icon_color": "rose",
+    "category_label": "Vin",
+    "photo": "produits/chateau-farizeau/5f3f14-9d33f2b730884490a7714d1e852cbe09.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 2880
+   },
+   {
+    "name": "Bordeaux Rosé 2024",
+    "description": "Afin de produire un rosé arômatique, nous sélectionnons une parcelle avant les vendanges car fait inhabituel, nous faisons macérer le raisin avec le jus !​\nAssemblage : 50 % Merlot  50 % Cabernet franc\nC'est le vin idéal pour prendre l'apéritif, accompagner vos salades composées et vos grillades l'été !Notre Rosé se marie également trés bien avec les pizzas et la cuisine asiatique.\n1 à 2 ans",
+    "icon": "vin",
+    "icon_color": "rose",
+    "category_label": "Vin",
+    "photo": "produits/chateau-farizeau/5f3f14-86a4bb4e5417409a86ad48e9bd13a3af.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 2700
+   },
+   {
+    "name": "Bordeaux Blanc Doux Cuvée Charlotte 2023",
+    "description": "Habillé d'une robe claire et doréeet récolté à sur-maturation, ce vin blanc doux vous surprendra par son fruité et son équilibre \"douceur et fraicheur\".\nUn vin original, tendance, idéal pour accompagner vos appéritifs.\nAssemblage : 50 % Sauvignon 50 % Sémillon\nUn vin original, tendance qui accompagnera vos apéritifs et les desserts.\nA boire dans les deux à trois ans.",
+    "icon": "verre-vin",
+    "icon_color": "rose",
+    "category_label": "Vin",
+    "photo": "produits/chateau-farizeau/5f3f14-a74c47cbba844207912ade2d23491d6b.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 2880
+   },
+   {
+    "name": "Cadillac Côtes de Bordeaux Rouge 2022 Cuvée Max",
+    "description": "Cette cuvée porte le nom de mon grand-père, en hommage à cette génération pleine de bon sens qui se contentait de prélever à la nature uniquement ce dont elle avait besoin pour vivre. À méditer...\nCépages 100 % Cabernet-sauvignon.\nApéritif dinatoire (Charcuterie, fromage), viandes blanches.\nA boire dans les 10 – 12 ans",
+    "icon": "vin",
+    "icon_color": "rose",
+    "category_label": "Vin",
+    "photo": "produits/chateau-farizeau/5f3f14-9db88fc074d6401382e6d116f2ab1630.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 4680
+   },
+   {
+    "name": "Bordeaux Rouge 2021",
+    "description": "C'est notre entrée de gamme.\nNos cépages rouges sont récoltés à maturation voire sur-maturation.\nLe but est de proposer un vin facile à boire, rond et fruité avec une bonne tenue arômatique et des tanins soyeux.\nAssemblage : 50 % Merlot 50 % Cabernet-Franc\nA boire dès maintenant à 16°C pour son fruité. \nDe multiples possibiltés gastronomiques.\n5 à 6 ans minimum",
+    "icon": "vin",
+    "icon_color": "rose",
+    "category_label": "Vin",
+    "photo": "produits/chateau-farizeau/5f3f14-ca51a11a7a4b47fb9a81ba4fbd7700bf.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 2700
+   },
+   {
+    "name": "Côtes de Bordeaux Rouge 2021",
+    "description": "Comme pour le Bordeaux, nous récoltons à maturation voire sur-maturation.\nLe sol sur la commune de Saint Caprais de Bordeaux est sablo-graveleux donc plus pauvre et filtrant.\nNous y produisons des vins avec plus de densité et plus de tenue arômatique.\nAssemblage : 60 % Merlot20 % Cabernet-Franc20 % Cabernet-Sauvignon\nElevé 12 mois en fûts.\n7 à 8 ans minimum",
+    "icon": "vin",
+    "icon_color": "rose",
+    "category_label": "Vin",
+    "photo": "produits/chateau-farizeau/5f3f14-9d33f2b730884490a7714d1e852cbe09.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 2880
+   },
+   {
+    "name": "Entre-Deux-Mers 2024",
+    "description": "C'est un assemblage des trois cépages majoritaires du vignoble blanc bordelais. 60% de Sauvignon pour le côté spectaculaire des parfums, 30% de Sémillon pour la rondeur et le volume, les arômes d'agrumes fréquents et 10 % de Muscadelle cépage typiquement bordelais pour sa finesse, ses arômes exotiques, sa couleur ambrée.\nC'est le vin des cocktails apéritifs. Peut aussi être servi avec des huitres, crustacés, entrées de poissons froids, marinades.\nSe marie également avec des asperges froides, salades, poissons en gelée et fromages de chèvre.\nC'est le vin plaisir!\nA boire dans les 2 ans",
+    "icon": "verre-vin",
+    "icon_color": "rose",
+    "category_label": "Vin",
+    "photo": "produits/chateau-farizeau/5f3f14-c3188f51d1e3405083e97c6b6d36aece.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 2808
+   }
+  ]
  },
  {
   "slug": "mas-d-intras",
@@ -583,7 +2572,98 @@
    "producteurs/mas-d-intras-2.jpg"
   ],
   "documents": [],
-  "products": []
+  "products": [
+   {
+    "name": "Cuvée Isidora 2024 (Demeter)",
+    "description": "Nez gourmand rappelant le bonbon arlequin. Bouche acidulée, aux arômes de myrtille et de canneberge, équilibre entre gourmandise et fraicheur.\nRosé d'été à la robe pastel, à boire à la belle saison sur volailles, grillades ou même à l'apéritif.\nAssemblage de 45% Grenache, 25% Cabernet-Sauvignon, 15% Merlot et 15% Syrah.",
+    "icon": "vin",
+    "icon_color": "ardoise",
+    "category_label": "Vin",
+    "photo": "produits/mas-d-intras/5f3f14-4153d1e8ba9d446a8437303df604150f.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 4560
+   },
+   {
+    "name": "Carignan 2023 puis 2024 (Demeter)",
+    "description": "Nez puissant, arômes de fruits rouges bien mûrs, acidulés et gourmands. Bouche éclatante d'arômes de cerise \"cœur de pigeon\", d'orange, de fleurs de garrigue et d'épices.\nVin croquant et juteux, accompagnera à merveille une moussaka, un tian ou un couscous.",
+    "icon": "vin",
+    "icon_color": "ardoise",
+    "category_label": "Vin",
+    "photo": "produits/mas-d-intras/5f3f14-164b84625d93473ab554f7d8d251ad74.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 6840
+   },
+   {
+    "name": "Merlot L'Enchanteur 2022",
+    "description": "Récolté à la main, ce vin sans sulfites ajoutés a un nez de groseille, de mûres et de cerises confites. La bouche, tout aussi fruitée, a une belle matière, soyeuse et gourmande. Un vin agréable et digeste qui accompagnera des tajines, des godiveaux et pourquoi pas un dessert au chocolat noir.",
+    "icon": "vin",
+    "icon_color": "ardoise",
+    "category_label": "Vin",
+    "photo": "produits/mas-d-intras/5f3f14-631c40bd374040bda832b4bf8b3d3651.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 6180
+   },
+   {
+    "name": "Cuvée des Helviens 2022 puis 2023",
+    "description": "Issue de vignes âgées de plus de 50 ans, c'est le vin préféré de Denis... avec le Cinsault ! Nez fruité et gourmand, rappelant la confiture de fraise, la framboise et le géranium. Vin de gastronomie à la texture très soyeuse, bouche aux arômes poivrés de réglisse et de zan.\nA servir légèrement rafraîchi, par exemple sur une magret de canard ou un chevreuil...",
+    "icon": "vin",
+    "icon_color": "ardoise",
+    "category_label": "Vin",
+    "photo": "produits/mas-d-intras/5f3f14-b4909d56a3a740c98419deeb385bd3af.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 6360
+   },
+   {
+    "name": "Grenache 2023 (Demeter)",
+    "description": "Ce 100% Grenache sans sulfites ajoutés est récolté à la main et macéré en grappes entières. Nez aux arômes de cerise, de groseille. Bouche nerveuse, croquante. Vin gourmand, vif et léger, à déguster frais, l'été, sur des légumes grillés ou des viandes blanches.",
+    "icon": "vin",
+    "icon_color": "ardoise",
+    "category_label": "Vin",
+    "photo": "produits/mas-d-intras/5f3f14-eb27c1808fcc46f9a2ef1eaadd16cbec.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 7080
+   },
+   {
+    "name": "Chardonnay 2024 (Demeter)",
+    "description": "Vin sans sulfites ajoutés avec un nez aux notes de fruits blancs, de poire et d'aubépine. Bouche ample au joli gras et aux arômes de fruits mûrs et de fleurs. La finale s'ouvre sur de jolies amers, parfaits pour accompagner un fromage à pâte molle ou un risotto crémeux.",
+    "icon": "verre-vin",
+    "icon_color": "ardoise",
+    "category_label": "Vin",
+    "photo": "produits/mas-d-intras/5f3f14-5174d9074ab94853934e58834ec9a6e4.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 7260
+   },
+   {
+    "name": "Cuvée Ferdinand 2022 puis 2023",
+    "description": "Issu des deux cépages régionaux par excellence, la Syrah (55%) et le Grenache (45%), ce vin a été élevé 9 mois essentiellement en foudre de 30 hls.\nVin riche et plein, aux arômes fruités et fumés évoquant la violette, la myrtille et le moka. Le nez capiteux aux arômes fuités et fumés évoque la violette, la myrtille et le moka. La bouche ronde et soyeuse, tout en finesse, dévoile des notes légèrement poivrées, de pivoine et de cerises noires\nIl gagne à être gardé, mais carafé, il se laisse déjà boire sur une daube ardéchoise ou un bœuf bourguignon.",
+    "icon": "vin",
+    "icon_color": "ardoise",
+    "category_label": "Vin",
+    "photo": "produits/mas-d-intras/5f3f14-7dba2dc000d84f85992eaf1886331f6b.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 7860
+   },
+   {
+    "name": "Cuvée d'Alphonse 2023",
+    "description": "Issu d'une macération longue de 30 jours, en assemblage de Merlot (66%) et de Syrah (34%). Nez agréable de sous-bois et de fruits rouges. Bouche ronde et riche aux saveurs de griotte, de chocolat et de café. Vin ample avec une belle matière. Mérite encore de vieillir et se boira facilement sur du gibier ou une poêlée de champignons et de légumes racines.",
+    "icon": "vin",
+    "icon_color": "ardoise",
+    "category_label": "Vin",
+    "photo": "produits/mas-d-intras/5f3f14-a3a136028e4a451188b5e8dfa0f49dc3.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 5520
+   },
+   {
+    "name": "Merlot – Assemblage de 2019, 2020, 2023, 2024",
+    "description": "Ce merlot à la robe rouge rubis, a des parfums de fraise et de cassis. La bouche ronde et fruité a des tanins marqués.\nPensez à le carafer avant de le déguster, au moment de le servir ou quelques heures avant.\nA déguster par exemple sur une salade de gésiers ou une pièce de boeuf.",
+    "icon": "vin",
+    "icon_color": "ardoise",
+    "category_label": "Vin",
+    "photo": "produits/mas-d-intras/5f3f14-4bed028e40f5415ba1981b374a87de22.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 4500
+   }
+  ]
  },
  {
   "slug": "clos-de-l-abbaye-bourgueil",
@@ -603,7 +2683,98 @@
    "producteurs/clos-de-l-abbaye-bourgueil-2.jpg"
   ],
   "documents": [],
-  "products": []
+  "products": [
+   {
+    "name": "Bourgueil Rouge 2023",
+    "description": "Liger d'Argent 2024\nBouteille de 75cl",
+    "icon": "vin",
+    "icon_color": "noir",
+    "category_label": "Vin",
+    "photo": "produits/clos-de-l-abbaye-bourgueil/5f3f14-163aed48f7cb4cf09a16fb5c9bafe7f2.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 5400
+   },
+   {
+    "name": "Bourgueil – Cuvée Galice 2022",
+    "description": "Selection de vieilles vignes\nElevé en fût de chène",
+    "icon": "vin",
+    "icon_color": "noir",
+    "category_label": "Vin",
+    "photo": "produits/clos-de-l-abbaye-bourgueil/5f3f14-163aed48f7cb4cf09a16fb5c9bafe7f2.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 11940
+   },
+   {
+    "name": "Bourgueil Rouge 2021",
+    "description": "Bouteille de 75cl",
+    "icon": "vin",
+    "icon_color": "noir",
+    "category_label": "Vin",
+    "photo": "produits/clos-de-l-abbaye-bourgueil/5f3f14-163aed48f7cb4cf09a16fb5c9bafe7f2.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 6300
+   },
+   {
+    "name": "Bourgueil Rouge 2020",
+    "description": "Bouteille de 75cl",
+    "icon": "vin",
+    "icon_color": "noir",
+    "category_label": "Vin",
+    "photo": "produits/clos-de-l-abbaye-bourgueil/5f3f14-163aed48f7cb4cf09a16fb5c9bafe7f2.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 6600
+   },
+   {
+    "name": "Bourgueil Rouge 2019",
+    "description": "Bouteille de 75cl",
+    "icon": "vin",
+    "icon_color": "noir",
+    "category_label": "Vin",
+    "photo": "produits/clos-de-l-abbaye-bourgueil/5f3f14-163aed48f7cb4cf09a16fb5c9bafe7f2.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 6900
+   },
+   {
+    "name": "Bourgueil Rouge 2017",
+    "description": "Liger de bronze 2018\nBouteille de 75cl",
+    "icon": "vin",
+    "icon_color": "noir",
+    "category_label": "Vin",
+    "photo": "produits/clos-de-l-abbaye-bourgueil/5f3f14-163aed48f7cb4cf09a16fb5c9bafe7f2.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 7200
+   },
+   {
+    "name": "Bourgueil Rouge 2022 (vrac)",
+    "description": "Vignoble en Agriculture Biologique, ayant organisé en 2018 le 1er concours de labour à cheval dans les vignes du Clos.",
+    "icon": "vin",
+    "icon_color": "noir",
+    "category_label": "Vin",
+    "photo": "produits/clos-de-l-abbaye-bourgueil/8eb090-fa99fab3b3554b04b9089757de45abf2.jpg",
+    "unit": "fontaine de 10 l",
+    "price_cents": 5300
+   },
+   {
+    "name": "Bourgueil Rouge 2023 (vrac)",
+    "description": "Vignoble en Agriculture Biologique, ayant organisé en 2018 le 1er concours de labour à cheval dans les vignes du Clos.",
+    "icon": "vin",
+    "icon_color": "noir",
+    "category_label": "Vin",
+    "photo": "produits/clos-de-l-abbaye-bourgueil/8eb090-fa99fab3b3554b04b9089757de45abf2.jpg",
+    "unit": "fontaine de 5 l",
+    "price_cents": 2900
+   },
+   {
+    "name": "Bourgueil Rouge 2022",
+    "description": "Bouteille de 75cl",
+    "icon": "vin",
+    "icon_color": "noir",
+    "category_label": "Vin",
+    "photo": "produits/clos-de-l-abbaye-bourgueil/5f3f14-163aed48f7cb4cf09a16fb5c9bafe7f2.jpg",
+    "unit": "carton de 6 × 75 cl",
+    "price_cents": 5700
+   }
+  ]
  },
  {
   "slug": "les-paysans-voyageurs",
@@ -630,6 +2801,287 @@
   "documents": [
    "documents/gamme-de-produits.pdf"
   ],
-  "products": []
+  "products": [
+   {
+    "name": "Jus de Pommes Bio",
+    "description": null,
+    "icon": "jus",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-d23d27c0bb744d7aae60663503a3224d.jpg",
+    "unit": "bouteille de 1 l",
+    "price_cents": 320
+   },
+   {
+    "name": "Pickles de courgette au curry bio",
+    "description": null,
+    "icon": "bocal",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-a742971d08ad4e7ab1ad39ad6c457900.jpg",
+    "unit": "pot de 450 g",
+    "price_cents": 450
+   },
+   {
+    "name": "Pickles de courgette au curry bio",
+    "description": null,
+    "icon": "bocal",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-a742971d08ad4e7ab1ad39ad6c457900.jpg",
+    "unit": "pot de 250 g",
+    "price_cents": 350
+   },
+   {
+    "name": "Coulis de Mûre Bio",
+    "description": null,
+    "icon": "jus",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-e7bc9009e9dd4856a6729dfd125906ac.jpg",
+    "unit": "bouteille de 25 cl",
+    "price_cents": 570
+   },
+   {
+    "name": "Coulis de Fraise Bio",
+    "description": null,
+    "icon": "jus",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-958fbc4e88b6490980aade546d415344.jpg",
+    "unit": "bouteille de 25 cl",
+    "price_cents": 570
+   },
+   {
+    "name": "Sirop de Groseille Bio",
+    "description": null,
+    "icon": "jus",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-71ce05ba5f3d4bb888b65cfbd634a7e1.jpg",
+    "unit": "bouteille de 25 cl",
+    "price_cents": 420
+   },
+   {
+    "name": "Sirop de Coing Bio",
+    "description": null,
+    "icon": "jus",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-fa683741ac9f4d7abec2feb449fc5802.jpg",
+    "unit": "bouteille de 25 cl",
+    "price_cents": 420
+   },
+   {
+    "name": "Sirop de Fraise Bio",
+    "description": null,
+    "icon": "jus",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-cec5a074a94843c4ba5500f76a0b7880.jpg",
+    "unit": "bouteille de 25 cl",
+    "price_cents": 420
+   },
+   {
+    "name": "Sirop de Menthe Bio",
+    "description": null,
+    "icon": "jus",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-75c08d97182a430395f108eda848c54d.jpg",
+    "unit": "bouteille de 25 cl",
+    "price_cents": 420
+   },
+   {
+    "name": "Sirop de Citron",
+    "description": null,
+    "icon": "jus",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-1372d45e7cc042d7adc73b9fa0446890.jpg",
+    "unit": "bouteille de 25 cl",
+    "price_cents": 420
+   },
+   {
+    "name": "Confiture Coings",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-042a4889b84247629bd6beb8d07d840c.jpg",
+    "unit": "pot de 250 g",
+    "price_cents": 420
+   },
+   {
+    "name": "Confiture Coings",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-042a4889b84247629bd6beb8d07d840c.jpg",
+    "unit": "pot de 450 g",
+    "price_cents": 620
+   },
+   {
+    "name": "Confiture Cynorhodon",
+    "description": "Cynorhodon ou gratte-cul",
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-68a56177b3bd4f1a92896e8ade760a07.jpg",
+    "unit": "pot de 250 g",
+    "price_cents": 420
+   },
+   {
+    "name": "Confiture Cynorhodon",
+    "description": "Cynorhodon ou gratte-cul",
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-68a56177b3bd4f1a92896e8ade760a07.jpg",
+    "unit": "pot de 450 g",
+    "price_cents": 620
+   },
+   {
+    "name": "Confiture Framboises Bio",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-ce02db0ea5a0469aa5f1e79acc667974.jpg",
+    "unit": "pot de 250 g",
+    "price_cents": 420
+   },
+   {
+    "name": "Confiture Framboises Bio",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-3650ef50d75946df8a9e2ece82348e31.jpg",
+    "unit": "pot de 450 g",
+    "price_cents": 620
+   },
+   {
+    "name": "Confiture Fraise/Rhubarbe Bio",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-0aed29116a2243c6abc976277b7a47fc.jpg",
+    "unit": "pot de 250 g",
+    "price_cents": 420
+   },
+   {
+    "name": "Confiture Fraise/Rhubarbe Bio",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-e1c81640668b42118c60f94fa740f8f4.jpg",
+    "unit": "pot de 450 g",
+    "price_cents": 620
+   },
+   {
+    "name": "Confiture Groseilles Bio",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-5ccf88ecbb6746b4b7f3bce3ba18e475.jpg",
+    "unit": "pot de 250 g",
+    "price_cents": 420
+   },
+   {
+    "name": "Confiture Groseilles Bio",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-5ccf88ecbb6746b4b7f3bce3ba18e475.jpg",
+    "unit": "pot de 450 g",
+    "price_cents": 620
+   },
+   {
+    "name": "Confiture Cassis Bio",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-042a4889b84247629bd6beb8d07d840c.jpg",
+    "unit": "pot de 250 g",
+    "price_cents": 420
+   },
+   {
+    "name": "Confiture Cassis Bio",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-042a4889b84247629bd6beb8d07d840c.jpg",
+    "unit": "pot de 450 g",
+    "price_cents": 620
+   },
+   {
+    "name": "Confiture Prunes Bio",
+    "description": "Prunes type quetsches",
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-329169a6837041a8a598159c4b27fcc9.jpg",
+    "unit": "pot de 450 g",
+    "price_cents": 620
+   },
+   {
+    "name": "Confiture Prunes Bio",
+    "description": "Prunes type quetsches",
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-12879b991e564eb1bbb6781b592e7901.jpg",
+    "unit": "pot de 250 g",
+    "price_cents": 420
+   },
+   {
+    "name": "Confiture Mûres Bio",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-2d54dedc675541ed8d1b2fbd906a09b5.jpg",
+    "unit": "pot de 450 g",
+    "price_cents": 620
+   },
+   {
+    "name": "Confiture Mûres Bio",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-f956fa98cbe747b1b70448a1a72fa3b4.jpg",
+    "unit": "pot de 250 g",
+    "price_cents": 420
+   },
+   {
+    "name": "Confiture Fraises Bio",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-f96e120b217f4eff9cee1c33412a81c4.jpg",
+    "unit": "pot de 250 g",
+    "price_cents": 420
+   },
+   {
+    "name": "Confiture Fraises Bio",
+    "description": null,
+    "icon": "pot",
+    "icon_color": "violet",
+    "category_label": "Confitures et sirops",
+    "photo": "produits/les-paysans-voyageurs/5f3f14-4fd3ecfadb044926bab368ce7e06639d.jpg",
+    "unit": "pot de 450 g",
+    "price_cents": 620
+   }
+  ]
  }
 ]

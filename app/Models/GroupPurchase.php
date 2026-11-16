@@ -66,14 +66,15 @@ class GroupPurchase extends Model
     }
 
     /**
-     * Icône des livraisons : celle du produit de l'engagement lié (le pain de la boulangerie),
-     * sinon le sac des commandes groupées.
+     * Icône des livraisons : celle d'un produit du producteur (le pain de la boulangerie plutôt
+     * que les pièces de l'engagement), sinon le sac des commandes groupées.
      *
      * @return array{0: string, 1: ?string}
      */
     public function deliveryIcon(): array
     {
-        $product = $this->contractOffer?->products()->whereNotNull('icon')->first();
+        $product = $this->producer?->products()->where('is_amount', false)->whereNotNull('icon')->orderBy('sort')->first()
+            ?? $this->contractOffer?->products()->whereNotNull('icon')->first();
 
         return $product ? [$product->icon, $product->icon_color] : ['sac', 'miel'];
     }

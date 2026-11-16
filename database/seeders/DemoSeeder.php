@@ -29,6 +29,9 @@ class DemoSeeder extends Seeder
 {
     private const PASSWORD = 'panier2027';
 
+    /** @var list<int> produits de la vitrine, hors offres de contrat */
+    private array $showcaseOnly = [];
+
     /** Adhérents fictifs. */
     private const MEMBERS = [
         ['Claire', 'Martin'], ['Paul', 'Bernard'], ['Léa', 'Rossi'], ['Hugo', 'Petit'], ['Emma', 'Durand'],
@@ -108,8 +111,14 @@ class DemoSeeder extends Seeder
                 'cheque_payee' => $data['cheque_payee'] ?? $data['name'],
                 'user_id' => $data['slug'] === 'le-corti-des-aravis' ? $corti->id : null,
             ]);
+            // « in_offer: false » : produit de la vitrine seulement (par exemple la viande au kilo du GAEC Bibollet).
             foreach ($products as $i => $product) {
-                $producer->products()->updateOrCreate(['name' => $product['name'], 'unit' => $product['unit']], [...$product, 'sort' => $i]);
+                $inOffer = $product['in_offer'] ?? true;
+                unset($product['in_offer']);
+                $saved = $producer->products()->updateOrCreate(['name' => $product['name'], 'unit' => $product['unit']], [...$product, 'sort' => $i]);
+                if (! $inOffer) {
+                    $this->showcaseOnly[] = $saved->id;
+                }
             }
         }
     }
@@ -183,7 +192,7 @@ class DemoSeeder extends Seeder
                 'terms' => '<p><strong>Engagement du producteur :</strong> livrer des produits de saison, au fur et à mesure des récoltes, et informer les adhérents sur ses pratiques.</p><p><strong>Engagement de l\'adhérent :</strong> régler d\'avance, récupérer ou faire récupérer ses produits, accepter les aléas de la production. En cas d\'absence, aucun remboursement ni rattrapage.</p><p><em>Texte d\'exemple du prototype.</em></p>',
                 'is_published' => true,
             ]);
-            $offer->products()->sync($producer->products()->where('is_amount', false)->pluck('id'));
+            $offer->products()->sync($producer->products()->whereNotIn('id', $this->showcaseOnly)->pluck('id'));
         }
     }
 
@@ -195,10 +204,8 @@ class DemoSeeder extends Seeder
     private function bakery(): void
     {
         $producer = Producer::firstWhere('slug', 'boulangerie-chez-geoffrey');
-        $amounts = collect([100_00, 200_00, 300_00])->map(fn (int $cents, int $i) => $producer->products()->updateOrCreate(
-            ['name' => 'Engagement '.($cents / 100).' €'],
-            ['unit' => 'engagement', 'price_cents' => $cents, 'is_amount' => true, 'icon' => 'pain', 'icon_color' => 'miel', 'category_label' => 'Pain', 'sort' => 10 + $i],
-        ));
+        // Montants proposés sur la boutique actuelle (producers.json).
+        $amounts = $producer->products()->where('is_amount', true)->get();
 
         $offer = ContractOffer::updateOrCreate(['producer_id' => $producer->id, 'title' => 'Engagement pain 2027'], [
             'starts_on' => '2026-11-21', 'ends_on' => '2027-12-31',
@@ -218,7 +225,7 @@ class DemoSeeder extends Seeder
             'opens_at' => '2026-11-18 12:00', 'closes_at' => '2026-11-19 18:00', 'distribution_id' => $first->id,
         ]);
         foreach ($producer->products()->where('is_amount', false)->get() as $i => $bread) {
-            $model->items()->updateOrCreate(['name' => $bread->name], ['packaging' => $bread->unit, 'price_cents' => $bread->price_cents, 'max_per_member' => 4, 'sort' => $i]);
+            $model->items()->updateOrCreate(['name' => $bread->name], ['packaging' => $bread->unit === 'kg' ? '1 kg' : $bread->unit, 'price_cents' => $bread->price_cents, 'max_per_member' => 4, 'sort' => $i]);
         }
         GroupPurchasesTable::repeat($model, Carbon::parse('2027-02-28'));
 

@@ -104,7 +104,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 | PUB-01 | Accueil                   | Accroche, prochaine distribution, actualités et période d'adhésion, commande groupée ouverte (titre), bouton « Adhérer » | Admin          |
 | PUB-02 | L'AMAP                    | Fusion de « Qu'est-ce qu'une AMAP » et « Notre fonctionnement » + charte et code de bonne conduite en PDF                | Admin          |
 | PUB-03 | Nos producteurs           | Liste en vignettes, filtrable par type de produit → fiche producteur générée automatiquement                             | Référents      |
-| PUB-04 | Fiche producteur          | Présentation, photos, produits, offres de contrat (sans les prix si on le souhaite), liens, labels                       | Référents      |
+| PUB-04 | Fiche producteur          | Présentation, photos, produits (un clic ouvre le produit en grand : photo et texte complet), offres de contrat (sans les prix si on le souhaite), liens, labels | Référents      |
 | PUB-05 | Calendrier                | Dates des distributions et des prochaines permanences d'adhésion (pour venir rencontrer l'AMAP)                          | Admin          |
 | PUB-06 | Adhérer                   | Étapes, cotisation, dates des permanences d'adhésion, paiement en ligne de la cotisation, création de compte             | Admin          |
 | PUB-07 | Contact / Nous rencontrer | Formulaire de contact, adresse postale, lieu de distribution (carte), prochaines permanences                             | Admin          |

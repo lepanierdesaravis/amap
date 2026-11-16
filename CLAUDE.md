@@ -32,6 +32,7 @@ Chaque exigence du cahier des charges a un numéro (`ADH-07`, `REF-13`…), qui 
 
 ## Données de démonstration
 - `DemoSeeder` : vrais producteurs (`database/seeders/data/producers.json` et `database/seeders/media`), adhérents fictifs en `@exemple.fr`, mot de passe `panier2027`.
+- Les produits de `producers.json` viennent de la boutique Wix (relevé du 16/11/2026, `docs/05-import-boutique.md`). Un produit avec `"in_offer": false` reste dans la vitrine, hors des offres de contrat de la démo.
 - La route `/demo/connexion/{email}` n'existe qu'en environnement local.
 
 ## Ton

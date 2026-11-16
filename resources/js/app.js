@@ -1,1 +1,1 @@
-//
+import './vitrine';
