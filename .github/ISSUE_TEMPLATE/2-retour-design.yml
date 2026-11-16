@@ -1,0 +1,35 @@
+name: Retour design
+description: Une remarque sur la présentation, les textes ou l'ergonomie d'un écran.
+title: "[Design] "
+labels: [design]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Adresse de la page
+      placeholder: https://…/producteurs
+    validations:
+      required: true
+  - type: dropdown
+    id: appareil
+    attributes:
+      label: Vu sur
+      multiple: true
+      options:
+        - Téléphone
+        - Tablette
+        - Ordinateur
+    validations:
+      required: true
+  - type: textarea
+    id: constat
+    attributes:
+      label: Ce qui ne va pas
+      description: Collez une capture d'écran et entourez la zone si possible.
+    validations:
+      required: true
+  - type: textarea
+    id: proposition
+    attributes:
+      label: Ce que je propose
+      description: Facultatif. Une maquette, un exemple d'un autre site, une formulation…

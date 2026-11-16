@@ -2,6 +2,8 @@
 
 Application de l'AMAP Le Panier des Aravis (Thônes). Le besoin est décrit dans `docs/02-cahier-des-charges.md`, les phases dans `docs/03-plan-de-developpement.md`. Le `README.md` explique comment lancer le projet.
 
+Chaque exigence du cahier des charges a un numéro (`ADH-07`, `REF-13`…), qui ne change jamais. `docs/04-suivi-conformite.md` donne l'état de chacune : mettez-le à jour quand une fonctionnalité change, et citez le numéro dans les commits et les tickets.
+
 ## Environnement
 - Tout passe par Docker avec Laravel Sail : `./vendor/bin/sail artisan …`, `./vendor/bin/sail npm …`, `./vendor/bin/sail pint`. N'installez ni PHP ni Composer sur la machine.
 - Laravel 13, PHP 8.4, MariaDB 11, Filament 5 (API de type v4 : `Filament\Schemas\Schema`, `->components()`, `Filament\Actions\*`), Livewire 4, Tailwind CSS v4, spatie/laravel-permission, barryvdh/laravel-dompdf.

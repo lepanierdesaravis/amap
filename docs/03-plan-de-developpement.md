@@ -41,7 +41,7 @@ Il y a donc **deux mises en production** :
 - **Organisation GitHub `lepanierdesaravis`** (gratuite). Au moins **2 propriétaires** (membres du bureau). Les développeurs sont membres. Le dépôt appartient à l'association, pas à une personne. On peut ensuite demander le programme *GitHub for Nonprofits* (offre Team gratuite), mais ce n'est pas nécessaire au départ.
 - **Dépôt `amap`** (nom générique, pour qu'il soit réutilisable), public.
 - **Façon de travailler :**
-  1. Un **ticket** décrit le besoin. Tout le monde peut en ouvrir, grâce à des modèles « Bug » et « Idée ».
+  1. Un **ticket** décrit le besoin. Tout le monde peut en ouvrir, grâce aux modèles « Anomalie », « Retour design » et « Exigence ».
   2. Une **branche** par ticket, développée avec Claude Code.
   3. Une **demande de fusion** (pull request) : les tests automatiques passent, puis au moins une personne relit.
   4. La fusion dans `main` → **déploiement automatique sur le site de test** (`test.lepanierdesaravis.fr`).

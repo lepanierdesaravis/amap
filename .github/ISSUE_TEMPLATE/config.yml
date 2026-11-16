@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Cahier des charges
+    url: https://github.com/lepanierdesaravis/amap/blob/main/docs/02-cahier-des-charges.md
+    about: Le besoin, exigence par exigence. On le modifie par une pull request.
+  - name: Suivi de conformité
+    url: https://github.com/lepanierdesaravis/amap/blob/main/docs/04-suivi-conformite.md
+    about: Ce que le site fait déjà, et ce qui reste à faire.

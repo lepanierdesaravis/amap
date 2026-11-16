@@ -1,0 +1,32 @@
+name: Exigence
+description: Réaliser une exigence du cahier des charges, ou en proposer une nouvelle.
+title: "[XXX-00] "
+labels: [exigence]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Le besoin lui-même est décrit dans le cahier des charges (docs/02-cahier-des-charges.md).
+        Si l'exigence n'y figure pas encore, ajoutez-la d'abord par une pull request sur ce fichier.
+  - type: input
+    id: exigence
+    attributes:
+      label: Numéro de l'exigence
+      placeholder: ADH-17
+    validations:
+      required: true
+  - type: textarea
+    id: travail
+    attributes:
+      label: Ce qu'il reste à faire
+      description: Reprenez la colonne « Remarques » du tableau de suivi (docs/04-suivi-conformite.md).
+    validations:
+      required: true
+  - type: textarea
+    id: criteres
+    attributes:
+      label: Comment vérifier que c'est fait
+      description: Ce que le testeur doit pouvoir faire sur le site de recette.
+      placeholder: |
+        - Un adhérent choisit 3 dates de permanence depuis son téléphone
+        - L'administrateur voit les vœux de chaque distribution
