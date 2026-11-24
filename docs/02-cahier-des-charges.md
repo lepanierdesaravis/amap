@@ -328,8 +328,6 @@ Le responsable fonctionnel les tranche avec l'association. La réponse est alors
 -   **Q-01** Le producteur modifie-t-il lui-même sa fiche et ses produits, ou passe-t-il toujours par son référent ? (ROL-10, PRO-04)
 -   **Q-02** Plusieurs référents peuvent-ils gérer un même producteur ? (ROL-17)
 -   **Q-03** ~~Que recouvrent les produits « Engagement de 50 € / 100 € / 1000 € pour l'année » de la boutique actuelle : un crédit à utiliser, ou un contrat au montant ?~~ Tranché le 16/11/2026 : les deux. Un montant peut se proposer comme un produit (REF-22), et servir de crédit pour des commandes liées (ADH-26, REF-24).
--   **Q-11** L'annonce d'ouverture d'un contrat va-t-elle par défaut à tous les adhérents, ou seulement à ceux qui ont un contrat en cours ? Le site permet les deux (REF-27).
--   **Q-12** Pour les commandes liées à un engagement, les adhérents non engagés doivent-ils aussi recevoir l'e-mail d'ouverture ? Aujourd'hui, seuls les engagés le reçoivent ; les autres voient la commande dans leur espace. (MEL-12)
 -   **Q-04** Les contrats ont-ils tous les mêmes fréquences (toutes / 1 sur 2), ou faut-il des choix de dates libres ? (ADH-07)
 -   **Q-05** Après la clôture des souscriptions, l'adhérent peut-il encore modifier son contrat ? (ADH-10)
 -   **Q-06** Faut-il gérer les livraisons hors distribution AMAP (autre lieu ou autre jour) dès la V1 ? (DIS-02)
@@ -337,3 +335,6 @@ Le responsable fonctionnel les tranche avec l'association. La réponse est alors
 -   **Q-08** Permanences : confirmez-vous le fonctionnement « 3 vœux, puis l'AMAP en retient 1 ou 2 » ? Qui fait cette sélection ? (ADH-17)
 -   **Q-09** Les prix doivent-ils être visibles publiquement sur les fiches producteurs ? (PUB-04)
 -   **Q-10** Formulation pour le « visiteur » dans le champ « Je suis ». (CON-01)
+-   **Q-11** L'annonce d'ouverture d'un contrat va-t-elle par défaut à tous les adhérents, ou seulement à ceux qui ont un contrat en cours ? Le site permet les deux (REF-27).
+-   **Q-12** Pour les commandes liées à un engagement, les adhérents non engagés doivent-ils aussi recevoir l'e-mail d'ouverture ? Aujourd'hui, seuls les engagés le reçoivent ; les autres voient la commande dans leur espace. (MEL-12)
+-   **Q-13** Gestion des inscriptions au fil de l'eau : calcul des tarifs selon le nombre de distributions restantes, mise à jour des documents, délai pour les producteurs avant la première distribution.

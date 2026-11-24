@@ -240,3 +240,4 @@ EVO-01 à EVO-06 : ⏸ hors V1.
 | Q-10 | Formulation « Je suis » | Ouvert | « Je découvre l'AMAP » |
 | Q-11 | Annonce d'un contrat : à qui par défaut ? | Ouvert | Au choix du référent, pour chaque offre |
 | Q-12 | Commandes liées : prévenir aussi les non-engagés ? | Ouvert | Seuls les engagés reçoivent l'e-mail |
+| Q-13 | Inscriptions en cours de saison (au fil de l'eau) ? | Ouvert | Souscription possible jusqu'à la clôture de l'offre, au prix de toutes ses distributions |
