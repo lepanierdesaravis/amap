@@ -222,7 +222,7 @@ Les annonces (MEL-04, MEL-11, MEL-12) et les rappels (MEL-05, MEL-07 à MEL-10) 
 
 ## 15. Évolutions futures
 
-EVO-01 à EVO-06 : ⏸ hors V1.
+EVO-01 à EVO-07 : ⏸ hors V1.
 
 ## 16. Points à préciser
 

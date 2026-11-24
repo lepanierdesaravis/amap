@@ -320,6 +320,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 -   **EVO-04** Blog et recettes.
 -   **EVO-05** Paiement en ligne des contrats (si un jour souhaité).
 -   **EVO-06** Liste d'attente pour les contrats complets.
+-   **EVO-07** Import dans l'agenda du téléphone des dates de distributions des contrats et des commandes groupées avec date/heure de distribution - nom et téléphone du responsable de distribution - contenu du panier à récupérer. Notification à J-1 et H-1.
 
 ## 16. Points à préciser
 
